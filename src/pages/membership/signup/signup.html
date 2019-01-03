@@ -5,6 +5,49 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+  <ion-navbar>
+    <ion-title>Inline Labels</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="Email" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Re-type Password</ion-label>
+      <ion-input type="password" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Contact Info</ion-label>
+      <ion-input type="number" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-textarea type="text" value=""></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>
+  </div>
+
+</ion-content>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>signup</ion-title>
@@ -13,6 +56,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="main">
 
-</ion-content>
+    <ion-input class="input" type="text" placeholder="Username"> </ion-input>
+    <ion-input class="input" type="text" placeholder="Email"> </ion-input>
+    <ion-input class="input" type="text" placeholder="Password"></ion-input> 
+    <ion-input class="input" type="text" placeholder="Re-type-Password"></ion-input>
+    <ion-input class="input" type="text" placeholder="Contact"></ion-input>
+    <ion-input class="inputaddress"  id="address"type="text" placeholder="Address"> </ion-input>
+   <button>Sign Up</button>
+   <ion-label>Already Registered?</ion-label>
+
+</ion-content> -->

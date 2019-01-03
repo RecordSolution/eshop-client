@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MenPage } from './../men/men';
 
 /**
  * Generated class for the CategoriesPage page.
@@ -22,4 +23,7 @@ export class CategoriesPage {
     console.log('ionViewDidLoad CategoriesPage');
   }
 
+  goToMensPage(){
+    this.navCtrl.push(MenPage);
+  }
 }

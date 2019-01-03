@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { CategoriesPage } from "./../../buyer/categories/categories";
 /**
  * Generated class for the SignupPage page.
  *
@@ -21,5 +21,7 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-
+  goBuyerHomePage(){
+    this.navCtrl.push(CategoriesPage);
+  }
 }
