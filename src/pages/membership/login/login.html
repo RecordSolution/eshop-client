@@ -1,11 +1,14 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
-    <ion-title>Inline Labels</ion-title>
+    <ion-title>LogIn</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
+
 
 <ion-content>
-
+<div class="logo">
+  <img src="assets/imgs/logo.png">
+</div>
   <ion-list>
 
     <ion-item>
@@ -23,5 +26,8 @@
   <div padding>
     <button ion-button color="primary" block>Sign In</button>
   </div>
-<p (click)="signup()" >signup</p>
+  <div padding>
+    <button ion-button color="primary"  (click)="signup()" block>Sign Up</button>
+  </div>
+<!-- <p (click)="signup()" >signup</p> -->
 </ion-content>

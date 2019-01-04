@@ -25695,3 +25695,8 @@ ion-navbar.toolbar {
   width: 100%;
   color: #fff;
 }
+
+.logo {
+  padding: 20px;
+  height: 300px;
+}
