@@ -8,6 +8,8 @@ import { LoginPage } from "./../pages/membership/login/login";
 import {CategoriesPage  } from "./../pages/buyer/categories/categories";
 import { SignupPage } from '../pages/membership/signup/signup';
 import { MenPage } from "./../pages/buyer/men/men";
+import { MembershipProvider } from '../providers/membership/membership';
+import { ProductsProvider } from '../providers/products/products';
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +33,9 @@ import { MenPage } from "./../pages/buyer/men/men";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MembershipProvider,
+    ProductsProvider
   ]
 })
 export class AppModule {}

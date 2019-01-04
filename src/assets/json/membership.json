@@ -1,0 +1,32 @@
+{"user":[
+{
+    "id":"920jdnd02jdwd2md",
+    "tokken":"0923jm02me902nce02jx0ej203e2h_jd02j",
+    "role":"user",
+    "name":"test user",
+    "email":"test@gmail.com",
+    "password":"zxcvbnm",
+    "contactNo":"03052872197",
+    "address":"multan"
+},
+{
+    "id":"920jdnm98y98nhy2md",
+    "tokken":"0923jm02me902nce02jx009u23jmd",
+    "name":"test user1",
+    "email":"test1@gmail.com",
+    "password":"zxcvbnm",
+    "contactNo":"03052872197",
+    "address":"multan"
+},
+{
+    "id":"920jdpoei923m8uhmd",
+    "tokken":"0923jm*(0q-dn2jx0ej203e2h_jd02j",
+    "role":"admin",
+    "name":"test user",
+    "email":"admin@gmail.com",
+    "password":"zxcvbnm",
+    "contactNo":"03052872197",
+    "address":"multan"
+}
+]
+}
