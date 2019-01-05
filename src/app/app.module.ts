@@ -10,6 +10,8 @@ import { SignupPage } from '../pages/membership/signup/signup';
 import { MenPage } from "./../pages/buyer/men/men";
 import { MembershipProvider } from '../providers/membership/membership';
 import { ProductsProvider } from '../providers/products/products';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +22,8 @@ import { ProductsProvider } from '../providers/products/products';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
