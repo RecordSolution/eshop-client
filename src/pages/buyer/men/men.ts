@@ -22,7 +22,7 @@ export class MenPage {
     public navParams: NavParams,
     public productService: ProductsProvider) {
     this.productService.getVehicles().subscribe(res => {
-      this.products = res
+      this.products = res;
     });
   }
 
