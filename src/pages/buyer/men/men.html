@@ -14,14 +14,14 @@
 
 
 <ion-content>
-<ion-card>
+<ion-card *ngFor="let product of products">
 
   <ion-item>
     <!-- <ion-avatar item-start>
       <img src="assets/imgs/firstCategory.png">
     </ion-avatar> -->
-    <h2>Product Name</h2>
-    <p>short description</p>
+    <h2>{{product.name}}</h2>
+    <p>{{product.shortDescription}}</p>
   </ion-item>
 
   <img src="assets/imgs/firstCategory.png">
