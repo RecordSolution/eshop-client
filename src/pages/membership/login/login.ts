@@ -5,6 +5,7 @@ import { SignupPage } from "./../signup/signup";
 import { CategoriesPage } from '../../buyer/categories/categories';
 import { MembershipProvider } from "./../../../providers/membership/membership";
 import { LoginModel } from './model/login';
+import { AdmindashboardPage } from '../../admin/admindashboard/admindashboard';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -70,6 +71,8 @@ export class LoginPage implements OnInit {
       if (res) {
         if (res.role == 'buyer') {
           this.navCtrl.setRoot(CategoriesPage);
+        }else{
+          this.navCtrl.setRoot(AdmindashboardPage);
         }
 
       } else {

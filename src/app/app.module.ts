@@ -17,6 +17,7 @@ import {ProductDetailsPage} from "./../pages/buyer/product-details/product-detai
 import { ProfileStore } from "./../store/profileStore";
 import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
 import { SharedProvider } from '../providers/shared/shared';
+import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +26,8 @@ import { SharedProvider } from '../providers/shared/shared';
     CategoriesPage,
     MenPage,
     ProductDetailsPage,
-    CustomDesignPage
+    CustomDesignPage,
+    AdmindashboardPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { SharedProvider } from '../providers/shared/shared';
     CategoriesPage,
     MenPage,
     ProductDetailsPage,
-    CustomDesignPage
+    CustomDesignPage,
+    AdmindashboardPage
   ],
   providers: [
     StatusBar,

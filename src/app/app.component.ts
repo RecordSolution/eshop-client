@@ -6,6 +6,7 @@ import { LoginPage } from './../pages/membership/login/login'
 import { CategoriesPage } from "./../pages/buyer/categories/categories";
 import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
 import { SharedProvider } from "./../providers/shared/shared";
+import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,7 +26,12 @@ export class MyApp {
         let data = JSON.parse(localStorage.getItem('userData'))
         if (data && data.accessTokken) {
           // this.navCtrl.setRoot(CategoriesPage);
-          this.rootPage = CategoriesPage;
+          if(data.accountType=='buyer'){
+            this.rootPage = CategoriesPage;
+          }else{
+            this.rootPage = AdmindashboardPage;
+          }
+         
         } else {
           this.rootPage = LoginPage;
         }
