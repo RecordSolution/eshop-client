@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductsProvider } from '../../../providers/products/products';
 import { Subscriber } from 'rxjs/Subscriber';
 import { Product } from '../../../shared/models/product';
+import { ProductDetailsPage } from '../product-details/product-details';
 
 /**
  * Generated class for the MenPage page.
@@ -22,12 +23,16 @@ export class MenPage {
     public navParams: NavParams,
     public productService: ProductsProvider) {
     this.productService.getVehicles().subscribe(res => {
-      this.products = res
+      this.products = res;
     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenPage');
+  }
+
+  showDetails(product) {
+    this.navCtrl.push(ProductDetailsPage, { 'data': product });
   }
 
 }

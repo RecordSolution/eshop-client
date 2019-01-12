@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content>
 <ion-card *ngFor="let product of products">
 
@@ -21,7 +20,7 @@
       <img src="assets/imgs/firstCategory.png">
     </ion-avatar> -->
     <h2>{{product.name}}</h2>
-    <p>{{product.shortDescription}}</p>
+    <p>{{product.description}}</p>
   </ion-item>
 
   <img src="assets/imgs/firstCategory.png">
@@ -38,7 +37,7 @@
       </button>
     </ion-col>
     <ion-col>
-      <button ion-button icon-start small>
+      <button ion-button icon-start (click)="showDetails(product)">
         BUY
         <!-- <ion-icon name="text"></ion-icon>
         <div>4 Comments</div> -->

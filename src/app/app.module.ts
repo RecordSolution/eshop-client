@@ -13,14 +13,19 @@ import { ProductsProvider } from '../providers/products/products';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { OrdersProvider} from '../providers/orders/orders';
 import { OrderStore } from '../store/orders/orderstore';
-
+import {ProductDetailsPage} from "./../pages/buyer/product-details/product-details"
+import { ProfileStore } from "./../store/profileStore";
+import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
+import { SharedProvider } from '../providers/shared/shared';
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
     SignupPage,
     CategoriesPage,
-    MenPage
+    MenPage,
+    ProductDetailsPage,
+    CustomDesignPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,9 @@ import { OrderStore } from '../store/orders/orderstore';
     LoginPage,
     SignupPage,
     CategoriesPage,
-    MenPage
+    MenPage,
+    ProductDetailsPage,
+    CustomDesignPage
   ],
   providers: [
     StatusBar,
@@ -42,9 +49,9 @@ import { OrderStore } from '../store/orders/orderstore';
     MembershipProvider,
     ProductsProvider,
     OrdersProvider,
-    OrderStore
-
-
+    OrderStore,
+    ProfileStore,
+    SharedProvider
   ]
 })
 export class AppModule {}
