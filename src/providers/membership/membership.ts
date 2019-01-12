@@ -20,7 +20,7 @@ export class MembershipProvider {
       let ifUser = res.user.find(x => x.email == userCredentials.email && x.password == userCredentials.password);
       if (ifUser) {
         this.profileStore.setUserData(ifUser);
-        return true;
+        return ifUser;
       } else {
         return false;
       }

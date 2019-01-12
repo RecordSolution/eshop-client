@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ProfileStore {
-    @observable userData: any;
+    @observable userData: any={};
 
     constructor() {
         autorun(() => {
@@ -13,7 +13,7 @@ export class ProfileStore {
                 this.userData = localStorage.userData;
                 console.log(this.userData);
             }
-            localStorage.userData = this.userData;
+            localStorage.userData = this.userData; 
         });
     }
 
