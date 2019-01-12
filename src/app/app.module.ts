@@ -11,6 +11,8 @@ import { MenPage } from "./../pages/buyer/men/men";
 import { MembershipProvider } from '../providers/membership/membership';
 import { ProductsProvider } from '../providers/products/products';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { OrdersProvider} from '../providers/orders/orders';
+import { OrderStore } from '../store/orders/orderstore';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MembershipProvider,
-    ProductsProvider
+    ProductsProvider,
+    OrdersProvider,
+    OrderStore
+
+
   ]
 })
 export class AppModule {}

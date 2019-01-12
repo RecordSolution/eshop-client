@@ -2,7 +2,7 @@
 {
     "id":"920jdnd02jdwd2md",
     "tokken":"0923jm02me902nce02jx0ej203e2h_jd02j",
-    "role":"user",
+    "role":"buyer",
     "name":"test user",
     "email":"test@gmail.com",
     "password":"zxcvbnm",
@@ -12,6 +12,7 @@
 {
     "id":"920jdnm98y98nhy2md",
     "tokken":"0923jm02me902nce02jx009u23jmd",
+    "role":"buyer",
     "name":"test user1",
     "email":"test1@gmail.com",
     "password":"zxcvbnm",
