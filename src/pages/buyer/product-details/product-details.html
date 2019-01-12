@@ -1,0 +1,79 @@
+<!--
+  Generated template for the ProductDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>product-details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngIf="details">
+
+        <ion-item>
+          <!-- <ion-avatar item-start>
+            <img src="assets/imgs/firstCategory.png">
+          </ion-avatar> -->
+          <h2>{{details.name}}</h2>
+          <p>{{details.description}}</p>
+        </ion-item>
+      
+        
+        <div>
+            <ion-slides>
+                <ion-slide>
+                    <img src="assets/imgs/firstCategory.png">
+                </ion-slide>
+                <ion-slide>
+                    <img src="assets/imgs/firstCategory.png">
+                </ion-slide>
+                <ion-slide>
+                    <img src="assets/imgs/firstCategory.png">
+                </ion-slide>
+              </ion-slides>
+      </div>
+        <ion-card-content>
+          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <!-- <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <p>Select Quantity</p>
+            </button>
+          </ion-col> -->
+          <ion-col>
+              <ion-item>
+                  <ion-label>Quantity</ion-label>
+                  <ion-select [(ngModel)]="number">
+                      <ion-option *ngFor="let count of quantity" [value]="count">{{count}}</ion-option>
+                    </ion-select>
+                  <!-- <ion-select [(ngModel)]="number">
+                    <ion-option *ngFor="let count of quantity" value="count"></ion-option>
+                  </ion-select> -->
+                </ion-item>
+                <ion-item>
+                <ion-label>Color</ion-label>
+                <ion-select [(ngModel)]="color">
+                    <ion-option *ngFor="let color of details.colors" [value]="color">{{color}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
+                  </ion-select>
+                <!-- <ion-select [(ngModel)]="number">
+                  <ion-option *ngFor="let count of quantity" value="count"></ion-option>
+                </ion-select> -->
+              </ion-item>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+
+
+ 
+</ion-content>

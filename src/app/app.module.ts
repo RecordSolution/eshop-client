@@ -11,14 +11,19 @@ import { MenPage } from "./../pages/buyer/men/men";
 import { MembershipProvider } from '../providers/membership/membership';
 import { ProductsProvider } from '../providers/products/products';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import {ProductDetailsPage} from "./../pages/buyer/product-details/product-details"
+import { ProfileStore } from "./../store/profileStore";
+import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
+import { SharedProvider } from '../providers/shared/shared';
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
     SignupPage,
     CategoriesPage,
-    MenPage
+    MenPage,
+    ProductDetailsPage,
+    CustomDesignPage
   ],
   imports: [
     BrowserModule,
@@ -31,14 +36,18 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     LoginPage,
     SignupPage,
     CategoriesPage,
-    MenPage
+    MenPage,
+    ProductDetailsPage,
+    CustomDesignPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MembershipProvider,
-    ProductsProvider
+    ProductsProvider,
+    ProfileStore,
+    SharedProvider
   ]
 })
 export class AppModule {}

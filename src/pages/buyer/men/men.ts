@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductsProvider } from '../../../providers/products/products';
 import { Subscriber } from 'rxjs/Subscriber';
 import { Product } from '../../../shared/models/product';
+import { ProductDetailsPage } from '../product-details/product-details';
 
 /**
  * Generated class for the MenPage page.
@@ -28,6 +29,10 @@ export class MenPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenPage');
+  }
+
+  showDetails(product) {
+    this.navCtrl.push(ProductDetailsPage, { 'data': product });
   }
 
 }

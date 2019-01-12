@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import { ProfileStore } from '../../store/profileStore';
 /*
   Generated class for the MembershipProvider provider.
 
@@ -10,13 +11,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MembershipProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private profileStore:ProfileStore) {
     console.log('Hello MembershipProvider Provider');
   }
-// loginUser(userCredentials){
-// return this.http.get('./../assets/json/membership.json').map(res=>{
-//  console.log(res);
-//   return res;
-// })
-// }
+  
+  login(userCredentials) {
+    return this.http.get('./../assets/json/membership.json').map((res: any) => {
+      let ifUser = res.user.find(x => x.email == userCredentials.email && x.password == userCredentials.password);
+      if (ifUser) {
+        this.profileStore.setUserData(ifUser);
+        return true;
+      } else {
+        return false;
+      }
+    })
+  }
 }
