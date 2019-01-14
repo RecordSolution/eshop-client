@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ProfileStore } from './../../store/profileStore'
+import { ProfileStore } from '../../store/profilestore/profileStore'
 /*
   Generated class for the SharedProvider provider.
 

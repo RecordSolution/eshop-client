@@ -14,7 +14,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { OrdersProvider} from '../providers/orders/orders';
 import { OrderStore } from '../store/orders/orderstore';
 import {ProductDetailsPage} from "./../pages/buyer/product-details/product-details"
-import { ProfileStore } from "./../store/profileStore";
+import { ProfileStore } from "../store/profilestore/profileStore";
 import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
 import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
