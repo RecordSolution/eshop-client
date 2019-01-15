@@ -1,4 +1,5 @@
-import { observable, action, autorun, computed } from 'mobx';
+import { observable, action, computed } from 'mobx-angular';
+import {autorun} from 'mobx'
 import { Injectable } from "@angular/core";
 // import { Birthday } from '../models/birthday';  
 // import { UUID } from 'angular2-uuid';
@@ -13,7 +14,10 @@ export class ProfileStore {
                 this.userData = localStorage.userData;
                 console.log(this.userData);
             }
-            localStorage.userData = this.userData;
+            if(this.userData){
+                localStorage.userData = this.userData;
+            }
+           
         });
     }
 

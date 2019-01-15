@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
   logIn() {
     this.membershipService.login(this.userCredentials).subscribe((res: any) => {
       if (res) {
-        if (res.accoutType == 'buyer') {
+        if (res.role == 'buyer') {
           this.navCtrl.setRoot(CategoriesPage);
         }
 
