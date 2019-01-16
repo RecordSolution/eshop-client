@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx-angular';
+import { observable, action, computed } from 'mobx';
 import {autorun} from 'mobx'
 import { Injectable } from "@angular/core";
 // import { Birthday } from '../models/birthday';  
