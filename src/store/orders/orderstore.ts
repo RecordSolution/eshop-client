@@ -1,4 +1,4 @@
-import { observable, computed , action} from 'mobx-angular';
+import { observable, computed , action} from 'mobx';
 // import { Orders } from '../../../shared/models/orders';
 
 export class OrderStore{

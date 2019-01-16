@@ -47,4 +47,8 @@ export class AdmindashboardPage {
   }
 
 
+  productDetails(){
+    this.navCtrl.push('OrderDetailsPage');
+  }
+
 }
