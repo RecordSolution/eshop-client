@@ -18,6 +18,7 @@ import { ProfileStore } from "../store/profilestore/profileStore";
 import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
 import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
+import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +28,8 @@ import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard
     MenPage,
     ProductDetailsPage,
     CustomDesignPage,
-    AdmindashboardPage
+    AdmindashboardPage,
+    OrderDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard
     MenPage,
     ProductDetailsPage,
     CustomDesignPage,
-    AdmindashboardPage
+    AdmindashboardPage,
+    OrderDetailsPage
   ],
   providers: [
     StatusBar,

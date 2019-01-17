@@ -6,9 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-   
+  <ion-navbar style="position:absolute">
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+ 
     <ion-title>admindashboard</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="action1()">
+        <ion-icon name="more"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +25,7 @@
 <ion-content padding>
 <!-- {{ordersStore.getOrders | json}} -->
     <button (click)="filterOrders('pending')"></button>
-  <ion-card *ngFor="let order of ordersStore.getOrders">
+  <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">
           
     <ion-item>
       <ion-avatar item-start>

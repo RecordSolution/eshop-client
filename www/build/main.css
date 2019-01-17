@@ -25735,6 +25735,19 @@ ion-navbar.toolbar {
   border: none;
 }
 
+page-order-details ion-card {
+  margin-top: 10px;
+}
+
+page-order-details ion-card img {
+  width: 100%;
+  height: 200px;
+}
+
+page-order-details ion-card ion-card-title {
+  text-align: center;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;

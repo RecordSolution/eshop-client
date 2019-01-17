@@ -7,12 +7,25 @@
       
         <ion-content>
           <ion-list>
-            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" >
-                <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" [class.active]="checkActivePage(p)"> -->
-                    
-              <!-- <ion-icon name="{{p.icon}}" item-left></ion-icon> -->
-              {{p.title}}
+            <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='buyer'" menuClose ion-item  (click)="openPage('home')" >
+                Home
             </button>
+            <button *ngIf="profileStore.currentUserData &&  profileStore.currentUserData.accountType=='buyer'" menuClose ion-item  (click)="openPage('customDesign')" >
+              Custom Design
+          </button>
+
+
+          <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='admin'" menuClose ion-item  (click)="openPage('adminOrders')" >
+            Orders
+        </button>
+        <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='admin'" menuClose ion-item  (click)="openPage('adminProducts')" >
+          Products
+      </button>
+
+
+          <button  menuClose ion-item  (click)="openPage('logout')" >
+            Logout
+        </button>
           </ion-list>
         </ion-content>
       
