@@ -54,11 +54,8 @@
               <ion-item>
                   <ion-label>Quantity</ion-label>
                   <ion-select [(ngModel)]="number">
-                      <ion-option *ngFor="let count of quantity" [value]="count">{{count}}</ion-option>
+                      <ion-option *ngFor="let count of quantity" [value]="count" (ionChange)="getQuantity(count)">{{count}}</ion-option>
                     </ion-select>
-                  <!-- <ion-select [(ngModel)]="number">
-                    <ion-option *ngFor="let count of quantity" value="count"></ion-option>
-                  </ion-select> -->
                 </ion-item>
                 <ion-item>
                 <ion-label>Color</ion-label>
@@ -69,11 +66,44 @@
                   <ion-option *ngFor="let count of quantity" value="count"></ion-option>
                 </ion-select> -->
               </ion-item>
-          </ion-col>
-        </ion-row>
+
+              <ion-item>
+                  <ion-label>Avaliable Sizes</ion-label>
+                  <ion-select [(ngModel)]="size">
+                      <ion-option *ngFor="let size of details.sizes" [value]="size">{{size}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
+                    </ion-select>
+                  <!-- <ion-select [(ngModel)]="number">
+                    <ion-option *ngFor="let count of quantity" value="count"></ion-option>
+                  </ion-select> -->
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Address</ion-label>
+                    <ion-toggle [(ngModel)]="address" checked="true"></ion-toggle>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label>Different Address</ion-label>
+                      <ion-toggle [(ngModel)]="differentAddress"></ion-toggle>
+                    </ion-item>
+                
+                    <textarea placeholder="Enter Change Address Here"class="addressArea"name="different-address" ></textarea>
       
+                    
+
+                    <ion-label>Price  <span float-right>$250</span></ion-label>
+
+                    <button ion-button block color="secondary" (click)="onChange()">Buy</button>
+                  
+                  </ion-col>
+
+                
+        </ion-row>
+                  
+           
       </ion-card>
 
+    
 
  
 </ion-content>

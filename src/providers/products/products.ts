@@ -12,9 +12,9 @@ export class ProductsProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello ProfuctsProvider Provider');
-    this.getVehicles()
+    this.getProducts();
   }
- getVehicles(value?: string) {
+ getProducts(value?: string) {
     return this.http.get('./../assets/json/products.json').
     map((data: any) => {
       console.log('profucts', data.products);

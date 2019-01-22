@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Ordered} from '../../../shared/models/ordered';
 
 /**
  * Generated class for the ProductDetailsPage page.
@@ -15,8 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductDetailsPage {
   details: any;
-  number: number=0;
+  number: string;
   quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  ordered :Array<any>;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // this.details = this.navParams.get('data');
   }
@@ -30,4 +33,11 @@ export class ProductDetailsPage {
     console.log(count)
   }
 
+  onChange(){ 
+
+    var orderDetails =  this.number;
+    localStorage.setItem('OrderDetails', JSON.stringify(orderDetails));
+  }
+
+ 
 }

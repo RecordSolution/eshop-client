@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { observable, computed } from 'mobx-angular';
+import { observable, computed } from 'mobx';
 
 export class ProductStore{
 

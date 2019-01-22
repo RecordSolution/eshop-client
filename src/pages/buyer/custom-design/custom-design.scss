@@ -1,3 +1,32 @@
 page-custom-design {
 
+    .main{
+        .container{
+            width: 100%;
+            height: 500px;
+            position: relative;
+            .shirts{
+                width: 200px;
+                height:200px;
+                margin-top: 26px;
+                margin-left: 60px;
+                position: relative;
+                    img{
+                    width: 200px;
+                    height:200px;
+                }
+            }
+            .pants{
+                width: 200px;
+                height:200px;
+                position: absolute;
+                margin-left: 60px;
+                    img{
+                    width: 200px;
+                    height:200px; 
+                }
+            }
+        }
+    }
 }
+
