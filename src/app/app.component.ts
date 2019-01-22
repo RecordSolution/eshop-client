@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from './../pages/membership/login/login'
 import { CategoriesPage } from "./../pages/buyer/categories/categories";
-import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
+import { CustomDesignPage } from '../pages/buyer/customDesign/custom-design/custom-design';
 import { SharedProvider } from "./../providers/shared/shared";
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { ProfileStore } from './../store/profilestore/profileStore'
