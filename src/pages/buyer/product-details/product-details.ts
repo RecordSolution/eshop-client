@@ -27,17 +27,19 @@ export class ProductDetailsPage {
   ionViewDidLoad() {
     this.details = this.navParams.get('data');
     // console.log('ionViewDidLoad ProductDetailsPage');
+   
+   
   }
-  getQuantity(count) {
-    this.number = count;
-    console.log(count)
+ 
+
+  onChange(value){
+    console.log(value);
   }
 
-  onChange(){ 
 
-    var orderDetails =  this.number;
-    localStorage.setItem('OrderDetails', JSON.stringify(orderDetails));
+   
   }
+
 
  
-}
+

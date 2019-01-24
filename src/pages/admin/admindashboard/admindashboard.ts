@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrdersProvider} from '../../../providers/orders/orders';
 import { Orders} from '../../../shared/models/orders';
 import { OrderStore } from '../../../store/orders/orderstore';
+import { OrderDetailsPage } from '../order-details/order-details';
 // import {} from '../../../store/orders/orderstore'; 
 
 /**
@@ -48,7 +49,7 @@ export class AdmindashboardPage {
 
 
   productDetails(){
-    this.navCtrl.push('OrderDetailsPage');
+    this.navCtrl.push(OrderDetailsPage);
   }
 
 }

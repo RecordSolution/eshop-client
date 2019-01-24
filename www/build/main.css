@@ -25735,6 +25735,19 @@ ion-navbar.toolbar {
   border: none;
 }
 
+page-order-details ion-card {
+  margin-top: 10px;
+}
+
+page-order-details ion-card img {
+  width: 100%;
+  height: 200px;
+}
+
+page-order-details ion-card ion-card-title {
+  text-align: center;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;
@@ -25757,6 +25770,37 @@ ion-navbar.toolbar {
   color: #fff;
 }
 
+page-custom-design .main .container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+page-custom-design .main .container .shirts {
+  width: 200px;
+  height: 200px;
+  margin-top: 26px;
+  margin-left: 60px;
+  position: relative;
+}
+
+page-custom-design .main .container .shirts img {
+  width: 200px;
+  height: 200px;
+}
+
+page-custom-design .main .container .pants {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-left: 60px;
+}
+
+page-custom-design .main .container .pants img {
+  width: 200px;
+  height: 200px;
+}
+
 .slider {
   background: #1f2533;
   border-radius: 1vw;
@@ -25768,6 +25812,12 @@ ion-navbar.toolbar {
 .slider .inner .col {
   color: white;
   font-size: 15px;
+}
+
+.addressArea {
+  padding: 5px;
+  width: 100%;
+  height: 70px;
 }
 
 .logo {

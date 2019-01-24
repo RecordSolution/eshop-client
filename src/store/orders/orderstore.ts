@@ -1,6 +1,9 @@
 import { observable, computed , action} from 'mobx';
 // import { Orders } from '../../../shared/models/orders';
+import { Injectable } from "@angular/core";
 
+
+@Injectable()
 export class OrderStore{
 
     @observable  myOrders : Array<any>= [];
@@ -11,6 +14,12 @@ export class OrderStore{
 
     constructor(){
 
+    }
+
+    @action clear(){
+        this.myOrders=[];
+        this.filter='';
+        this.filteredOrders=[];
     }
     @action setOrders(orders){
 

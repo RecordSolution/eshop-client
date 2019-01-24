@@ -51,22 +51,23 @@
             </button>
           </ion-col> -->
           <ion-col>
-              <ion-item>
+               <ion-item>
                   <ion-label>Quantity</ion-label>
-                  <ion-select [(ngModel)]="number">
-                      <ion-option *ngFor="let count of quantity" [value]="count" (ionChange)="getQuantity(count)">{{count}}</ion-option>
+                  <ion-select [(ngModel)]="number" (ionChange)="onChange($event)" >
+                      <ion-option *ngFor="let count of quantity" [value]="count">{{count}}</ion-option>
                     </ion-select>
-                </ion-item>
+                </ion-item> 
                 <ion-item>
                 <ion-label>Color</ion-label>
-                <ion-select [(ngModel)]="color">
-                    <ion-option *ngFor="let color of details.colors" [value]="color">{{color}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
+                <ion-select [(ngModel)]="color" (ionChange)="onChange(color)">
+                    <ion-option *ngFor="let color of details.colors"  [value]="color"  >{{color}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
                   </ion-select>
                 <!-- <ion-select [(ngModel)]="number">
                   <ion-option *ngFor="let count of quantity" value="count"></ion-option>
                 </ion-select> -->
               </ion-item>
 
+           
               <ion-item>
                   <ion-label>Avaliable Sizes</ion-label>
                   <ion-select [(ngModel)]="size">
