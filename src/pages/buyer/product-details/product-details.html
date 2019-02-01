@@ -53,13 +53,13 @@
           <ion-col>
                <ion-item>
                   <ion-label>Quantity</ion-label>
-                  <ion-select [(ngModel)]="number" (ionChange)="onChange($event)" >
+                  <ion-select [(ngModel)]="number" (ionChange)="selectquantity($event)" >
                       <ion-option *ngFor="let count of quantity" [value]="count">{{count}}</ion-option>
                     </ion-select>
                 </ion-item> 
                 <ion-item>
                 <ion-label>Color</ion-label>
-                <ion-select [(ngModel)]="color" (ionChange)="onChange(color)">
+                <ion-select [(ngModel)]="color" (ionChange)="selectColor(color)">
                     <ion-option *ngFor="let color of details.colors"  [value]="color"  >{{color}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
                   </ion-select>
                 <!-- <ion-select [(ngModel)]="number">
@@ -70,7 +70,7 @@
            
               <ion-item>
                   <ion-label>Avaliable Sizes</ion-label>
-                  <ion-select [(ngModel)]="size">
+                  <ion-select [(ngModel)]="size" (ionChange)="selectSize(size)">
                       <ion-option *ngFor="let size of details.sizes" [value]="size">{{size}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
                     </ion-select>
                   <!-- <ion-select [(ngModel)]="number">
@@ -92,9 +92,9 @@
       
                     
 
-                    <ion-label>Price  <span float-right>$250</span></ion-label>
+                    <ion-label>Price  <span float-right >{{details.price}}</span></ion-label>
 
-                    <button ion-button block color="secondary" (click)="onChange()">Buy</button>
+                    <button ion-button block color="secondary" (click)="buyProduct()">Buy</button>
                   
                   </ion-col>
 

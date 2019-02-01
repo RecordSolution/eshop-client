@@ -15,27 +15,55 @@ import { Ordered} from '../../../shared/models/ordered';
   templateUrl: 'product-details.html',
 })
 export class ProductDetailsPage {
-  details: any;
+  details: [];
   number: string;
   quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   ordered :Array<any>;
+  selectedQuantity : string;
+  selectedColor : string;
+  selectedSize : string;
+
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // this.details = this.navParams.get('data');
+     this.details = this.navParams.get('data');
+    
   }
 
   ionViewDidLoad() {
     this.details = this.navParams.get('data');
     // console.log('ionViewDidLoad ProductDetailsPage');
-   
+    
    
   }
+ selectquantity(value){
+
+   this.selectedQuantity = value;
+
+
+  
+  
+ }
+
+ selectColor(value){
+
+  this.selectedColor = value;
+
+ }
  
+ selectSize(value){
 
-  onChange(value){
-    console.log(value);
+  this.selectedSize = value;
+ 
+ }
+ 
+  buyProduct(){
+
+
+    this.ordered = ['selectedQuantity',this.selectedQuantity ,'selectedColor', this.selectedColor ,'selectedSize',this.selectedSize];
+   
+    // localStorage.setItem('orderDetails',this.details);
+    localStorage.setItem("order", JSON.stringify(this.ordered));
   }
-
 
    
   }
