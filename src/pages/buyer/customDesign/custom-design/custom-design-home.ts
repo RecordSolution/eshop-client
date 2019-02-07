@@ -12,6 +12,10 @@ import { DesignCanvasPage } from '../design-canvas/design-canvas';
 export class CustomDesignHomePage {
   @ViewChild('itemSlider') itemSlider: any;
   customDesignSelectionModel: CustomDesignSelectionModel;
+  color: string = "red";
+  crossActive: boolean;
+  size: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
@@ -20,10 +24,21 @@ export class CustomDesignHomePage {
     this.customDesignSelectionModel.selectedColor = event;
   }
   ionViewDidLoad() {
-    
+
     // ScreenOrientation.lockOrientation('landscape')
-screen.orientation.lock('landscape');
+    screen.orientation.lock('landscape');
     console.log('ionViewDidLoad CustomDesignPage');
+  }
+  ionViewDidLeave() {
+    screen.orientation.lock('portrait');
+    console.log('ionViewDidLeave CustomDesignPage');
+  }
+  active(){
+    // alert("stop")
+    this.crossActive=true;
+  }
+  setBadge(size){
+    this.size=size
   }
   next() {
     this.itemSlider.slideNext();

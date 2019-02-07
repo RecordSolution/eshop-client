@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CategoriesPage } from "./../../buyer/categories/categories";
+import { CustomDesignHomePage } from '../../buyer/customDesign/custom-design/custom-design-home';
 /**
  * Generated class for the SignupPage page.
  *
@@ -22,6 +23,6 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
   goBuyerHomePage(){
-    this.navCtrl.push(CategoriesPage);
+    this.navCtrl.setRoot(CustomDesignHomePage);
   }
 }

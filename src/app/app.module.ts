@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+// import { SplashScreen } from '@ionic-native/splash-screen';
+// import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from "./../pages/membership/login/login";
 import { CategoriesPage } from "./../pages/buyer/categories/categories";
@@ -19,10 +19,14 @@ import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/
 import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
-// import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { DesignCanvasPage } from "./../pages/buyer/customDesign/design-canvas/design-canvas";
 // import { ScreenOrientation } from "@ionic-native/screen-orientation";
-import { DragableDirective } from "./../directives/dragable/dragable";
+import { AbsoluteDragDirective } from "./../directives/dragable/dragable";
+import { LongPressModule } from 'ionic-long-press'
+import { AngularDraggableModule } from 'angular2-draggable';
+import { CustomFashionCategorySelectorComponent } from "./../components/custom-fashion-category-selector/custom-fashion-category-selector";
+import { CustomDressCategorySelectorComponent } from "./../components/custom-dress-category-selector/custom-dress-category-selector";
 @NgModule({
   declarations: [
     MyApp,
@@ -35,13 +39,18 @@ import { DragableDirective } from "./../directives/dragable/dragable";
     AdmindashboardPage,
     OrderDetailsPage,
     DesignCanvasPage,
-    DragableDirective
+    AbsoluteDragDirective,
+    CustomFashionCategorySelectorComponent,
+    CustomDressCategorySelectorComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    // ColorPickerModule
+    ColorPickerModule,
+    AngularDraggableModule,
+    LongPressModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,7 +63,9 @@ import { DragableDirective } from "./../directives/dragable/dragable";
     CustomDesignHomePage,
     AdmindashboardPage,
     OrderDetailsPage,
-    DesignCanvasPage
+    DesignCanvasPage,
+    CustomFashionCategorySelectorComponent,
+    CustomDressCategorySelectorComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

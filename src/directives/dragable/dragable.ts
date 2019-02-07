@@ -1,13 +1,23 @@
-import { Directive, Input, ElementRef, Renderer  } from '@angular/core';
+import { Directive, Input, Renderer, ElementRef } from '@angular/core';
 import { DomController } from 'ionic-angular';
+
+/**
+ * Generated class for the AbsoluteDragDirective directive.
+ *
+ * See https://angular.io/api/core/Directive for more info on Angular
+ * Directives.
+ */
 @Directive({
-  selector: '[dragable]' // Attribute selector
+  selector: '[absolute-drag]' // Attribute selector
 })
-export class DragableDirective {
+export class AbsoluteDragDirective {
+
   @Input('startLeft') startLeft: any;
-    @Input('startTop') startTop: any;
-  constructor(public element: ElementRef, public renderer: Renderer, public domCtrl: DomController) {
-    console.log('Hello DragableDirective Directive');
+  @Input('startTop') startTop: any;
+
+
+  constructor(public element: ElementRef,public renderer: Renderer, public domCtrl: DomController) {
+    console.log('Hello AbsoluteDragDirective Directive');
   }
 
   ngAfterViewInit() {
@@ -27,14 +37,15 @@ export class DragableDirective {
 
 handlePan(ev){
 
-    let newLeft = ev.center.x;
-    let newTop = ev.center.y;
+  let newLeft = ev.center.x;
+  let newTop = ev.center.y;
 
-    this.domCtrl.write(() => {
-        this.renderer.setElementStyle(this.element.nativeElement, 'left', newLeft + 'px');
-        this.renderer.setElementStyle(this.element.nativeElement, 'top', newTop + 'px');
-    });
+  this.domCtrl.write(() => {
+      this.renderer.setElementStyle(this.element.nativeElement, 'left', newLeft + 'px');
+      this.renderer.setElementStyle(this.element.nativeElement, 'top', newTop + 'px');
+  });
 
 }
+
 
 }

@@ -19,9 +19,6 @@ export class ProductsProvider {
     pipe(map((data: any) => {
       console.log('profucts', data.products);
      return data.products;
-      // return vehicles.filter(v =>
-      //   v.name.toLowerCase().includes(value.toLowerCase())
-      // );
     }))
   }
 }

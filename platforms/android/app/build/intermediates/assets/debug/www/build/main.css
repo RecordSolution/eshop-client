@@ -24783,6 +24783,20 @@ ion-navbar.toolbar {
   border: none;
 }
 
+custom-dress-category-selector .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+custom-fashion-category-selector .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 page-order-details ion-card {
   margin-top: 10px;
 }
@@ -24818,8 +24832,28 @@ page-order-details ion-card ion-card-title {
   color: #fff;
 }
 
-.items {
-  width: 50%;
+.left-side {
+  width: 20%;
+  height: 100%;
+  background: red;
+}
+
+.mid {
+  width: 60%;
+  height: 100%;
+}
+
+.right-side {
+  width: 20%;
+  height: 100%;
+  background: yellow;
+  float: right;
+}
+
+.icons {
+  width: 20%;
+  height: 20%;
+  padding: 8px;
 }
 
 .flex {
@@ -24827,6 +24861,11 @@ page-order-details ion-card ion-card-title {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.result {
+  width: 100%;
+  fill: attr(color);
 }
 
 .item {

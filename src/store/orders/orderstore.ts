@@ -10,8 +10,6 @@ export class OrderStore{
     @observable filteredOrders : Array<any> =[];
     @observable filter:string = '';
 
-
-
     constructor(){
 
     }

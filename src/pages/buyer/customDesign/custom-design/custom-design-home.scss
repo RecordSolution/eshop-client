@@ -1,6 +1,28 @@
-.items{
-    width: 50%
+.left-side{
+    width:20%;
+    height: 100%;
+    background: red;
+}
+.mid{
+    width:60%;
+    height: 100%;
+
+}
+.right-side{
+    width: 20%;
+    height: 100%;
+    background: yellow;
+    float: right;
+}
+.icons{
+    width: 20%;
+    height: 20%;
+    padding: 8px
 }
 .flex{
     display: flex;
+}
+.result{
+    width: 100%;
+    fill: attr(color);
 }

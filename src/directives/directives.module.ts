@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { DragableDirective } from './dragable/dragable';
+import { AbsoluteDragDirective } from './dragable/dragable';
 @NgModule({
-	declarations: [DragableDirective],
+	declarations: [AbsoluteDragDirective],
 	imports: [],
-	exports: [DragableDirective]
+	exports: [AbsoluteDragDirective]
 })
 export class DirectivesModule {}
