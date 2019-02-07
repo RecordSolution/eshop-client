@@ -17,8 +17,8 @@ export class SharedProvider {
     console.log('Hello SharedProvider Provider');
   }
 clearStores(){
-this.profileStore.clear();
-this.adminOrdersStore.clear();
+// this.profileStore.clear();
+// this.adminOrdersStore.clear();
 }
 
 }

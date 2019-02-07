@@ -1,13 +1,14 @@
 import { Component, ViewChild,OnChanges } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// import { StatusBar } from '@ionic-native/status-bar';
+// import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from './../pages/membership/login/login'
 import { CategoriesPage } from "./../pages/buyer/categories/categories";
-import { CustomDesignPage } from '../pages/buyer/customDesign/custom-design/custom-design';
+import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/custom-design-home';
 import { SharedProvider } from "./../providers/shared/shared";
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { ProfileStore } from './../store/profilestore/profileStore'
+// import { DesignCanvasPage } from '../pages/buyer/customDesign/design-canvas/design-canvas';
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,8 +20,8 @@ export class MyApp implements OnChanges{
 
 
   constructor(platform: Platform,
-    statusBar: StatusBar,
-    splashScreen: SplashScreen,
+    // statusBar: StatusBar,
+    // splashScreen: SplashScreen,
     public profileStore: ProfileStore,
     public sharedService: SharedProvider) {
 
@@ -44,8 +45,8 @@ export class MyApp implements OnChanges{
       }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      // statusBar.styleDefault();
+      // splashScreen.hide();
     });
     this.pagesForMenu();
 
@@ -53,19 +54,19 @@ export class MyApp implements OnChanges{
   }
 
   pagesForMenu(){
-    if (this.profileStore.currentUserData && this.profileStore.currentUserData.accountType == 'buyer') {
-      this.pages = [
-        { title: 'Home', component: CategoriesPage },
-        { title: 'Custom Design', component: CustomDesignPage },
-        { title: 'LogOut', component: LoginPage }
-      ];
-    } else if(this.profileStore.currentUserData && this.profileStore.currentUserData.accountType == 'admin'){
-      this.pages = [
-        { title: 'Orders', component: AdmindashboardPage },
-        { title: 'Products', component: AdmindashboardPage },
-        { title: 'LogOut', component: LoginPage }
-      ];
-    }
+    // if (this.profileStore.currentUserData && this.profileStore.currentUserData.accountType == 'buyer') {
+    //   this.pages = [
+    //     { title: 'Home', component: CategoriesPage },
+    //     { title: 'Custom Design', component: CustomDesignHomePage },
+    //     { title: 'LogOut', component: LoginPage }
+    //   ];
+    // } else if(this.profileStore.currentUserData && this.profileStore.currentUserData.accountType == 'admin'){
+    //   this.pages = [
+    //     { title: 'Orders', component: AdmindashboardPage },
+    //     { title: 'Products', component: AdmindashboardPage },
+    //     { title: 'LogOut', component: LoginPage }
+    //   ];
+    // }
   }
   ngOnChanges(){
     this.pagesForMenu();
@@ -80,7 +81,7 @@ export class MyApp implements OnChanges{
       this.nav.push(CategoriesPage);
     }
     else if(pageName=='customDesign'){
-      this.nav.push(CustomDesignPage);
+      this.nav.push(CustomDesignHomePage);
     }
     else if(pageName=='adminOrders'){
       this.nav.push(AdmindashboardPage);

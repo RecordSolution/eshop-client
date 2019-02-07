@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 292:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomDesignPageModule", function() { return CustomDesignPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DesignCanvasPageModule", function() { return DesignCanvasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__custom_design__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__design_canvas__ = __webpack_require__(87);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CustomDesignPageModule = /** @class */ (function () {
-    function CustomDesignPageModule() {
+var DesignCanvasPageModule = /** @class */ (function () {
+    function DesignCanvasPageModule() {
     }
-    CustomDesignPageModule = __decorate([
+    DesignCanvasPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__custom_design__["a" /* CustomDesignPage */],
+                __WEBPACK_IMPORTED_MODULE_2__design_canvas__["a" /* DesignCanvasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__custom_design__["a" /* CustomDesignPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__design_canvas__["a" /* DesignCanvasPage */]),
             ],
         })
-    ], CustomDesignPageModule);
-    return CustomDesignPageModule;
+    ], DesignCanvasPageModule);
+    return DesignCanvasPageModule;
 }());
 
-//# sourceMappingURL=custom-design.module.js.map
+//# sourceMappingURL=design-canvas.module.js.map
 
 /***/ })
 

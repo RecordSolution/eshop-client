@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-
+import 'rxjs/add/operator/map';
 import { observable, computed } from 'mobx';
+
 @Injectable()
 export class ProductStore{
 

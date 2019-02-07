@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { OrderStore} from '../../store/orders/orderstore';
-import 'rxjs/add/operator/map';
+import {map} from 'rxjs/operators';
 
 
 @Injectable()
@@ -12,13 +12,13 @@ export class OrdersProvider {
     this.getorders()
   }
  getorders(value?: string) {
-    return this.http.get('./../assets/json/orders.json').
+    return this.http.get('./../assets/json/orders.json').pipe(
     map((data: any) => {
       console.log('Orders', data.orders);
-   this.ordersStore.setOrders(data.orders);
+  //  this.ordersStore.setOrders(data.orders);
      return data.orders;
      
 
-    })
+    }))
   }
 }

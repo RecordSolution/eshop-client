@@ -24,7 +24,7 @@
 
 <ion-content padding>
 <!-- {{ordersStore.getOrders | json}} -->
-    <button (click)="filterOrders('pending')"></button>
+    <!-- <button (click)="filterOrders('pending')"></button> -->
   <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">
           
     <ion-item>
@@ -43,13 +43,13 @@
     </ion-card-content>
 
     <ion-item>
-      <!-- <ion-icon name="cash" item-start></ion-icon> -->
+     
      Total Price
       <ion-badge item-end>{{order.totalPrice}}</ion-badge>
     </ion-item>
 
  
-<!--   
+  
     <ion-row>
       <ion-col>
         <button ion-button icon-start clear small>
@@ -68,7 +68,7 @@
           11h ago
         </ion-note>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
   
   </ion-card>
 </ion-content>

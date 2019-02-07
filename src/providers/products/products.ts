@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+import {map} from 'rxjs/operators';
 /*
   Generated class for the ProfuctsProvider provider.
 
@@ -12,16 +12,16 @@ export class ProductsProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello ProfuctsProvider Provider');
-    this.getVehicles()
+    this.getProducts();
   }
- getVehicles(value?: string) {
+ getProducts(value?: string) {
     return this.http.get('./../assets/json/products.json').
-    map((data: any) => {
+    pipe(map((data: any) => {
       console.log('profucts', data.products);
      return data.products;
       // return vehicles.filter(v =>
       //   v.name.toLowerCase().includes(value.toLowerCase())
       // );
-    })
+    }))
   }
 }

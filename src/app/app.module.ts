@@ -5,20 +5,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from "./../pages/membership/login/login";
-import {CategoriesPage  } from "./../pages/buyer/categories/categories";
+import { CategoriesPage } from "./../pages/buyer/categories/categories";
 import { SignupPage } from '../pages/membership/signup/signup';
 import { MenPage } from "./../pages/buyer/men/men";
 import { MembershipProvider } from '../providers/membership/membership';
 import { ProductsProvider } from '../providers/products/products';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { OrdersProvider} from '../providers/orders/orders';
+import { HttpClientModule } from '@angular/common/http';
+import { OrdersProvider } from '../providers/orders/orders';
 import { OrderStore } from '../store/orders/orderstore';
-import {ProductDetailsPage} from "./../pages/buyer/product-details/product-details"
+import { ProductDetailsPage } from "./../pages/buyer/product-details/product-details"
 import { ProfileStore } from "../store/profilestore/profileStore";
-import { CustomDesignPage } from '../pages/buyer/custom-design/custom-design';
+import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/custom-design-home';
 import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
+// import { ColorPickerModule } from 'ngx-color-picker';
+import { DesignCanvasPage } from "./../pages/buyer/customDesign/design-canvas/design-canvas";
+// import { ScreenOrientation } from "@ionic-native/screen-orientation";
+import { DragableDirective } from "./../directives/dragable/dragable";
 @NgModule({
   declarations: [
     MyApp,
@@ -27,14 +31,17 @@ import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
     CategoriesPage,
     MenPage,
     ProductDetailsPage,
-    CustomDesignPage,
+    CustomDesignHomePage,
     AdmindashboardPage,
-    OrderDetailsPage
+    OrderDetailsPage,
+    DesignCanvasPage,
+    DragableDirective
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    // ColorPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,20 +51,21 @@ import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
     CategoriesPage,
     MenPage,
     ProductDetailsPage,
-    CustomDesignPage,
+    CustomDesignHomePage,
     AdmindashboardPage,
-    OrderDetailsPage
+    OrderDetailsPage,
+    DesignCanvasPage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     MembershipProvider,
     ProductsProvider,
     OrdersProvider,
     OrderStore,
     ProfileStore,
-    SharedProvider
+    SharedProvider,
+    // ScreenOrientation
+    
   ]
 })
-export class AppModule {}
+export class AppModule { }
