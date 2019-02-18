@@ -1,7 +1,4 @@
 export class orderDetails{
-
-
-
     
         orderid:string;
         status: string;
@@ -9,14 +6,12 @@ export class orderDetails{
         estimatedDateToDeliver: string;
         totalPrice: string;
         orderType: string;
-
-        userid : string
-        role: string;
+        userid : [
+        {role : string}];
         name: string;
         email: string;
         contactNo: string;
-        address:string;
-      
+        address:string;   
         productid : string;
         productname: string;
         shortDescription: string;

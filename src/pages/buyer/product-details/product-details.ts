@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Ordered} from '../../../shared/models/ordered';
+import {orderDetails} from '../../../model/orderDetails';
 
 /**
  * Generated class for the ProductDetailsPage page.
@@ -22,7 +23,7 @@ export class ProductDetailsPage {
   selectedQuantity : string;
   selectedColor : string;
   selectedSize : string;
-
+  orderdetails : Array<orderDetails>;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
      this.details = this.navParams.get('data');
