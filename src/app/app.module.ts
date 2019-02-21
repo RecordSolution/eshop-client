@@ -13,6 +13,7 @@ import { ProductsProvider } from '../providers/products/products';
 import { HttpClientModule } from '@angular/common/http';
 import { OrdersProvider } from '../providers/orders/orders';
 import { OrderStore } from '../store/orders/orderstore';
+import { ProductStore } from '../store/productstore/productstore';
 import { ProductDetailsPage } from "./../pages/buyer/product-details/product-details"
 import { ProfileStore } from "../store/profilestore/profileStore";
 import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/custom-design-home';
@@ -25,8 +26,8 @@ import { DesignCanvasPage } from "./../pages/buyer/customDesign/design-canvas/de
 import { AbsoluteDragDirective } from "./../directives/dragable/dragable";
 import { LongPressModule } from 'ionic-long-press'
 import { AngularDraggableModule } from 'angular2-draggable';
-import { CustomFashionCategorySelectorComponent } from "./../components/custom-fashion-category-selector/custom-fashion-category-selector";
-import { CustomDressCategorySelectorComponent } from "./../components/custom-dress-category-selector/custom-dress-category-selector";
+import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
+import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
 @NgModule({
   declarations: [
     MyApp,
@@ -50,7 +51,7 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-dre
     ColorPickerModule,
     AngularDraggableModule,
     LongPressModule
-    
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -75,8 +76,9 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-dre
     OrderStore,
     ProfileStore,
     SharedProvider,
+    ProductStore
     // ScreenOrientation
-    
+
   ]
 })
 export class AppModule { }

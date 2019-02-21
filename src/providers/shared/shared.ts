@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ProfileStore } from '../../store/profilestore/profileStore'
 import { OrderStore } from '../../store/orders/orderstore';
+import {map} from 'rxjs/operators';
 /*
   Generated class for the SharedProvider provider.
 
@@ -12,13 +13,28 @@ import { OrderStore } from '../../store/orders/orderstore';
 export class SharedProvider {
 
   constructor(public http: HttpClient,
-     public profileStore:ProfileStore,
-     public adminOrdersStore:OrderStore) {
+    public profileStore: ProfileStore,
+    public adminOrdersStore: OrderStore) {
     console.log('Hello SharedProvider Provider');
   }
-clearStores(){
-// this.profileStore.clear();
-// this.adminOrdersStore.clear();
-}
+  clearStores() {
+    // this.profileStore.clear();
+    // this.adminOrdersStore.clear();
+  }
+
+  getFashionCategories() {
+    return this.http.get('./../assets/json/custom-fashion-categories.json').
+    pipe(map((data: any) => {
+      console.log('profucts', data);
+     return data.fashionCategories;
+    }))
+  }
+  getdressCategories() {
+    return this.http.get('./../assets/json/dress-category.json').
+    pipe(map((data: any) => {
+      console.log('profucts', data);
+     return data.dressCategories;
+    }))
+  }
 
 }

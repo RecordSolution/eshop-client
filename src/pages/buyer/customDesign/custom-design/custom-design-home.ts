@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
 import { DesignCanvasPage } from '../design-canvas/design-canvas';
+import { ProductStore } from '../../../../store/productstore/productstore';
+
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -11,12 +13,15 @@ import { DesignCanvasPage } from '../design-canvas/design-canvas';
 })
 export class CustomDesignHomePage {
   @ViewChild('itemSlider') itemSlider: any;
+  fashionCategory: string = '';
+  dressCategory: string = '';
   customDesignSelectionModel: CustomDesignSelectionModel;
   color: string = "red";
   crossActive: boolean;
   size: any;
+  selectedProduct:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public productStore:ProductStore, public navParams: NavParams) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -33,12 +38,24 @@ export class CustomDesignHomePage {
     screen.orientation.lock('portrait');
     console.log('ionViewDidLeave CustomDesignPage');
   }
-  active(){
-    // alert("stop")
-    this.crossActive=true;
+  onFashionCategorySelection(cat) {
+    this.fashionCategory = cat;
+   this.getSelectedDress(); 
   }
-  setBadge(size){
-    this.size=size
+  onDressCategorySelection(cat) {
+    this.dressCategory = cat;
+    this.getSelectedDress();
+  }
+  getSelectedDress(){
+     this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+     console.log(this.selectedProduct);
+  }
+  active() {
+    // alert("stop")
+    this.crossActive = true;
+  }
+  setBadge(size) {
+    this.size = size
   }
   next() {
     this.itemSlider.slideNext();

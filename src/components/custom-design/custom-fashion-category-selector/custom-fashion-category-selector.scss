@@ -1,0 +1,11 @@
+custom-fashion-category-selector {
+    .flex{
+        display: inline-block;
+        height: 100vh;
+        background-color: lightgray;
+        .cat{
+            width: 33%;
+            height: auto;
+        }
+    }
+}

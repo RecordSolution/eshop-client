@@ -1,0 +1,13 @@
+custom-dress-category-selector {
+    .flex{
+        display: inline-block;
+        height: 100vh;
+        background-color: lightgray;
+        .cat{
+            width: 33%;
+            height: auto;
+            // float:right;
+        }
+    }
+
+}

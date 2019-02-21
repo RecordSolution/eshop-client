@@ -1,17 +1,42 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import { observable, computed } from 'mobx';
+import { observable, autorun, action, computed } from 'mobx';
 
 @Injectable()
-export class ProductStore{
+export class ProductStore {
 
-    @observable  product :Array<any>=[] ;
+    @observable allProducts: Array<any> = [];
 
+    constructor() {
+        autorun(() => {
+            if (JSON.parse(localStorage.getItem('products')) && JSON.parse(localStorage.getItem('products')) != {}) {
+                let obj = JSON.parse(localStorage.getItem('products'));;
+                if (obj && obj.accountType) {
+                    this.allProducts = obj;
+                }
+                console.log(this.allProducts);
+            }
+            else if (this.allProducts) {
+                window.localStorage.setItem('products', JSON.stringify(this.allProducts));
+            }
 
-    @computed get products() {
-
-        return true;
-
+        });
     }
 
+    @action clear() {
+        this.allProducts = null;
+        localStorage.removeItem('userData');
+    }
+    @action saveProducts(products: Array<any>) {
+        this.allProducts = [...products];
+    }
+    @computed get products() {
+
+        return this.allProducts;
+
+    }
+    getproductForCustomDesign(dressCategory, fashionCategory) {
+       let p = this.allProducts.find(x=>x.dressCategory==dressCategory.key && x.fashionCategory==fashionCategory.key);
+       return p;
+    }
 }

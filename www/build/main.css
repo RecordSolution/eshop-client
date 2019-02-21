@@ -24784,17 +24784,25 @@ ion-navbar.toolbar {
 }
 
 custom-dress-category-selector .flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+custom-dress-category-selector .flex .cat {
+  width: 33%;
+  height: auto;
 }
 
 custom-fashion-category-selector .flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+custom-fashion-category-selector .flex .cat {
+  width: 33%;
+  height: auto;
 }
 
 page-order-details ion-card {
@@ -24868,9 +24876,15 @@ page-order-details ion-card ion-card-title {
   fill: attr(color);
 }
 
-.item {
-  width: 50%;
-  height: 50%;
+.color-selection {
+  width: 30px;
+  height: 30px;
+}
+
+.size {
+  border: 1px solid gray;
+  width: 30px;
+  padding: 2px;
 }
 
 .slider {

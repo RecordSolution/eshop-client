@@ -1,0 +1,9 @@
+<!-- Generated template for the CustomDressCategorySelectorComponent component -->
+<div class="flex">
+
+  <div *ngFor="let cat of dressDesignes">
+    <label>{{cat.key}}</label>
+    <img (click)="onSelectCategory(cat)" class="cat" src="/assets/imgs/avatar.png">
+    
+  </div>
+</div>
