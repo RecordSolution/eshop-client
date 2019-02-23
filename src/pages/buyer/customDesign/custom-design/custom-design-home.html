@@ -36,10 +36,11 @@
           <polygon id="XMLID_81_" class="st0" points="278.4,30.9 348.4,30.9 348.4,210.9 313.9,210.9 313.6,62.9 278.4,62.9 " />
           <polygon id="XMLID_82_" class="st0" points="101.4,30.9 31.4,30.9 31.4,210.9 65.9,210.9 66.1,62.9 101.4,62.9 " />
         </svg> -->
-        <img [ngStyle]="{height:size+'px',width:size+'px'}" class="icons" ion-long-press [interval]="400" (onPressing)="active()"
-          ngDraggable src="/assets/imgs/pocket-icon.png">
+  
+        <img *ngFor="let asset of dragableAssets" [ngStyle]="selectedToResize==asset ? {height:size+'px',width:size+'px'}:''" class="icons" ion-long-press [interval]="400" (onPressing)="active(asset)"
+          ngDraggable src="{{asset}}">
         <ion-item >
-          <ion-range min="50" max="200" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">{{size}}</ion-range>
+          <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">{{size}}</ion-range>
         </ion-item>
         {{size}}
         <div class="flex" *ngIf="selectedProduct">
@@ -49,7 +50,8 @@
         <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" />
         <div class="flex " *ngIf="selectedProduct"><div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div></div>
        <ion-item> <ion-input type='text' placeholder="Extra Instructions...."></ion-input></ion-item>
-        <button ngDraggable ion-button>save</button>
+        <button ion-button >save</button>
+        <button ion-button (click)="selectAssets()">asssets</button>
       </ion-col>
 
       <ion-col size="3">
@@ -58,5 +60,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <div class="popup" *ngIf="showAssets" >
+  <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()" (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>
+ 
+  </div>
 </ion-content>

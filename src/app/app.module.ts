@@ -28,6 +28,7 @@ import { LongPressModule } from 'ionic-long-press'
 import { AngularDraggableModule } from 'angular2-draggable';
 import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
 import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
+import { CustomAssetsComponent } from "./../components/custom-design/custom-assets/custom-assets";
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +43,8 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     DesignCanvasPage,
     AbsoluteDragDirective,
     CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent
+    CustomDressCategorySelectorComponent,
+    CustomAssetsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     OrderDetailsPage,
     DesignCanvasPage,
     CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent
+    CustomDressCategorySelectorComponent,
+    CustomAssetsComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

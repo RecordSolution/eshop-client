@@ -19,9 +19,13 @@ export class CustomDesignHomePage {
   color: string = "red";
   crossActive: boolean;
   size: any;
-  selectedProduct:any;
+  selectedProduct: any;
+  customAssets: Array<string>;
+  showAssets: boolean = false;
+  dragableAssets: Array<any> = [];
+  selectedToResize: any;
 
-  constructor(public navCtrl: NavController,public productStore:ProductStore, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public productStore: ProductStore, public navParams: NavParams) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -29,7 +33,7 @@ export class CustomDesignHomePage {
     this.customDesignSelectionModel.selectedColor = event;
   }
   ionViewDidLoad() {
-
+    this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
     screen.orientation.lock('landscape');
     console.log('ionViewDidLoad CustomDesignPage');
@@ -40,36 +44,49 @@ export class CustomDesignHomePage {
   }
   onFashionCategorySelection(cat) {
     this.fashionCategory = cat;
-   this.getSelectedDress(); 
+    this.getSelectedDress();
   }
   onDressCategorySelection(cat) {
     this.dressCategory = cat;
     this.getSelectedDress();
   }
-  getSelectedDress(){
-     this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
-     console.log(this.selectedProduct);
+  getSelectedDress() {
+    this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+    console.log(this.selectedProduct);
   }
-  active() {
-    // alert("stop")
-    this.crossActive = true;
+
+  onCustomAssetSelection(item) {
+    debugger
+    if(item){
+      this.showAssets = false;
+      this.dragableAssets.push(item);
+    }
+  }
+  active(item){
+    this.selectedToResize=item;
+  }
+  selectAssets() {
+    this.showAssets = true;
+  }
+  closePopup(){
+    this.showAssets=false
   }
   setBadge(size) {
     this.size = size
   }
-  next() {
-    this.itemSlider.slideNext();
-  }
-  getSize(size) {
-    this.customDesignSelectionModel.size = size
-  }
-  selctedDress(imgurl) {
-    this.customDesignSelectionModel.selectedDressType = imgurl;
-  }
-  prev() {
-    this.itemSlider.slidePrev();
-  }
-  done() {
-    this.navCtrl.push(DesignCanvasPage, { 'data': this.customDesignSelectionModel });
-  }
+  // next() {
+  //   this.itemSlider.slideNext();
+  // }
+  // getSize(size) {
+  //   this.customDesignSelectionModel.size = size
+  // }
+  // selctedDress(imgurl) {
+  //   this.customDesignSelectionModel.selectedDressType = imgurl;
+  // }
+  // prev() {
+  //   this.itemSlider.slidePrev();
+  // }
+  // done() {
+  //   this.navCtrl.push(DesignCanvasPage, { 'data': this.customDesignSelectionModel });
+  // }
 }

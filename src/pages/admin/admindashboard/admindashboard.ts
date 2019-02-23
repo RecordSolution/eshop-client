@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrdersProvider} from '../../../providers/orders/orders';
 import { Orders} from '../../../shared/models/orders';
-// import { OrderStore } from '../../../store/orders/orderstore';
+import { OrderStore } from '../../../store/orders/orderstore';
 import { OrderDetailsPage } from '../order-details/order-details';
 // import {} from '../../../store/orders/orderstore'; 
 
@@ -21,7 +21,7 @@ import { OrderDetailsPage } from '../order-details/order-details';
 export class AdmindashboardPage {
 
   orders: Array<Orders>;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public orderService: OrdersProvider) {
+  constructor(public navCtrl: NavController,public ordersStore:OrderStore, public navParams: NavParams,public orderService: OrdersProvider) {
     // this.productService.getVehicles().subscribe(res => {
     //   this.products = res
    

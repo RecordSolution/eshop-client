@@ -1,0 +1,8 @@
+<!-- Generated template for the CustomAssetsComponent component -->
+<div class="inner-popup">
+ <img  class="images" [class.selected-item]="ifSelected(item)" *ngFor="let item of allCustomAssets" src="{{item}}" (click)="onSelection(item)">
+ <p *ngIf="errorMessage && errorMessage!=''">{{errorMessage}}</p>
+ <button ion-button (click)="onConfirm()">OK</button>
+ <button ion-button (click)="close()">cancel</button>
+</div>
+

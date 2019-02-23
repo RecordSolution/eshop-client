@@ -35,3 +35,12 @@
     width: 30px;
     padding: 2px;
 }
+.popup{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(146, 146, 146, 0.6);
+    padding: 15%;
+}

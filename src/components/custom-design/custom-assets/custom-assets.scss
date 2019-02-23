@@ -1,0 +1,16 @@
+custom-assets {
+    .inner-popup{
+        width: 100%;
+        padding: 10%;
+        height: auto;
+        background-color: white;
+        .selected-item{
+            border: 2px solid greenyellow;
+        }
+        .images{
+            width:70px !important; 
+            height: 70px !important;
+        }
+    }
+
+}

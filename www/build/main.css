@@ -24783,6 +24783,22 @@ ion-navbar.toolbar {
   border: none;
 }
 
+custom-assets .inner-popup {
+  width: 100%;
+  padding: 10%;
+  height: auto;
+  background-color: white;
+}
+
+custom-assets .inner-popup .selected-item {
+  border: 2px solid greenyellow;
+}
+
+custom-assets .inner-popup .images {
+  width: 70px !important;
+  height: 70px !important;
+}
+
 custom-dress-category-selector .flex {
   display: inline-block;
   height: 100vh;
@@ -24893,6 +24909,16 @@ page-order-details ion-card ion-card-title {
   border: 1px solid gray;
   width: 30px;
   padding: 2px;
+}
+
+.popup {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: rgba(146, 146, 146, 0.6);
+  padding: 15%;
 }
 
 .slider {

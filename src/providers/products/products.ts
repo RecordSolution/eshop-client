@@ -16,7 +16,7 @@ export class ProductsProvider {
     this.getProducts();
   }
  getProducts(value?: string) {
-    return this.http.get('./../assets/json/products.json').
+    return this.http.get('./../assets/products.json').
     pipe(map((data: any) => {
       console.log('profucts', data.products);
      this.productStore.saveProducts(data.products);

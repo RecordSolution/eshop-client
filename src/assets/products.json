@@ -1,0 +1,160 @@
+{
+    "products": [
+        {
+            "id": "920jdnd02jdwd2md",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "images": [
+                {
+                    "url": "/assets/imgs/shirt.jpg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "assets/imgs/logo.png",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/imgs/logo.png",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "images": [
+                {
+                    "url": "/assets/imgs/kurta.png",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "assets/imgs/logo.png",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/imgs/logo.png",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "kurta",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "images": [
+                {
+                    "url": "/assets/imgs/pent.jpg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "assets/imgs/logo.png",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/imgs/logo.png",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "pent",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "images": [
+                {
+                    "url": "/assets/imgs/shirt.jpg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "assets/imgs/logo.png",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/imgs/logo.png",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        }
+    ]
+}
