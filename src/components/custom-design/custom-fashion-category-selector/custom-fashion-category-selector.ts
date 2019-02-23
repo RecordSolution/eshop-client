@@ -14,6 +14,7 @@ import { SharedProvider } from '../../../providers/shared/shared';
 export class CustomFashionCategorySelectorComponent implements OnInit {
 fasionDesignes:Array<any>=[]
   text: string;
+  selectedItem:any;
 @Output() selectedCategory:EventEmitter<any>=new EventEmitter<any>();
 
   constructor(public sharedService: SharedProvider) {
@@ -29,8 +30,12 @@ fasionDesignes:Array<any>=[]
   }
 
   onSelectCategory(selectedCategory){
+    this.selectedItem=selectedCategory;
     this.selectedCategory.emit(selectedCategory);
     // alert('selected category is '+ selectedCategory.key);
   }
+  isSelectedItem(cat){
+    return this.selectedItem==cat ? true:false;
+   }
 
 }

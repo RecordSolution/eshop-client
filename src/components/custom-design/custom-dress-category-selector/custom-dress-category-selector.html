@@ -1,9 +1,9 @@
 <!-- Generated template for the CustomDressCategorySelectorComponent component -->
 <div class="flex">
 
-  <div *ngFor="let cat of dressDesignes">
+  <div *ngFor="let cat of dressDesignes" (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">
     <label>{{cat.key}}</label>
-    <img (click)="onSelectCategory(cat)" class="cat" src="/assets/imgs/avatar.png">
+    <img  class="cat" src="/assets/imgs/avatar.png">
     
   </div>
 </div>

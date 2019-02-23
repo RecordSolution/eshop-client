@@ -437,27 +437,27 @@ var map = {
 		7
 	],
 	"../pages/admin/order-details/order-details.module": [
-		446,
+		443,
 		6
 	],
 	"../pages/buyer/categories/categories.module": [
-		443,
+		444,
 		5
 	],
 	"../pages/buyer/customDesign/custom-design/custom-design-home.module": [
-		444,
+		445,
 		4
 	],
 	"../pages/buyer/customDesign/design-canvas/design-canvas.module": [
-		448,
+		446,
 		3
 	],
 	"../pages/buyer/men/men.module": [
-		445,
+		447,
 		2
 	],
 	"../pages/buyer/product-details/product-details.module": [
-		447,
+		448,
 		1
 	],
 	"../pages/membership/signup/signup.module": [
@@ -797,12 +797,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/admin/admindashboard/admindashboard.module#AdmindashboardPageModule', name: 'AdmindashboardPage', segment: 'admindashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin/order-details/order-details.module#OrderDetailsPageModule', name: 'OrderDetailsPage', segment: 'order-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/customDesign/custom-design/custom-design-home.module#CustomDesignHomePageModule', name: 'CustomDesignHomePage', segment: 'custom-design-home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer/men/men.module#MenPageModule', name: 'MenPage', segment: 'men', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin/order-details/order-details.module#OrderDetailsPageModule', name: 'OrderDetailsPage', segment: 'order-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/customDesign/design-canvas/design-canvas.module#DesignCanvasPageModule', name: 'DesignCanvasPage', segment: 'design-canvas', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/men/men.module#MenPageModule', name: 'MenPage', segment: 'men', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -1130,8 +1130,12 @@ var CustomFashionCategorySelectorComponent = /** @class */ (function () {
         });
     };
     CustomFashionCategorySelectorComponent.prototype.onSelectCategory = function (selectedCategory) {
+        this.selectedItem = selectedCategory;
         this.selectedCategory.emit(selectedCategory);
-        alert('selected category is ' + selectedCategory.key);
+        // alert('selected category is '+ selectedCategory.key);
+    };
+    CustomFashionCategorySelectorComponent.prototype.isSelectedItem = function (cat) {
+        return this.selectedItem == cat ? true : false;
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
@@ -1139,7 +1143,7 @@ var CustomFashionCategorySelectorComponent = /** @class */ (function () {
     ], CustomFashionCategorySelectorComponent.prototype, "selectedCategory", void 0);
     CustomFashionCategorySelectorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-fashion-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-fashion-category-selector\custom-fashion-category-selector.html"*/'<!-- Generated template for the CustomFashionCategorySelectorComponent component -->\n<div class="flex">\n\n  <div *ngFor="let cat of fasionDesignes">\n    <img (click)="onSelectCategory(cat)" class="cat" src="/assets/imgs/avatar.png">\n    <label>{{cat.key}}</label>\n  </div>\n</div>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-fashion-category-selector\custom-fashion-category-selector.html"*/
+            selector: 'custom-fashion-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-fashion-category-selector\custom-fashion-category-selector.html"*/'<!-- Generated template for the CustomFashionCategorySelectorComponent component -->\n<div class="flex">\n\n  <div *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">\n    <img class="cat" src="/assets/imgs/avatar.png">\n    <label>{{cat.key}}</label>\n  </div>\n</div>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-fashion-category-selector\custom-fashion-category-selector.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__["a" /* SharedProvider */]])
     ], CustomFashionCategorySelectorComponent);
@@ -1188,8 +1192,12 @@ var CustomDressCategorySelectorComponent = /** @class */ (function () {
         });
     };
     CustomDressCategorySelectorComponent.prototype.onSelectCategory = function (selectedCategory) {
+        this.selectedItem = selectedCategory;
         this.selectedCategory.emit(selectedCategory);
-        alert('selected category is ' + selectedCategory.key);
+        // alert('selected category is '+ selectedCategory.key);
+    };
+    CustomDressCategorySelectorComponent.prototype.isSelectedItem = function (cat) {
+        return this.selectedItem == cat ? true : false;
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
@@ -1197,7 +1205,7 @@ var CustomDressCategorySelectorComponent = /** @class */ (function () {
     ], CustomDressCategorySelectorComponent.prototype, "selectedCategory", void 0);
     CustomDressCategorySelectorComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-dress-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-dress-category-selector\custom-dress-category-selector.html"*/'<!-- Generated template for the CustomDressCategorySelectorComponent component -->\n<div class="flex">\n\n  <div *ngFor="let cat of dressDesignes">\n    <label>{{cat.key}}</label>\n    <img (click)="onSelectCategory(cat)" class="cat" src="/assets/imgs/avatar.png">\n    \n  </div>\n</div>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-dress-category-selector\custom-dress-category-selector.html"*/
+            selector: 'custom-dress-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-dress-category-selector\custom-dress-category-selector.html"*/'<!-- Generated template for the CustomDressCategorySelectorComponent component -->\n<div class="flex">\n\n  <div *ngFor="let cat of dressDesignes" (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">\n    <label>{{cat.key}}</label>\n    <img  class="cat" src="/assets/imgs/avatar.png">\n    \n  </div>\n</div>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-dress-category-selector\custom-dress-category-selector.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__["a" /* SharedProvider */]])
     ], CustomDressCategorySelectorComponent);
@@ -1569,12 +1577,13 @@ var CategoriesPage = /** @class */ (function () {
             _this.productStore.saveProducts(res);
         });
     };
-    var _a, _b, _c, _d;
     CategoriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-categories',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/'<!--\n\n  Generated template for the CategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  \n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n    <ion-title>E Garments</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n\n\n  <ion-card  (click)="goToMensPage()">\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Men</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Women</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Boys</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Girls</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */]) === "function" ? _b : Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" ? _c : Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */]) === "function" ? _d : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */]])
     ], CategoriesPage);
     return CategoriesPage;
 }());
@@ -1642,6 +1651,7 @@ var CustomDesignHomePage = /** @class */ (function () {
     };
     CustomDesignHomePage.prototype.getSelectedDress = function () {
         this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+        console.log(this.selectedProduct);
     };
     CustomDesignHomePage.prototype.active = function () {
         // alert("stop")
@@ -1671,7 +1681,7 @@ var CustomDesignHomePage = /** @class */ (function () {
     ], CustomDesignHomePage.prototype, "itemSlider", void 0);
     CustomDesignHomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)"></custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n        <!-- {{selectedProduct | json}} -->\n\n        <!-- <input [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <svg class="result" [attr.fill]="color" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 373.5 322.5" style="enable-background:new 0 0 373.5 322.5;"\n\n          xml:space="preserve">\n\n          <style type="text/css">\n\n\n\n          </style>\n\n          <polygon id="XMLID_2_" class="st0" points="142.4,30.4 184.4,72 184.4,297.9 101.4,297.9 101.4,30.4 " />\n\n          <polygon id="XMLID_1_" class="st0" points="237.4,30.4 195.4,72 195.4,297.9 278.4,297.9 278.4,30.4 " />\n\n          <polygon id="XMLID_81_" class="st0" points="278.4,30.9 348.4,30.9 348.4,210.9 313.9,210.9 313.6,62.9 278.4,62.9 " />\n\n          <polygon id="XMLID_82_" class="st0" points="101.4,30.9 31.4,30.9 31.4,210.9 65.9,210.9 66.1,62.9 101.4,62.9 " />\n\n        </svg> -->\n\n        <!-- <img [ngStyle]="{height:size+\'px\',width:size+\'px\'}" class="icons" ion-long-press [interval]="400" (onPressing)="active()"\n\n          ngDraggable src="/assets/imgs/logo.png">\n\n        <ion-item >\n\n          <ion-range min="50" max="200" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">{{size}}</ion-range>\n\n        </ion-item>\n\n        {{size}} -->\n\n        <div class="flex" *ngIf="selectedProduct">\n\n            colors\n\n            <div class="color-selection"  [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n          </div>\n\n        <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" />\n\n        <div class="flex " *ngIf="selectedProduct"><div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div></div>\n\n       <ion-item> <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input></ion-item>\n\n        <button ngDraggable ion-button>save</button>\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n        \n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)"></custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
+            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)"></custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n        <!-- {{selectedProduct | json}} -->\n\n        <!-- <input [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <svg class="result" [attr.fill]="color" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 373.5 322.5" style="enable-background:new 0 0 373.5 322.5;"\n\n          xml:space="preserve">\n\n          <style type="text/css">\n\n\n\n          </style>\n\n          <polygon id="XMLID_2_" class="st0" points="142.4,30.4 184.4,72 184.4,297.9 101.4,297.9 101.4,30.4 " />\n\n          <polygon id="XMLID_1_" class="st0" points="237.4,30.4 195.4,72 195.4,297.9 278.4,297.9 278.4,30.4 " />\n\n          <polygon id="XMLID_81_" class="st0" points="278.4,30.9 348.4,30.9 348.4,210.9 313.9,210.9 313.6,62.9 278.4,62.9 " />\n\n          <polygon id="XMLID_82_" class="st0" points="101.4,30.9 31.4,30.9 31.4,210.9 65.9,210.9 66.1,62.9 101.4,62.9 " />\n\n        </svg> -->\n\n        <img [ngStyle]="{height:size+\'px\',width:size+\'px\'}" class="icons" ion-long-press [interval]="400" (onPressing)="active()"\n\n          ngDraggable src="/assets/imgs/pocket-icon.png">\n\n        <ion-item >\n\n          <ion-range min="50" max="200" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">{{size}}</ion-range>\n\n        </ion-item>\n\n        {{size}}\n\n        <div class="flex" *ngIf="selectedProduct">\n\n            colors\n\n            <div class="color-selection"  [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n          </div>\n\n        <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" />\n\n        <div class="flex " *ngIf="selectedProduct"><div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div></div>\n\n       <ion-item> <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input></ion-item>\n\n        <button ngDraggable ion-button>save</button>\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n        \n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)"></custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], CustomDesignHomePage);

@@ -1,13 +1,16 @@
 custom-dress-category-selector {
-    .flex{
+   .flex{
         display: inline-block;
         height: 100vh;
         background-color: lightgray;
+        .selected-item{
+            border:2px solid greenyellow;
+        }
         .cat{
             width: 33%;
             height: auto;
-            // float:right;
         }
+    
     }
 
 }

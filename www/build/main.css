@@ -24789,6 +24789,10 @@ custom-dress-category-selector .flex {
   background-color: lightgray;
 }
 
+custom-dress-category-selector .flex .selected-item {
+  border: 2px solid greenyellow;
+}
+
 custom-dress-category-selector .flex .cat {
   width: 33%;
   height: auto;
@@ -24798,6 +24802,10 @@ custom-fashion-category-selector .flex {
   display: inline-block;
   height: 100vh;
   background-color: lightgray;
+}
+
+custom-fashion-category-selector .flex .selected-item {
+  border: 2px solid greenyellow;
 }
 
 custom-fashion-category-selector .flex .cat {
