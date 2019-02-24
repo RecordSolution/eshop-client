@@ -12,10 +12,12 @@ export class OrdersProvider {
     this.getorders()
   }
  getorders(value?: string) {
+
+  console.log("getOrders");
     return this.http.get('./../assets/json/orders.json').pipe(
     map((data: any) => {
       console.log('Orders', data.orders);
-  //  this.ordersStore.setOrders(data.orders);
+     this.ordersStore.setOrders(data.orders);
      return data.orders;
      
 

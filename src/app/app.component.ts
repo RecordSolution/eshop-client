@@ -89,6 +89,7 @@ export class MyApp implements OnChanges{
     else if(pageName=='adminProducts'){
       this.nav.push(AdmindashboardPage);
     }
+  
     else if(pageName=='logout'){
       this.nav.setRoot(LoginPage);
       localStorage.clear();

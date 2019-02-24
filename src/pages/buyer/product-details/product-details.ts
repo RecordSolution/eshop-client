@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Ordered} from '../../../shared/models/ordered';
+import { OrderModel} from '../../../shared/models/ordered';
+import { ProductStore } from '../../../store/productstore/productstore';
+import { Product } from '../../../shared/models/product';
 
 /**
  * Generated class for the ProductDetailsPage page.
@@ -15,28 +17,36 @@ import { Ordered} from '../../../shared/models/ordered';
   templateUrl: 'product-details.html',
 })
 export class ProductDetailsPage {
-  details: any;
-  number: string;
-  quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  ordered :Array<any>;
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ order:OrderModel;
+ details:Product
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public productStore : ProductStore,
+    ) {
+      this.order=new OrderModel();
     // this.details = this.navParams.get('data');
   }
 
   ionViewDidLoad() {
     this.details = this.navParams.get('data');
-    // console.log('ionViewDidLoad ProductDetailsPage');
+
+    console.log('ionViewDidLoad ProductDetailsPage', this.details);
   }
   getQuantity(count) {
-    this.number = count;
-    console.log(count)
+
   }
 
   onChange(){ 
+    
+  
 
-    var orderDetails =  this.number;
-    localStorage.setItem('OrderDetails', JSON.stringify(orderDetails));
+   
+  }
+
+  onBuy(){
+   console.log("order her ===>",this.order);
+   console.log("product her ===>",this.details)
   }
 
  

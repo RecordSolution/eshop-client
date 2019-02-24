@@ -22,25 +22,19 @@
             <img src="assets/imgs/firstCategory.png">
           </ion-avatar> -->
           <h2>{{details.name}}</h2>
-          <p>{{details.description}}</p>
+          <p>{{details.shortDescription}}</p>
         </ion-item>
       
         
         <div>
             <ion-slides>
-                <ion-slide>
-                    <img src="assets/imgs/firstCategory.png">
-                </ion-slide>
-                <ion-slide>
-                    <img src="assets/imgs/firstCategory.png">
-                </ion-slide>
-                <ion-slide>
-                    <img src="assets/imgs/firstCategory.png">
+                <ion-slide *ngFor="let image of details.images">
+                    <img src="{{image.url}}">
                 </ion-slide>
               </ion-slides>
       </div>
         <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+          <p>{{details.description}}</p>
         </ion-card-content>
       
         <ion-row>
@@ -53,13 +47,14 @@
           <ion-col>
               <ion-item>
                   <ion-label>Quantity</ion-label>
-                  <ion-select [(ngModel)]="number">
-                      <ion-option *ngFor="let count of quantity" [value]="count" (ionChange)="getQuantity(count)">{{count}}</ion-option>
-                    </ion-select>
+                  <ion-input type="number" [(ngModel)]="order.quantity"></ion-input>
+                  <!-- <ion-select [(ngModel)]="order.quantity">
+                      <ion-option *ngFor="let count of details.availableQuantity" [value]="count" (ionChange)="getQuantity(count)">{{count}}</ion-option>
+                    </ion-select> -->
                 </ion-item>
                 <ion-item>
                 <ion-label>Color</ion-label>
-                <ion-select [(ngModel)]="color">
+                <ion-select [(ngModel)]="order.color">
                     <ion-option *ngFor="let color of details.colors" [value]="color">{{color}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
                   </ion-select>
                 <!-- <ion-select [(ngModel)]="number">
@@ -69,7 +64,7 @@
 
               <ion-item>
                   <ion-label>Avaliable Sizes</ion-label>
-                  <ion-select [(ngModel)]="size">
+                  <ion-select [(ngModel)]="order.size">
                       <ion-option *ngFor="let size of details.sizes" [value]="size">{{size}} <div style=" width: 10px; height:10px" [ngStyle]="{background:'color'}"></div></ion-option>
                     </ion-select>
                   <!-- <ion-select [(ngModel)]="number">
@@ -79,21 +74,21 @@
 
                 <ion-item>
                     <ion-label>Address</ion-label>
-                    <ion-toggle [(ngModel)]="address" checked="true"></ion-toggle>
+                    <ion-toggle [(ngModel)]="order.addressToDeliver" checked="true"></ion-toggle>
                   </ion-item>
 
                   <ion-item>
                       <ion-label>Different Address</ion-label>
-                      <ion-toggle [(ngModel)]="differentAddress"></ion-toggle>
+                      <ion-toggle [(ngModel)]="order.addressToDeliver"></ion-toggle>
                     </ion-item>
                 
-                    <textarea placeholder="Enter Change Address Here"class="addressArea"name="different-address" ></textarea>
+                    <textarea *ngIf="changeAddress"  placeholder="Enter Change Address Here"class="addressArea"name="different-address" ></textarea>
       
                     
 
-                    <ion-label>Price  <span float-right>$250</span></ion-label>
+                    <ion-label>Price  <span float-right>{{details.price}}</span></ion-label>
 
-                    <button ion-button block color="secondary" (click)="onChange()">Buy</button>
+                    <button ion-button block color="secondary" (click)="onBuy()">Buy</button>
                   
                   </ion-col>
 

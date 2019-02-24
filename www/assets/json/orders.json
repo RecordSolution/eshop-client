@@ -30,8 +30,7 @@
                         }
                     ,
                     "Category": "t-shirt",
-                    "gendar": "men",
-                    
+                    "gendar": "men",                   
                     "price": "40",
                     "descriprion": "this is panda original shiry for mens and this is awesome"
                 } , {
@@ -48,8 +47,7 @@
                         }
                     ,
                     "Category": "t-shirt",
-                    "gendar": "men",
-                    
+                    "gendar": "men",  
                     "price": "40",
                     "descriprion": "this is panda original shiry for mens and this is awesome"
                 }   

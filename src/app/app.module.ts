@@ -28,6 +28,7 @@ import { LongPressModule } from 'ionic-long-press'
 import { AngularDraggableModule } from 'angular2-draggable';
 import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
 import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
+
 @NgModule({
   declarations: [
     MyApp,

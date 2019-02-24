@@ -1,14 +1,25 @@
-export class Ordered{
-    orderId:string;
-    customerid:string;
-    userDetails:string;
-    productDetails:string;
-    orderType:string;
+import { profileModel } from "./profile";
+import { Product } from "./product";
+
+export class OrderModel{
+    id:string;
+    status:string;
+    orderDate:string;
     addressToDeliver:string;
     cutomerContact:string;
-    Category:string;
-    selectedQuantity:string;
-    selectedSize:string ;
-    number: string;
+    estimatedDateToDeliver:string;
+    totalPrice:string;
+    color:any;
+    size:string;
+    quantity:number;
+    orderType:string;
+    buyer:profileModel;
+    selectedproducts:Product;
 
+    constructor(){
+
+    }
 }
+
+
+
