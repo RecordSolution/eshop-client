@@ -16,7 +16,7 @@ export class CustomDesignHomePage {
   fashionCategory: string = '';
   dressCategory: string = '';
   customDesignSelectionModel: CustomDesignSelectionModel;
-  color: string = "red";
+  color: string = "black";
   crossActive: boolean;
   size: any;
   selectedProduct: any;

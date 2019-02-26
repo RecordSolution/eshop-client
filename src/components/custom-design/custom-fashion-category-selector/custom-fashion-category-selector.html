@@ -1,8 +1,16 @@
 <!-- Generated template for the CustomFashionCategorySelectorComponent component -->
-<div class="flex">
-
-  <div *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">
+<!-- <div class="flex"> -->
+    <ion-list class="chip-list" *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">
+        <ion-item text-wrap no-lines>
+          <ion-chip class="chip-size" item-content>
+            <ion-label>{{cat.key}}</ion-label>
+            <!-- <ion-icon name="heart" color="primary"></ion-icon> -->
+            <img class="icon" src="{{cat.menIcon}}">
+          </ion-chip>
+        </ion-item>
+      </ion-list>
+  <!-- <div *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">
     <img class="cat" src="/assets/imgs/avatar.png">
     <label>{{cat.key}}</label>
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->

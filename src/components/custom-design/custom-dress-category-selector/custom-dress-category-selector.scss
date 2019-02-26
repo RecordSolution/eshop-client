@@ -1,16 +1,31 @@
 custom-dress-category-selector {
-   .flex{
-        display: inline-block;
-        height: 100vh;
-        background-color: lightgray;
-        .selected-item{
-            border:2px solid greenyellow;
-        }
-        .cat{
-            width: 33%;
-            height: auto;
-        }
+//    .flex{
+//         display: inline-block;
+//         height: 100vh;
+//         background-color: lightgray;
+//         .selected-item{
+//             border:2px solid greenyellow;
+//         }
+//         .cat{
+//             width: 33%;
+//             height: auto;
+//         }
     
-    }
+//     }
+.chip-list{
+    margin: 0 !important;
+    float: right;
+}
+.chip-size{
+    width: 110px;
+    background-color: rgba(164, 203, 210, 0.49)
+}
+.icon{
+    width: 32px;
+    height: 32px;
+    background: #2ce3e4;
+    border-radius: 50%;
+    padding: 3px;
+}
 
 }

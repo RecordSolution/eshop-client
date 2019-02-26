@@ -29,6 +29,7 @@ export class ProductStore {
     }
     @action saveProducts(products: Array<any>) {
         this.allProducts = [...products];
+        window.localStorage.setItem('products', JSON.stringify(this.allProducts));
     }
     @computed get products() {
 

@@ -2,23 +2,33 @@
     "dressCategories": [
         {
             "id": "jx2873y",
-            "key": "shalwa"
+            "key": "shalwa",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "d093j",
-            "key": "kurta"
+            "key": "kurta",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "dh389-nwioru30",
-            "key": "t-shirt"
+            "key": "t-shirt",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-2398h",
-            "key": "pent"
+            "key": "pent",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-2i93h",
-            "key": "upper"
+            "key": "upper",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         }
     ]
 }
