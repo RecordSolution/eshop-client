@@ -10,13 +10,15 @@ export class OrdersProvider {
   constructor(public http: HttpClient , private ordersStore : OrderStore) {
     console.log('Hello OrdesProvider Provider');
     this.getorders()
+
+
   }
  getorders(value?: string) {
 
   console.log("getOrders");
     return this.http.get('./../assets/json/orders.json').pipe(
     map((data: any) => {
-      console.log('Orders', data.orders);
+      console.log('Orders Here', data.orders);
      this.ordersStore.setOrders(data.orders);
      return data.orders;
      

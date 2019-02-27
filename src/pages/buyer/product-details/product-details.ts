@@ -26,6 +26,7 @@ export class ProductDetailsPage {
     ) {
       this.order=new OrderModel();
     // this.details = this.navParams.get('data');
+    
   }
 
   ionViewDidLoad() {

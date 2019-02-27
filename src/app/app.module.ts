@@ -28,7 +28,8 @@ import { LongPressModule } from 'ionic-long-press'
 import { AngularDraggableModule } from 'angular2-draggable';
 import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
 import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
-
+import { PopoverController } from 'ionic-angular';
+import { PopoverComponent} from '../components/popover/popover';
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +44,10 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     DesignCanvasPage,
     AbsoluteDragDirective,
     CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent
+    CustomDressCategorySelectorComponent,
+    PopoverComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     HttpClientModule,
     ColorPickerModule,
     AngularDraggableModule,
-    LongPressModule
+    LongPressModule,
+  
 
   ],
   bootstrap: [IonicApp],
@@ -67,7 +72,9 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     OrderDetailsPage,
     DesignCanvasPage,
     CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent
+    CustomDressCategorySelectorComponent,
+    PopoverComponent,
+   
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -77,7 +84,8 @@ import { CustomDressCategorySelectorComponent } from "./../components/custom-des
     OrderStore,
     ProfileStore,
     SharedProvider,
-    ProductStore
+    ProductStore,
+
     // ScreenOrientation
 
   ]

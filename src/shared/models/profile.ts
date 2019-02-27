@@ -11,5 +11,5 @@ export class profileModel {
         this.address = 'pak street multan';
         this.contactNo = 3058989778;
         this.accountType ='';
-    }
+    } 
 }

@@ -24805,6 +24805,14 @@ custom-fashion-category-selector .flex .cat {
   height: auto;
 }
 
+popover ion-popover {
+  height: 90px !important;
+  top: 47px !important;
+  left: 329.5px !important;
+  border-radius: 1vw !important;
+  width: 64px !important;
+}
+
 page-order-details ion-card {
   margin-top: 10px;
 }

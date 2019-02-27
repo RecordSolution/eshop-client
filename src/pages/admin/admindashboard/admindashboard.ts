@@ -4,6 +4,8 @@ import { OrdersProvider} from '../../../providers/orders/orders';
 import { Orders} from '../../../shared/models/orders';
 import { OrderStore } from '../../../store/orders/orderstore';
 import { OrderDetailsPage } from '../order-details/order-details';
+import { PopoverController } from 'ionic-angular';
+import { PopoverComponent} from '../../../components/popover/popover';
 // import {} from '../../../store/orders/orderstore'; 
 
 /**
@@ -24,7 +26,8 @@ export class AdmindashboardPage {
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public orderService: OrdersProvider,
-     public ordersStore : OrderStore) {
+     public ordersStore : OrderStore,
+     public popoverCtrl: PopoverController) {
     // this.productService.getVehicles().subscribe(res => {
     //   this.products = res
    
@@ -52,4 +55,8 @@ export class AdmindashboardPage {
     this.navCtrl.push(OrderDetailsPage);
   }
 
+  action1(){
+    const popover = this.popoverCtrl.create(PopoverComponent);
+    popover.present();
+  }
 }

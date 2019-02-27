@@ -8,6 +8,7 @@ export class ProductStore {
     @observable allProducts: Array<any> = [];
 
     constructor() {
+
         autorun(() => {
             if (JSON.parse(localStorage.getItem('products')) && JSON.parse(localStorage.getItem('products')) != {}) {
                 let obj = JSON.parse(localStorage.getItem('products'));;
@@ -29,6 +30,7 @@ export class ProductStore {
     }
     @action saveProducts(products: Array<any>) {
         this.allProducts = [...products];
+        window.localStorage.setItem('products', JSON.stringify(this.allProducts));
     }
     @computed get products() {
 

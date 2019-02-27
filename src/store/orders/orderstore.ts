@@ -1,4 +1,4 @@
-import { observable, computed , action} from 'mobx';
+import { observable, autorun, computed , action} from 'mobx';
 import { Orders } from './../../shared/models/orders';
 import { Injectable } from "@angular/core";
 
@@ -12,6 +12,19 @@ export class OrderStore{
 
     constructor(){
 
+        autorun(() => {
+            if (JSON.parse(localStorage.getItem('orders')) && JSON.parse(localStorage.getItem('orders')) != {}) {
+                let obj = JSON.parse(localStorage.getItem('orders'));;
+                if (obj && obj.accountType) {
+                    this.filteredOrders = obj;
+                }
+                console.log(this.filteredOrders);
+            }
+            else if (this.filteredOrders) {
+                window.localStorage.setItem('orders', JSON.stringify(this.filteredOrders));
+            }
+      
+        });
     }
 
     @action clear(){
@@ -22,6 +35,7 @@ export class OrderStore{
     @action setOrders(orders){
 
         this.myOrders = orders;
+        window.localStorage.setItem('products', JSON.stringify(orders));
         if(this.filter && this.filter!=''){
 
             this.filterOrders(this.filter);
