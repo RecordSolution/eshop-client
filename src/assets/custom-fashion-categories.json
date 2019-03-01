@@ -2,7 +2,7 @@
     "fashionCategories": [
         {
             "id": "kasd892das",
-            "key": "cashual",
+            "key": "casual",
             "menIcon":"/assets/icon/casual-men-Icon.png",
             "womenIcon":"/assets/icon/casual-women-Icon.png"
         },

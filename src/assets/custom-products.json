@@ -1,0 +1,103 @@
+{
+    "customProducts": [
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/men-casual-kurta-front.svg",
+            "menBack":"/assets/imgs/men-casual-kurta-back.svg",
+            "womenFront":"/assets/imgs/men-casual-kurta-front.svg",
+            "womenBack":"/assets/imgs/men-casual-kurta-front.svg",
+            "fashion-category": "casual",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/men-party-kurta-front.svg",
+            "menBack":"/assets/imgs/men-party-kurta-back.svg",
+            "womenFront":"/assets/imgs/men-party-kurta-front.svg",
+            "womenBack":"/assets/imgs/men-party-kurta-front",
+            "fashion-category": "party",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/men-casual-t-shirt-front.svg",
+            "menBack":"/assets/imgs/men-casual-t-shirt-back.svg",
+            "womenFront":"/assets/imgs/t-shirt.svg",
+            "womenBack":"/assets/imgs/men-casual-t-shirt-front.svg",
+            "fashion-category": "casual",
+            "dress-category":"t-shirt",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/t-shirt.svg",
+            "menBack":"/assets/imgs/t-shirt.svg",
+            "womenFront":"/assets/imgs/t-shirt.svg",
+            "womenBack":"/assets/imgs/t-shirt.svg",
+            "fashion-category": "cashual",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/t-shirt.svg",
+            "menBack":"/assets/imgs/t-shirt.svg",
+            "womenFront":"/assets/imgs/t-shirt.svg",
+            "womenBack":"/assets/imgs/t-shirt.svg",
+            "fashion-category": "cashual",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/t-shirt.svg",
+            "menBack":"/assets/imgs/t-shirt.svg",
+            "womenFront":"/assets/imgs/t-shirt.svg",
+            "womenBack":"/assets/imgs/t-shirt.svg",
+            "fashion-category": "cashual",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        },
+        {
+            "id": "kasd892das",
+            "menFront":"/assets/imgs/t-shirt.svg",
+            "menBack":"/assets/imgs/t-shirt.svg",
+            "womenFront":"/assets/imgs/t-shirt.svg",
+            "womenBack":"/assets/imgs/t-shirt.svg",
+            "fashion-category": "cashual",
+            "dress-category":"kurta",
+            "sizes":["SM","MD"],
+            "colors":["#787878", "red","black"],
+            "price": 700,
+            "notes":"price can be change according to design"
+            
+        }
+        
+    ]
+}
