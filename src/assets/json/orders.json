@@ -2,10 +2,15 @@
     "orders": [
         {
             "id": "lkma90i,k89mslkd",
-            "status": "in-progress",
+            "status": "rejected",
             "orderDate": "date string auto created on user side",
             "estimatedDateToDeliver": "date string set by admin",
             "totalPrice": "650",
+            "addressToDeliver": "Multan",
+            "cutomerContact":"0313131313",
+           "color" :"green",
+            "size":"sm",
+            "quantity":1,
             "orderType": "multiple-products",
             "buyer": {
                 "id": "920jdnd02jdwd2md",
@@ -55,10 +60,15 @@
         }, 
         {
             "id": "lkma90i,k89mslkd",
-            "status": "in-progress",
+            "status": "pending",
             "orderDate": "date string auto created on user side",
             "estimatedDateToDeliver": "date string set by admin",
             "totalPrice": "650",
+            "addressToDeliver": "Multan",
+            "cutomerContact":"0313131313",
+           "color" :"green",
+            "size":"sm",
+            "quantity":1,
             "orderType": "single-products",
             "buyer": {
                 "id": "920jdnd02jdwd2md",
@@ -91,10 +101,15 @@
         },
         {
             "id": "lkma90i,k89mslkd",
-            "status": "completed",
+            "status": "complete",
             "orderDate": "date string auto created on user side",
             "estimatedDateToDeliver": "date string set by admin",
             "totalPrice": "650",
+            "addressToDeliver": "Multan",
+            "cutomerContact":"0313131313",
+           "color" :"green",
+            "size":"sm",
+            "quantity":1,
             "orderType": "single-products",
             "buyer": {
                 "id": "920jdnd02jdwd2md",

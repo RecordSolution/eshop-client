@@ -50,6 +50,7 @@ export class OrderStore{
     }
     @action filterOrders(status?){
 
+        console.log(status)
 
 
         if(status){

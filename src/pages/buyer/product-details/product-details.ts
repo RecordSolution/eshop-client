@@ -3,13 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrderModel} from '../../../shared/models/ordered';
 import { ProductStore } from '../../../store/productstore/productstore';
 import { Product } from '../../../shared/models/product';
-
-/**
- * Generated class for the ProductDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { profileModel } from '../../../shared/models/profile';
+import { ProfileStore } from '../../../store/profilestore/profileStore';
 
 @IonicPage()
 @Component({
@@ -18,11 +13,13 @@ import { Product } from '../../../shared/models/product';
 })
 export class ProductDetailsPage {
  order:OrderModel;
- details:Product
+ details:Product;
+ profile:profileModel;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public productStore : ProductStore,
+    public profileStore : ProfileStore,
     ) {
       this.order=new OrderModel();
     // this.details = this.navParams.get('data');
@@ -40,14 +37,15 @@ export class ProductDetailsPage {
 
   onChange(){ 
     
-  
-
-   
+ 
   }
 
   onBuy(){
-   console.log("order her ===>",this.order);
-   console.log("product her ===>",this.details)
+
+    console.log("order her ===>",JSON.stringify(this.order));
+    console.log("product her ===>",this.details);
+     console.log("Profile",JSON.stringify(this.profile));
+
   }
 
  

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OrderStore} from '../../store/orders/orderstore';
 
 /**
  * Generated class for the PopoverComponent component.
@@ -11,12 +12,17 @@ import { Component } from '@angular/core';
   templateUrl: 'popover.html'
 })
 export class PopoverComponent {
+ 
+  filyer : string;
+  text: any;
+  optionsList : ['Pending','Completed','Rejected'];
 
-  text: string;
-
-  constructor() {
-    console.log('Hello PopoverComponent Component');
-    this.text = 'Hello World';
+  constructor( private ordersStore : OrderStore) {
+    this.text = ['pending','completed','rejected'];
+  }
+  filterList(list){
+   
+    this.ordersStore.filterOrders(list);
   }
 
 }

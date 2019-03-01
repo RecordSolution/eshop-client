@@ -1,4 +1,6 @@
 <!-- Generated template for the PopoverComponent component -->
-<div>
-  {{text}}
+<div >
+<ul *ngFor="let list of text">
+  <li (click)="filterList(list)">{{list}}</li>
+</ul>
 </div>

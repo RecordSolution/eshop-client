@@ -10,9 +10,43 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="register">
 
-  <ion-list>
+  <div class="logo">
+    <img class="logo-img" src="assets/imgs/logo.png">
+  </div>
+  
+  <ion-card class="card">
+  
+    <ion-card-content>
+    <ion-list>
+  
+      <ion-input  class="loginfields" placeholder=" User Name "  type="text" value=""></ion-input>
+      
+        <ion-input  class="loginfields" placeholder=" Email "  type="text" value=""></ion-input>
+      
+        <ion-input class="loginfields" placeholder=" Password "  type="text" value=""></ion-input>
+      
+        <ion-input  class="loginfields" placeholder="Re-type Password " type="password" value=""></ion-input>
+   
+        <ion-input  class="loginfields" placeholder="Contact info " type="password" value=""></ion-input>
+   
+        <ion-input  class="loginfields" placeholder=" Address" type="password" value=""></ion-input>
+   
+    <div class="login" >
+      <button ion-button color="primary" (click)="Signup()" block>Signup</button>
+    </div>
+    </ion-list>
+    </ion-card-content>
+  
+  </ion-card>
+  
+  <div class="signin">
+  
+    <a (click)="signup()">Alrady a Member?</a>
+  </div>
+
+  <!-- <ion-list>
 
     <ion-item>
       <ion-label floating>Username</ion-label>
@@ -44,7 +78,7 @@
 
   <div padding>
     <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>
-  </div>
+  </div> -->
 
 </ion-content>
 <!-- <ion-header>

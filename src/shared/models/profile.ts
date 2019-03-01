@@ -10,6 +10,6 @@ export class profileModel {
         this.email = 'test@gmail.com';
         this.address = 'pak street multan';
         this.contactNo = 3058989778;
-        this.accountType ='';
+        this.accountType ='user';
     } 
 }
