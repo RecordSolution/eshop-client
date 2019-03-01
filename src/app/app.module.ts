@@ -21,7 +21,6 @@ import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { DesignCanvasPage } from "./../pages/buyer/customDesign/design-canvas/design-canvas";
 // import { ScreenOrientation } from "@ionic-native/screen-orientation";
 import { AbsoluteDragDirective } from "./../directives/dragable/dragable";
 import { LongPressModule } from 'ionic-long-press'
@@ -40,7 +39,6 @@ import { CustomAssetsComponent } from "./../components/custom-design/custom-asse
     CustomDesignHomePage,
     AdmindashboardPage,
     OrderDetailsPage,
-    DesignCanvasPage,
     AbsoluteDragDirective,
     CustomFashionCategorySelectorComponent,
     CustomDressCategorySelectorComponent,
@@ -66,7 +64,6 @@ import { CustomAssetsComponent } from "./../components/custom-design/custom-asse
     CustomDesignHomePage,
     AdmindashboardPage,
     OrderDetailsPage,
-    DesignCanvasPage,
     CustomFashionCategorySelectorComponent,
     CustomDressCategorySelectorComponent,
     CustomAssetsComponent

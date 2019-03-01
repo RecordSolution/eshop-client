@@ -3,9 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
-import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
-
+import { ProductsProvider } from '../../../../providers/products/products';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -24,8 +23,8 @@ export class CustomDesignHomePage {
   showAssets: boolean = false;
   dragableAssets: Array<any> = [];
   selectedToResize: any;
-
-  constructor(public navCtrl: NavController, public productStore: ProductStore, public navParams: NavParams) {
+  svgs : any;
+  constructor(public navCtrl: NavController, public productStore: ProductStore, public navParams: NavParams,private productsProvider: ProductsProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -35,8 +34,14 @@ export class CustomDesignHomePage {
   ionViewDidLoad() {
     this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    screen.orientation.lock('landscape');
+    
     console.log('ionViewDidLoad CustomDesignPage');
+    this.productsProvider.getSvgs().subscribe(res =>{
+      debugger;
+      this.svgs= res;
+      console.log(res)
+    })
+    screen.orientation.lock('landscape');
   }
   ionViewDidLeave() {
     screen.orientation.lock('portrait');

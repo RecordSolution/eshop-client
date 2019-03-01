@@ -24,4 +24,11 @@ export class ProductsProvider {
 
     }))
   }
+  getSvgs(value?: string) {
+    return this.http.get('/assets/svg-data.json').
+    pipe(map((data: any) => {
+      return data;
+
+    }))
+  }
 }
