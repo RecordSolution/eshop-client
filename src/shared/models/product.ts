@@ -4,7 +4,12 @@ export class Product{
         name:string;
         shortDescription:string;
         colors:Array<string>;
-        Category:string;
+        images :Array<any>;
+        dressCategory:any;
+        fashionCategory:any;
+        availableQuantity:number;
+        soldQuantity:number;
+        totalQuantity:number;
         gendar:string;
         sizes:Array<string>;
         price:string;

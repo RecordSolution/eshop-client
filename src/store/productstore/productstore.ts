@@ -8,6 +8,7 @@ export class ProductStore {
     @observable allProducts: Array<any> = [];
 
     constructor() {
+
         autorun(() => {
             if (JSON.parse(localStorage.getItem('products')) && JSON.parse(localStorage.getItem('products')) != {}) {
                 let obj = JSON.parse(localStorage.getItem('products'));;

@@ -1,3 +1,81 @@
+
+.register{
+    
+    background-color: 	#F5F5F5;
+    .logo{
+        padding-top: 30%;
+        height: 26%;
+        text-align: center;
+    }
+    .logo-img{
+        max-width: 93px;
+    }
+    .card{
+      
+        border-radius: 2vw;
+        ion-card-content{
+
+    padding: 54px 17px 54px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+            .login{
+                .button-ios-primary {
+                    color:white;
+                    background-color:  #8d939e;;
+                    width: 34%;
+                    position: absolute;
+                    margin-top: 8%;
+                    border-radius: 6vw;
+                    margin-left: 26%;
+                  
+                }
+            }
+            .forgotpassword{
+                padding-top: 20px;
+                text-align: center;
+                font-weight: bold;
+                a{
+                    color: darkgray;
+                }
+            }
+        
+            .loginfields{
+                border-bottom: 0.5px solid #e2d4d4;
+            }
+        
+                 
+            ::-webkit-input-placeholder {
+                text-align: center;
+             }
+             
+             :-moz-placeholder { /* Firefox 18- */
+                text-align: center;  
+             }
+             
+             ::-moz-placeholder {  /* Firefox 19+ */
+                text-align: center;  
+             }
+             
+             :-ms-input-placeholder {  
+                text-align: center; 
+             }
+
+        }
+    }
+    .signin{
+        font-size: 18px;
+        padding-top: 20px;
+        text-align: center;
+        a{
+            color: gray;
+        }
+    }
+    }
+
+
+
+
+
 // page-signup {
 
 //     ion-header{

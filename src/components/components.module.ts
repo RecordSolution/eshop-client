@@ -5,19 +5,24 @@ import { CustomFashionCategorySelectorComponent } from './custom-design/custom-f
 import { CustomDressCategorySelectorComponent } from './custom-design/custom-dress-category-selector/custom-dress-category-selector';
 import { ColorPickerComponent } from './color-picker/color-picker';
 import { CustomAssetsComponent } from './custom-design/custom-assets/custom-assets';
+import { PopoverComponent } from './popover/popover';
 @NgModule({
-	declarations: [SearchComponent,
-    ImageViewerComponent,
-    CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent,
-    ColorPickerComponent,
-    CustomAssetsComponent],
-	imports: [],
-	exports: [SearchComponent,
-    ImageViewerComponent,
-    CustomFashionCategorySelectorComponent,
-    CustomDressCategorySelectorComponent,
-    ColorPickerComponent,
-    CustomAssetsComponent]
+    declarations: [SearchComponent,
+        ImageViewerComponent,
+        CustomFashionCategorySelectorComponent,
+        CustomDressCategorySelectorComponent,
+        ColorPickerComponent,
+        CustomAssetsComponent,
+        PopoverComponent],
+
+    imports: [],
+    exports: [SearchComponent,
+        ImageViewerComponent,
+        CustomFashionCategorySelectorComponent,
+        CustomDressCategorySelectorComponent,
+        ColorPickerComponent,
+        CustomAssetsComponent,
+        PopoverComponent
+    ]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

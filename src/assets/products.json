@@ -9,6 +9,9 @@
                 "#233234",
                 "#20235"
             ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
             "images": [
                 {
                     "url": "/assets/imgs/shirt.jpg",
@@ -48,6 +51,9 @@
                 "#233234",
                 "#20235"
             ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
             "images": [
                 {
                     "url": "/assets/imgs/kurta.png",
@@ -87,6 +93,9 @@
                 "#233234",
                 "#20235"
             ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
             "images": [
                 {
                     "url": "/assets/imgs/pent.jpg",
@@ -126,6 +135,9 @@
                 "#233234",
                 "#20235"
             ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
             "images": [
                 {
                     "url": "/assets/imgs/shirt.jpg",

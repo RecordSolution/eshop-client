@@ -10,6 +10,8 @@ export class OrdersProvider {
   constructor(public http: HttpClient , private ordersStore : OrderStore) {
     console.log('Hello OrdesProvider Provider');
     this.getorders()
+
+
   }
  getorders(value?: string) {
     return this.http.get('./../assets/orders.json').pipe(
@@ -17,8 +19,6 @@ export class OrdersProvider {
       console.log('Orders', data.orders);
    this.ordersStore.setOrders(data.orders);
      return data.orders;
-     
-
     }))
   }
 }
