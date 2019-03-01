@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
+import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
 @IonicPage()
@@ -24,6 +25,13 @@ export class CustomDesignHomePage {
   dragableAssets: Array<any> = [];
   selectedToResize: any;
   svgs : any;
+  inBounds = true;
+  edge = {
+    top: true,
+    bottom: true,
+    left: true,
+    right: true
+  };
   constructor(public navCtrl: NavController, public productStore: ProductStore, public navParams: NavParams,private productsProvider: ProductsProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
@@ -37,7 +45,6 @@ export class CustomDesignHomePage {
     
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getSvgs().subscribe(res =>{
-      debugger;
       this.svgs= res;
       console.log(res)
     })
@@ -78,6 +85,10 @@ export class CustomDesignHomePage {
   }
   setBadge(size) {
     this.size = size
+  }
+  checkEdge(event) {
+    this.edge = event;
+    console.log('edge:', event);
   }
   // next() {
   //   this.itemSlider.slideNext();

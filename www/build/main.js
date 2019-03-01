@@ -232,36 +232,40 @@ webpackEmptyAsyncContext.id = 191;
 
 var map = {
 	"../pages/add-product/add-product.module": [
-		443,
-		11
+		442,
+		1
 	],
 	"../pages/admin/admindashboard/admindashboard.module": [
-		444,
-		18
+		443,
+		8
 	],
 	"../pages/admin/order-details/order-details.module": [
-		447,
-		17
+		445,
+		7
 	],
 	"../pages/buyer/categories/categories.module": [
 		448,
-		16
+		6
 	],
 	"../pages/buyer/customDesign/custom-design/custom-design-home.module": [
-		445,
-		15
+		444,
+		5
+	],
+	"../pages/buyer/customDesign/design-canvas/design-canvas.module": [
+		450,
+		0
 	],
 	"../pages/buyer/men/men.module": [
-		449,
-		14
+		446,
+		4
 	],
 	"../pages/buyer/product-details/product-details.module": [
-		450,
-		13
+		447,
+		3
 	],
 	"../pages/membership/signup/signup.module": [
-		451,
-		12
+		449,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -338,7 +342,7 @@ var OrdersProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buyer_categories_categories__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_membership_membership__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_login__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_login__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_admindashboard_admindashboard__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -490,13 +494,13 @@ var MembershipProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(392);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(391);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -504,7 +508,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 392:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -512,7 +516,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_membership_login_login__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_buyer_categories_categories__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_membership_signup_signup__ = __webpack_require__(158);
@@ -529,13 +533,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_shared_shared__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_admin_admindashboard_admindashboard__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_admin_order_details_order_details__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_color_picker__ = __webpack_require__(436);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__directives_dragable_dragable__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ionic_long_press__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_draggable__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_custom_design_custom_fashion_category_selector_custom_fashion_category_selector__ = __webpack_require__(440);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_assets_custom_assets__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_color_picker__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__directives_dragable_dragable__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ionic_long_press__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_draggable__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_custom_design_custom_fashion_category_selector_custom_fashion_category_selector__ = __webpack_require__(439);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_assets_custom_assets__ = __webpack_require__(441);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -598,12 +602,13 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/add-product/add-product.module#AddProductPageModule', name: 'AddProductPage', segment: 'add-product', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin/admindashboard/admindashboard.module#AdmindashboardPageModule', name: 'AdmindashboardPage', segment: 'admindashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/customDesign/custom-design/custom-design-home.module#CustomDesignHomePageModule', name: 'CustomDesignHomePage', segment: 'custom-design-home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin/order-details/order-details.module#OrderDetailsPageModule', name: 'OrderDetailsPage', segment: 'order-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/men/men.module#MenPageModule', name: 'MenPage', segment: 'men', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer/customDesign/custom-design/custom-design-home.module#CustomDesignHomePageModule', name: 'CustomDesignHomePage', segment: 'custom-design-home', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/buyer/customDesign/design-canvas/design-canvas.module#DesignCanvasPageModule', name: 'DesignCanvasPage', segment: 'design-canvas', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__angular_common_http__["b" /* HttpClientModule */],
@@ -646,7 +651,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 414:
+/***/ 413:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,7 +670,7 @@ var CustomDesignSelectionModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 434:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -801,7 +806,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 435:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -818,7 +823,7 @@ var LoginModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 437:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -890,7 +895,7 @@ var AbsoluteDragDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 439:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -954,7 +959,7 @@ var CustomFashionCategorySelectorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 441:
+/***/ 440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1016,7 +1021,7 @@ var CustomDressCategorySelectorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 442:
+/***/ 441:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1207,7 +1212,7 @@ var OrderStore = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductStore; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(415);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mobx__ = __webpack_require__(133);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1341,10 +1346,9 @@ var ProductsProvider = /** @class */ (function () {
             return data;
         }));
     };
-    var _a, _b;
     ProductsProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */]) === "function" ? _b : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */]])
     ], ProductsProvider);
     return ProductsProvider;
 }());
@@ -1590,7 +1594,7 @@ var AdmindashboardPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomDesignHomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__ = __webpack_require__(414);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__ = __webpack_require__(413);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_products_products__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1620,6 +1624,13 @@ var CustomDesignHomePage = /** @class */ (function () {
         this.color = "black";
         this.showAssets = false;
         this.dragableAssets = [];
+        this.inBounds = true;
+        this.edge = {
+            top: true,
+            bottom: true,
+            left: true,
+            right: true
+        };
         this.customDesignSelectionModel = new __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__["a" /* CustomDesignSelectionModel */]();
     }
     CustomDesignHomePage.prototype.onEventLog = function (colorPicker, event) {
@@ -1632,7 +1643,6 @@ var CustomDesignHomePage = /** @class */ (function () {
         // ScreenOrientation.lockOrientation('landscape')
         console.log('ionViewDidLoad CustomDesignPage');
         this.productsProvider.getSvgs().subscribe(function (res) {
-            debugger;
             _this.svgs = res;
             console.log(res);
         });
@@ -1673,16 +1683,19 @@ var CustomDesignHomePage = /** @class */ (function () {
     CustomDesignHomePage.prototype.setBadge = function (size) {
         this.size = size;
     };
-    var _a, _b, _c, _d;
+    CustomDesignHomePage.prototype.checkEdge = function (event) {
+        this.edge = event;
+        console.log('edge:', event);
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('itemSlider'),
         __metadata("design:type", Object)
     ], CustomDesignHomePage.prototype, "itemSlider", void 0);
     CustomDesignHomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n        </custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n      \n\n        <!-- {{selectedProduct | json}} -->\n\n        <ion-icon name="color-palette"  [cpHeight]=\'auto\'  [style.color]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" ></ion-icon>\n\n        <!-- <input  [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->\n\n      \n\n        <div *ngIf="svgs && svgs.shirts">\n\n          \n\n          <svg  version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"\n\n          style="fill:color;" xml:space="preserve">\n\n          <path  class="test"  [attr.d]="svgs.shirts"/>\n\n        </svg>\n\n        </div>\n\n       \n\n        <!-- <input type="color" value="#0000ff">\n\n<img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->\n\n\n\n        <img *ngFor="let asset of dragableAssets"\n\n          [ngStyle]="selectedToResize==asset ? {height:size+\'px\',width:size+\'px\'}:\'\'" class="icons" ion-long-press\n\n          [interval]="400" (onPressing)="active(asset)" ngDraggable src="{{asset}}">\n\n        <ion-item>\n\n          <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">\n\n            {{size}}</ion-range>\n\n        </ion-item>\n\n        <div class="flex" *ngIf="selectedProduct">\n\n          colors\n\n          <div class="color-selection" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n        </div>\n\n        <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" />\n\n        <div class="flex " *ngIf="selectedProduct">\n\n          <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>\n\n        </div>\n\n        <ion-item>\n\n          <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input>\n\n        </ion-item>\n\n        <button ion-button>save</button>\n\n        <button ion-button (click)="selectAssets()">asssets</button>\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n\n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n        </custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <div class="popup" *ngIf="showAssets">\n\n    <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()"\n\n      (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>\n\n\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
+            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n        </custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n      \n\n        <!-- {{selectedProduct | json}} -->\n\n        <ion-icon name="color-palette"  [cpHeight]=\'auto\'  [style.color]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" ></ion-icon>\n\n        <!-- <input  [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->\n\n      <div class="drag-boundary" [ngClass]="{ \'top-b\': !edge?.top, \'bottom-b\': !edge?.bottom, \'left-b\': !edge?.left, \'right-b\': !edge?.right }" #myBounds>\n\n          <div *ngIf="svgs && svgs.shirts">\n\n          \n\n              <svg  version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"\n\n              style="fill:color;" xml:space="preserve">\n\n              <path  class="test"  [attr.d]="svgs.shirts"/>\n\n            </svg>\n\n    \n\n            </div>\n\n\n\n            <div *ngIf="dragableAssets && dragableAssets.length > 0" style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">\n\n                <img *ngFor="let asset of dragableAssets"\n\n                [ngStyle]="selectedToResize==asset ? {height:size+\'px\',width:size+\'px\'}:\'\'" class="icons" ion-long-press\n\n                [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset}}">\n\n            </div>\n\n        \n\n      </div>\n\n        \n\n       \n\n        <!-- <input type="color" value="#0000ff">\n\n<img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->\n\n\n\n        \n\n        <ion-item>\n\n          <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">\n\n            {{size}}</ion-range>\n\n        </ion-item>\n\n        <div class="flex" *ngIf="selectedProduct">\n\n          colors\n\n          <div class="color-selection" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n        </div>\n\n        <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" />\n\n        <div class="flex " *ngIf="selectedProduct">\n\n          <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>\n\n        </div>\n\n        <ion-item>\n\n          <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input>\n\n        </ion-item>\n\n        <button ion-button>save</button>\n\n        <button ion-button (click)="selectAssets()">asssets</button>\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n\n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n        </custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <div class="popup" *ngIf="showAssets">\n\n    <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()"\n\n      (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>\n\n\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */]) === "function" ? _b : Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" ? _c : Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_products_products__["a" /* ProductsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_products_products__["a" /* ProductsProvider */]) === "function" ? _d : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_products_products__["a" /* ProductsProvider */]])
     ], CustomDesignHomePage);
     return CustomDesignHomePage;
 }());
@@ -1750,5 +1763,5 @@ var CategoriesPage = /** @class */ (function () {
 
 /***/ })
 
-},[278]);
+},[277]);
 //# sourceMappingURL=main.js.map

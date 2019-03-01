@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 443:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddProductPageModule", function() { return AddProductPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DesignCanvasPageModule", function() { return DesignCanvasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_product__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__design_canvas__ = __webpack_require__(452);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddProductPageModule = /** @class */ (function () {
-    function AddProductPageModule() {
+var DesignCanvasPageModule = /** @class */ (function () {
+    function DesignCanvasPageModule() {
     }
-    AddProductPageModule = __decorate([
+    DesignCanvasPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__add_product__["a" /* AddProductPage */],
+                __WEBPACK_IMPORTED_MODULE_2__design_canvas__["a" /* DesignCanvasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_product__["a" /* AddProductPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__design_canvas__["a" /* DesignCanvasPage */]),
             ],
         })
-    ], AddProductPageModule);
-    return AddProductPageModule;
+    ], DesignCanvasPageModule);
+    return DesignCanvasPageModule;
 }());
 
-//# sourceMappingURL=add-product.module.js.map
+//# sourceMappingURL=design-canvas.module.js.map
 
 /***/ }),
 
@@ -42,7 +42,7 @@ var AddProductPageModule = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddProductPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DesignCanvasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the AddProductPage page.
+ * Generated class for the DesignCanvasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AddProductPage = /** @class */ (function () {
-    function AddProductPage(navCtrl, navParams) {
+var DesignCanvasPage = /** @class */ (function () {
+    function DesignCanvasPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    AddProductPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddProductPage');
+    DesignCanvasPage.prototype.ionViewDidLoad = function () {
     };
-    AddProductPage = __decorate([
+    DesignCanvasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-product',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\add-product\add-product.html"*/'<!--\n  Generated template for the AddProductPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>add-product</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\add-product\add-product.html"*/,
+            selector: 'page-design-canvas',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\design-canvas\design-canvas.html"*/'<!--\n\n  Generated template for the DesignCanvasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>design-canvas</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\design-canvas\design-canvas.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], AddProductPage);
-    return AddProductPage;
+    ], DesignCanvasPage);
+    return DesignCanvasPage;
 }());
 
-//# sourceMappingURL=add-product.js.map
+//# sourceMappingURL=design-canvas.js.map
 
 /***/ })
 

@@ -29,22 +29,30 @@
         <ion-icon name="color-palette"  [cpHeight]='auto'  [style.color]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" ></ion-icon>
         <!-- <input  [value]="color" [style.background]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" /> -->
         <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->
-      
-        <div *ngIf="svgs && svgs.shirts">
+      <div class="drag-boundary" [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds>
+          <div *ngIf="svgs && svgs.shirts">
           
-          <svg  version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"
-          style="fill:color;" xml:space="preserve">
-          <path  class="test"  [attr.d]="svgs.shirts"/>
-        </svg>
-        </div>
+              <svg  version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"
+              style="fill:color;" xml:space="preserve">
+              <path  class="test"  [attr.d]="svgs.shirts"/>
+            </svg>
+    
+            </div>
+
+            <div *ngIf="dragableAssets && dragableAssets.length > 0" style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+                <img *ngFor="let asset of dragableAssets"
+                [ngStyle]="selectedToResize==asset ? {height:size+'px',width:size+'px'}:''" class="icons" ion-long-press
+                [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset}}">
+            </div>
+        
+      </div>
+        
        
         <!-- <input type="color" value="#0000ff">
 <img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->
 
-        <img *ngFor="let asset of dragableAssets"
-          [ngStyle]="selectedToResize==asset ? {height:size+'px',width:size+'px'}:''" class="icons" ion-long-press
-          [interval]="400" (onPressing)="active(asset)" ngDraggable src="{{asset}}">
+        
         <ion-item>
           <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">
             {{size}}</ion-range>
