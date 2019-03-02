@@ -36,7 +36,10 @@ export class CustomDesignHomePage {
     left: true,
     right: true
   };
-  constructor(public navCtrl: NavController, public productStore: ProductStore, public navParams: NavParams,private productsProvider: ProductsProvider) {
+  constructor(public navCtrl: NavController, 
+    public productStore: ProductStore, 
+    public navParams: NavParams,
+    private productsProvider: ProductsProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -46,30 +49,30 @@ export class CustomDesignHomePage {
   ionViewDidLoad() {
     this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    
+    this.selectedProduct = this.navParams.get('data'); 
     console.log('ionViewDidLoad CustomDesignPage');
-    this.productsProvider.getSvgs().subscribe(res =>{
-      this.svgs= res;
-      console.log(res)
-    })
+    // this.productsProvider.getSvgs().subscribe(res =>{
+    //   this.svgs= res;
+    //   console.log(res)
+    // })
     screen.orientation.lock('landscape');
   }
   ionViewDidLeave() {
     screen.orientation.lock('portrait');
     console.log('ionViewDidLeave CustomDesignPage');
   }
-  onFashionCategorySelection(cat) {
-    this.fashionCategory = cat;
-    this.getSelectedDress();
-  }
-  onDressCategorySelection(cat) {
-    this.dressCategory = cat;
-    this.getSelectedDress();
-  }
-  getSelectedDress() {
-    this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
-    console.log(this.selectedProduct);
-  }
+  // onFashionCategorySelection(cat) {
+  //   this.fashionCategory = cat;
+  //   this.getSelectedDress();
+  // }
+  // onDressCategorySelection(cat) {
+  //   this.dressCategory = cat;
+  //   this.getSelectedDress();
+  // }
+  // getSelectedDress() {
+  //   this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+  //   console.log(this.selectedProduct);
+  // }
   selectColor(selectedColor){
     this.color=selectedColor;
   }

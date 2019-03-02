@@ -2,31 +2,45 @@
     "fashionCategories": [
         {
             "id": "kasd892das",
-            "key": "casual"
+            "key": "casual",
+            "menIcon":"/assets/icon/casual-men-Icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "j309492das",
-            "key": "party"
+            "key": "function",
+            "menIcon":"/assets/icon/party-icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-nwioru30",
-            "key": "marriage"
+            "key": "party",
+            "menIcon":"/assets/icon/party-icon.png",
+            "womenIcon":"/assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-nw032u9huc",
-            "key": "fashion"
+            "key": "marriage",
+            "menIcon":"/assets/icon/marriage-icon.png",
+            "womenIcon":"/assets/icon/casual-women-icon.png"
         },
         {
-            "id": "kasc-nw892jdcjd98jd",
-            "key": "night"
+            "id": "k39uvn3rj2jdcjd98jd",
+            "key": "night",
+            "menIcon":"/assets/icon/night-dress-icon.png",
+            "womenIcon":"/assets/icon/casual-women-icon.png"
         },
         {
-            "id": "kascvjfujd98jd",
-            "key": "office"
+            "id": "kniw8y39rujdcjd98jd",
+            "key": "office",
+            "menIcon":"/assets/icon/office-icon.png",
+            "womenIcon":"/assets/icon/casual-women-icon.png"
         },
         {
-            "id": "kax46487rcjd98jd",
-            "key": "student"
+            "id": "ka6786-gjd98jd",
+            "key": "student",
+            "menIcon":"/assets/icon/night-dress-icon.png",
+            "womenIcon":"/assets/icon/casual-women-icon.png"
         }
     ]
 }

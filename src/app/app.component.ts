@@ -4,10 +4,11 @@ import { Nav, Platform } from 'ionic-angular';
 // import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from './../pages/membership/login/login'
 import { CategoriesPage } from "./../pages/buyer/categories/categories";
-import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/custom-design-home';
+// import { CustomDesignHomePage } from '../pages/buyer/customDesign/custom-design/custom-design-home';
 import { SharedProvider } from "./../providers/shared/shared";
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { ProfileStore } from './../store/profilestore/profileStore'
+import { CutomDesignCategorySelectorPage } from '../pages/buyer/cutom-design-category-selector/cutom-design-category-selector';
 // import { DesignCanvasPage } from '../pages/buyer/customDesign/design-canvas/design-canvas';
 @Component({
   templateUrl: 'app.html'
@@ -81,7 +82,7 @@ export class MyApp implements OnChanges{
       this.nav.push(CategoriesPage);
     }
     else if(pageName=='customDesign'){
-      this.nav.push(CustomDesignHomePage);
+      this.nav.push(CutomDesignCategorySelectorPage);
     }
     else if(pageName=='adminOrders'){
       this.nav.push(AdmindashboardPage);
