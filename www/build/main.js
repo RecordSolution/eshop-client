@@ -1,14 +1,15 @@
 webpackJsonp([10],{
 
-/***/ 132:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(66);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_profilestore_profileStore__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,46 +23,287 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /*
-  Generated class for the ProfuctsProvider provider.
+  Generated class for the SharedProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var ProductsProvider = /** @class */ (function () {
-    function ProductsProvider(http, productStore) {
+var SharedProvider = /** @class */ (function () {
+    function SharedProvider(http, profileStore, adminOrdersStore) {
         this.http = http;
-        this.productStore = productStore;
-        console.log('Hello ProfuctsProvider Provider');
-        this.getProducts();
+        this.profileStore = profileStore;
+        this.adminOrdersStore = adminOrdersStore;
+        console.log('Hello SharedProvider Provider');
     }
-    ProductsProvider.prototype.getProducts = function (value) {
-        var _this = this;
-        return this.http.get('./../assets/json/products.json').
-            pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["map"])(function (data) {
-            console.log('profucts', data.products);
-            _this.productStore.saveProducts(data.products);
-            return data.products;
+    SharedProvider.prototype.clearStores = function () {
+        // this.profileStore.clear();
+        // this.adminOrdersStore.clear();
+    };
+    SharedProvider.prototype.getFashionCategories = function () {
+        return this.http.get('./../assets/custom-fashion-categories.json').
+            pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
+            console.log('fashion', data);
+            return data.fashionCategories;
         }));
     };
-    ProductsProvider = __decorate([
+    SharedProvider.prototype.getdressCategories = function () {
+        return this.http.get('./../assets/dress-category.json').
+            pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
+            console.log('profucts', data);
+            return data.dressCategories;
+        }));
+    };
+    SharedProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */]])
-    ], ProductsProvider);
-    return ProductsProvider;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__store_profilestore_profileStore__["a" /* ProfileStore */],
+            __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__["a" /* OrderStore */]])
+    ], SharedProvider);
+    return SharedProvider;
 }());
 
-//# sourceMappingURL=products.js.map
+//# sourceMappingURL=shared.js.map
 
 /***/ }),
 
-/***/ 155:
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmindashboardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_orders_orders__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__order_details_order_details__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_popover_popover__ = __webpack_require__(251);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+// import {} from '../../../store/orders/orderstore'; 
+/**
+ * Generated class for the AdmindashboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AdmindashboardPage = /** @class */ (function () {
+    function AdmindashboardPage(navCtrl, navParams, orderService, ordersStore, popoverCtrl) {
+        // this.productService.getVehicles().subscribe(res => {
+        //   this.products = res
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.orderService = orderService;
+        this.ordersStore = ordersStore;
+        this.popoverCtrl = popoverCtrl;
+    }
+    AdmindashboardPage.prototype.ionViewDidLoad = function () {
+        //  if(this.ordersStore.myOrders.length==0){
+        var _this = this;
+        this.orderService.getorders().subscribe(function (res) {
+            _this.orders = res;
+            console.log(_this.orders);
+        });
+        // }
+    };
+    AdmindashboardPage.prototype.filterOrders = function (status) {
+        // this.ordersStore.filterOrders(status);
+    };
+    AdmindashboardPage.prototype.productDetails = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__order_details_order_details__["a" /* OrderDetailsPage */]);
+    };
+    AdmindashboardPage.prototype.action1 = function () {
+        var popover = this.popoverCtrl.create(__WEBPACK_IMPORTED_MODULE_5__components_popover_popover__["a" /* PopoverComponent */]);
+        popover.present();
+    };
+    AdmindashboardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-admindashboard',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\admin\admindashboard\admindashboard.html"*/'<!--\n\n  Generated template for the AdmindashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar style="position:absolute">\n\n    <button ion-button menuToggle start>\n\n      <ion-icon name="menu"></ion-icon>\n\n  </button>\n\n \n\n    <ion-title>admindashboard</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="action1()">\n\n        <ion-icon name="more"></ion-icon>\n\n    </button>\n\n  </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<!-- {{ordersStore.getOrders | json}} -->\n\n    <!-- <button (click)="filterOrders(\'pending\')"></button> -->\n\n  <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">\n\n          \n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/imgs/logo.png">\n\n      </ion-avatar>\n\n      <h2>{{order.buyer.name}}</h2>\n\n      <p>{{order.orderDate}}</p>\n\n    </ion-item>\n\n  \n\n    <!-- <img src="img/advance-card-bttf.png"> -->\n\n  \n\n    <ion-card-content>\n\n     <p>{{order.status}}</p>\n\n     <h6>{{order.buyer.contactNo}}</h6>\n\n    </ion-card-content>\n\n\n\n    <ion-item>\n\n     \n\n     Total Price\n\n      <ion-badge item-end>{{order.totalPrice}}</ion-badge>\n\n    </ion-item>\n\n\n\n \n\n  \n\n    <ion-row>\n\n      <ion-col>\n\n        <button ion-button icon-start clear small>\n\n          <ion-icon name="thumbs-up"></ion-icon>\n\n          <div>12 Likes</div>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col>\n\n        <button ion-button icon-start clear small>\n\n          <ion-icon name="text"></ion-icon>\n\n          <div>4 Comments</div>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col center text-center>\n\n        <ion-note>\n\n          11h ago\n\n        </ion-note>\n\n      </ion-col>\n\n    </ion-row>\n\n  \n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\admin\admindashboard\admindashboard.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_orders_orders__["a" /* OrdersProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__["a" /* OrderStore */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */]])
+    ], AdmindashboardPage);
+    return AdmindashboardPage;
+}());
+
+//# sourceMappingURL=admindashboard.js.map
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomDesignHomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_products_products__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_html2canvas__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// import { ScreenOrientation } from 'ionic-native';
+// import {ScreenOrientation} from "@ionic-native/screen-orientation";
+
+
+
+
+var CustomDesignHomePage = /** @class */ (function () {
+    function CustomDesignHomePage(navCtrl, productStore, navParams, productsProvider) {
+        this.navCtrl = navCtrl;
+        this.productStore = productStore;
+        this.navParams = navParams;
+        this.productsProvider = productsProvider;
+        this.fashionCategory = '';
+        this.dressCategory = '';
+        this.color = "black";
+        this.showAssets = false;
+        this.dragableAssets = [];
+        this.inBounds = true;
+        this.edge = {
+            top: true,
+            bottom: true,
+            left: true,
+            right: true
+        };
+        this.customDesignSelectionModel = new __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__["a" /* CustomDesignSelectionModel */]();
+    }
+    CustomDesignHomePage.prototype.onEventLog = function (colorPicker, event) {
+        console.log(colorPicker, event);
+        this.customDesignSelectionModel.selectedColor = event;
+    };
+    CustomDesignHomePage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png'];
+        // ScreenOrientation.lockOrientation('landscape')
+        console.log('ionViewDidLoad CustomDesignPage');
+        this.productsProvider.getSvgs().subscribe(function (res) {
+            _this.svgs = res;
+            console.log(res);
+        });
+        screen.orientation.lock('landscape');
+    };
+    CustomDesignHomePage.prototype.ionViewDidLeave = function () {
+        screen.orientation.lock('portrait');
+        console.log('ionViewDidLeave CustomDesignPage');
+    };
+    CustomDesignHomePage.prototype.onFashionCategorySelection = function (cat) {
+        this.fashionCategory = cat;
+        this.getSelectedDress();
+    };
+    CustomDesignHomePage.prototype.onDressCategorySelection = function (cat) {
+        this.dressCategory = cat;
+        this.getSelectedDress();
+    };
+    CustomDesignHomePage.prototype.getSelectedDress = function () {
+        this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+        console.log(this.selectedProduct);
+    };
+    CustomDesignHomePage.prototype.selectColor = function (selectedColor) {
+        this.color = selectedColor;
+    };
+    CustomDesignHomePage.prototype.onCustomAssetSelection = function (item) {
+        if (item) {
+            this.showAssets = false;
+            this.dragableAssets.push(item);
+        }
+    };
+    CustomDesignHomePage.prototype.active = function (item) {
+        this.selectedToResize = item;
+    };
+    CustomDesignHomePage.prototype.selectAssets = function () {
+        this.showAssets = true;
+    };
+    CustomDesignHomePage.prototype.closePopup = function () {
+        this.showAssets = false;
+    };
+    CustomDesignHomePage.prototype.setBadge = function (size) {
+        this.size = size;
+    };
+    CustomDesignHomePage.prototype.checkEdge = function (event) {
+        this.edge = event;
+        console.log('edge:', event);
+    };
+    CustomDesignHomePage.prototype.downloadImage = function () {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_5_html2canvas___default()(this.screen.nativeElement, {
+            useCORS: true,
+            width: 300,
+            height: 300
+        }).then(function (canvas) {
+            debugger;
+            _this.canvas.nativeElement.src = canvas.toDataURL();
+            // document.getElementById('test').appendChild(canvas);
+            // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+            // this.downloadLink.nativeElement.download = 'marble-diagram.png';
+            // this.downloadLink.nativeElement.click();
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('itemSlider'),
+        __metadata("design:type", Object)
+    ], CustomDesignHomePage.prototype, "itemSlider", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('screen'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], CustomDesignHomePage.prototype, "screen", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('canvas'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], CustomDesignHomePage.prototype, "canvas", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('downloadLink'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], CustomDesignHomePage.prototype, "downloadLink", void 0);
+    CustomDesignHomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n        </custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n      \n\n        <!-- {{selectedProduct | json}} -->\n\n  <!-- {{selectedProduct | json}} -->\n\n        <!-- <ion-icon name="color-palette"  [cpHeight]=\'auto\'  [style.color]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" ></ion-icon> -->\n\n        <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>\n\n        <!-- <input  [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->\n\n      <div  class="drag-boundary" #screen   [ngClass]="{ \'top-b\': !edge?.top, \'bottom-b\': !edge?.bottom, \'left-b\': !edge?.left, \'right-b\': !edge?.right }" #myBounds>\n\n         <!-- {{svgs.json}} -->\n\n             \n\n        <div  *ngIf="selectedProduct" >\n\n          \n\n              <svg  width="300" height="300" version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"\n\n              style="fill:color;" xml:space="preserve">\n\n              <path  class="test"  [attr.d]="selectedProduct.menFront"/>\n\n            </svg>\n\n    \n\n            </div>\n\n\n\n            <div *ngIf="dragableAssets && dragableAssets.length > 0" style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">\n\n                <img *ngFor="let asset of dragableAssets"\n\n                [ngStyle]="selectedToResize==asset ? {height:size+\'px\',width:size+\'px\'}:\'\'" class="icons" ion-long-press\n\n                [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset}}">\n\n            </div>\n\n        \n\n      </div>\n\n        \n\n   \n\n        <!-- <input type="color" value="#0000ff">\n\n<img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->\n\n\n\n        \n\n        <ion-item>\n\n          <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">\n\n            {{size}}</ion-range>\n\n        </ion-item>\n\n        <div class="flex" *ngIf="selectedProduct">\n\n          <!-- colors -->\n\n          <div class="color-selection" (click)="selectColor(color)" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n        </div>\n\n        <!-- <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" /> -->\n\n        <div class="flex " *ngIf="selectedProduct">\n\n          <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>\n\n        </div>\n\n        <ion-item>\n\n          <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input>\n\n        </ion-item>\n\n        <button ion-button (click)="downloadImage()">save</button>\n\n        <!-- <button ion-button (click)="selectAssets()">asssets</button> -->\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n\n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n        </custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <div class="popup" *ngIf="showAssets">\n\n    <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()"\n\n      (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>\n\n\n\n  </div>\n\n  <img #canvas style=" width:500px;\n\n  height:500px;">\n\n  <a #downloadLink></a>\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_products_products__["a" /* ProductsProvider */]])
+    ], CustomDesignHomePage);
+    return CustomDesignHomePage;
+}());
+
+//# sourceMappingURL=custom-design-home.js.map
+
+/***/ }),
+
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -100,15 +342,15 @@ var OrderDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 156:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_products_products__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_details_product_details__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_products_products__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_details_product_details__ = __webpack_require__(173);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,16 +401,16 @@ var MenPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 157:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_models_ordered__ = __webpack_require__(418);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_profilestore_profileStore__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_models_ordered__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_profilestore_profileStore__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,58 +463,15 @@ var ProductDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 158:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DesignCanvasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the DesignCanvasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var DesignCanvasPage = /** @class */ (function () {
-    function DesignCanvasPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    DesignCanvasPage.prototype.ionViewDidLoad = function () {
-    };
-    DesignCanvasPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-design-canvas',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\buyer\customDesign\design-canvas\design-canvas.html"*/'<!--\n\n  Generated template for the DesignCanvasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>design-canvas</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\buyer\customDesign\design-canvas\design-canvas.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], DesignCanvasPage);
-    return DesignCanvasPage;
-}());
-
-//# sourceMappingURL=design-canvas.js.map
-
-/***/ }),
-
-/***/ 159:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buyer_categories_categories__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -282,6 +481,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -300,11 +500,14 @@ var SignupPage = /** @class */ (function () {
         console.log('ionViewDidLoad SignupPage');
     };
     SignupPage.prototype.goBuyerHomePage = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__buyer_customDesign_custom_design_custom_design_home__["a" /* CustomDesignHomePage */]);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__buyer_customDesign_custom_design_custom_design_home__["a" /* CustomDesignHomePage */]);
+    };
+    SignupPage.prototype.Signup = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__buyer_categories_categories__["a" /* CategoriesPage */]);
     };
     SignupPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\membership\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar align-title="center">\n\n    <ion-title >Sign Up</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="register">\n\n\n\n  <div class="logo">\n\n    <img class="logo-img" src="assets/imgs/logo.png">\n\n  </div>\n\n  \n\n  <ion-card class="card">\n\n  \n\n    <ion-card-content>\n\n    <ion-list>\n\n  \n\n      <ion-input  class="loginfields" placeholder=" User Name "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder=" Email "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input class="loginfields" placeholder=" Password "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder="Re-type Password " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder="Contact info " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder=" Address" type="password" value=""></ion-input>\n\n   \n\n    <div class="login" >\n\n      <button ion-button color="primary" (click)="Signup()" block>Signup</button>\n\n    </div>\n\n    </ion-list>\n\n    </ion-card-content>\n\n  \n\n  </ion-card>\n\n  \n\n  <div class="signin">\n\n  \n\n    <a (click)="signup()">Alrady a Member?</a>\n\n  </div>\n\n\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input type="Email" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Re-type Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Contact Info</ion-label>\n\n      <ion-input type="number" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Address</ion-label>\n\n      <ion-textarea type="text" value=""></ion-textarea>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>\n\n  </div> -->\n\n\n\n</ion-content>\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n\n\n    <ion-input class="input" type="text" placeholder="Username"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Email"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Password"></ion-input> \n\n    <ion-input class="input" type="text" placeholder="Re-type-Password"></ion-input>\n\n    <ion-input class="input" type="text" placeholder="Contact"></ion-input>\n\n    <ion-input class="inputaddress"  id="address"type="text" placeholder="Address"> </ion-input>\n\n   <button>Sign Up</button>\n\n   <ion-label>Already Registered?</ion-label>\n\n\n\n</ion-content> -->\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\membership\signup\signup.html"*/,
+            selector: 'page-signup',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar align-title="center">\n\n    <ion-title >Sign Up</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="register">\n\n\n\n  <div class="logo">\n\n    <img class="logo-img" src="assets/imgs/logo.png">\n\n  </div>\n\n  \n\n  <ion-card class="card">\n\n  \n\n    <ion-card-content>\n\n    <ion-list>\n\n  \n\n      <ion-input  class="loginfields" placeholder=" User Name "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder=" Email "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input class="loginfields" placeholder=" Password "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder="Re-type Password " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder="Contact info " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder=" Address" type="password" value=""></ion-input>\n\n   \n\n    <div class="login" >\n\n      <button ion-button color="primary" (click)="Signup()" block>Signup</button>\n\n    </div>\n\n    </ion-list>\n\n    </ion-card-content>\n\n  \n\n  </ion-card>\n\n  \n\n  <div class="signin">\n\n  \n\n    <a (click)="signup()">Alrady a Member?</a>\n\n  </div>\n\n\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input type="Email" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Re-type Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Contact Info</ion-label>\n\n      <ion-input type="number" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Address</ion-label>\n\n      <ion-textarea type="text" value=""></ion-textarea>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>\n\n  </div> -->\n\n\n\n</ion-content>\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n\n\n    <ion-input class="input" type="text" placeholder="Username"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Email"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Password"></ion-input> \n\n    <ion-input class="input" type="text" placeholder="Re-type-Password"></ion-input>\n\n    <ion-input class="input" type="text" placeholder="Contact"></ion-input>\n\n    <ion-input class="inputaddress"  id="address"type="text" placeholder="Address"> </ion-input>\n\n   <button>Sign Up</button>\n\n   <ion-label>Already Registered?</ion-label>\n\n\n\n</ion-content> -->\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], SignupPage);
@@ -315,7 +518,7 @@ var SignupPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 191:
+/***/ 207:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -328,52 +531,52 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 191;
+webpackEmptyAsyncContext.id = 207;
 
 /***/ }),
 
-/***/ 233:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin/add-product/add-product.module": [
-		444,
+		502,
 		1
 	],
 	"../pages/admin/admindashboard/admindashboard.module": [
-		453,
+		503,
 		9
 	],
 	"../pages/admin/order-details/order-details.module": [
-		445,
+		504,
 		8
 	],
 	"../pages/buyer/categories/categories.module": [
-		446,
+		505,
 		7
 	],
 	"../pages/buyer/customDesign/custom-design/custom-design-home.module": [
-		447,
+		506,
 		6
 	],
 	"../pages/buyer/customDesign/design-canvas/design-canvas.module": [
-		448,
+		507,
+		0
+	],
+	"../pages/buyer/cutom-design-category-selector/cutom-design-category-selector.module": [
+		508,
 		5
 	],
 	"../pages/buyer/men/men.module": [
-		449,
+		509,
 		4
 	],
 	"../pages/buyer/product-details/product-details.module": [
-		450,
+		510,
 		3
 	],
-	"../pages/login/login.module": [
-		451,
-		0
-	],
 	"../pages/membership/signup/signup.module": [
-		452,
+		511,
 		2
 	]
 };
@@ -388,20 +591,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 233;
+webpackAsyncContext.id = 249;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 234:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_orders_orderstore__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_orders_orderstore__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -441,13 +644,13 @@ var OrdersProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 236:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopoverComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_orders_orderstore__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_orders_orderstore__ = __webpack_require__(73);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -475,7 +678,7 @@ var PopoverComponent = /** @class */ (function () {
     };
     PopoverComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'popover',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\components\popover\popover.html"*/'<!-- Generated template for the PopoverComponent component -->\n\n<div >\n\n<ul *ngFor="let list of text">\n\n  <li (click)="filterList(list)">{{list}}</li>\n\n</ul>\n\n</div>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\components\popover\popover.html"*/
+            selector: 'popover',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\popover\popover.html"*/'<!-- Generated template for the PopoverComponent component -->\n\n<div >\n\n<ul *ngFor="let list of text">\n\n  <li (click)="filterList(list)">{{list}}</li>\n\n</ul>\n\n</div>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\popover\popover.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__store_orders_orderstore__["a" /* OrderStore */]])
     ], PopoverComponent);
@@ -486,18 +689,18 @@ var PopoverComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buyer_categories_categories__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_membership_membership__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_login__ = __webpack_require__(437);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_admindashboard_admindashboard__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buyer_categories_categories__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_membership_membership__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_login__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__admin_admindashboard_admindashboard__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -577,7 +780,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\membership\login\login.html"*/'<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title>LogIn</ion-title>\n\n  </ion-navbar>\n\n</ion-header> -->\n\n\n\n\n\n<ion-content class="main">\n\n<div class="logo">\n\n  <img class="logo-img" src="assets/imgs/logo.png">\n\n</div>\n\n\n\n<ion-card class="card">\n\n\n\n  <ion-card-content>\n\n  <ion-list>\n\n\n\n\n\n      <ion-input [(ngModel)]="userCredentials.email" class="loginfields" placeholder="Enter Email Here"  type="text" value=""></ion-input>\n\n    \n\n     \n\n      <ion-input [(ngModel)]="userCredentials.password" class="loginfields" placeholder="Enter Password Here" type="password" value=""></ion-input>\n\n  <div class="forgotpassword">\n\n\n\n    <a (click)="forgotpassword()">Forgot Password ?</a>\n\n  </div>\n\n  <div class="login" >\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  </ion-list>\n\n  </ion-card-content>\n\n\n\n</ion-card>\n\n\n\n<div class="signup">\n\n\n\n  <a (click)="signup()">Signup</a>\n\n</div>\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.email" type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.password" type="password" value=""></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n<a (click)="forgotpassword()">Forgot Password ?</a>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  <div padding>\n\n    <button ion-button color="primary"  (click)="signup()" block>Sign Up</button>\n\n  </div> -->\n\n<!-- <p (click)="signup()" >signup</p> -->\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\membership\login\login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/'<!-- <ion-header>\n\n  <ion-navbar>\n\n    <ion-title>LogIn</ion-title>\n\n  </ion-navbar>\n\n</ion-header> -->\n\n\n\n\n\n<ion-content class="main">\n\n<div class="logo">\n\n  <img class="logo-img" src="assets/imgs/logo.png">\n\n</div>\n\n\n\n<ion-card class="card">\n\n\n\n  <ion-card-content>\n\n  <ion-list>\n\n\n\n\n\n      <ion-input [(ngModel)]="userCredentials.email" class="loginfields" placeholder="Enter Email Here"  type="text" value=""></ion-input>\n\n    \n\n     \n\n      <ion-input [(ngModel)]="userCredentials.password" class="loginfields" placeholder="Enter Password Here" type="password" value=""></ion-input>\n\n  <div class="forgotpassword">\n\n\n\n    <a (click)="forgotpassword()">Forgot Password ?</a>\n\n  </div>\n\n  <div class="login" >\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  </ion-list>\n\n  </ion-card-content>\n\n\n\n</ion-card>\n\n\n\n<div class="signup">\n\n\n\n  <a (click)="signup()">Signup</a>\n\n</div>\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.email" type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.password" type="password" value=""></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n<a (click)="forgotpassword()">Forgot Password ?</a>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  <div padding>\n\n    <button ion-button color="primary"  (click)="signup()" block>Sign Up</button>\n\n  </div> -->\n\n<!-- <p (click)="signup()" >signup</p> -->\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -590,15 +793,15 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MembershipProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_profilestore_profileStore__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_profilestore_profileStore__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -648,13 +851,59 @@ var MembershipProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 279:
+/***/ 306:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CutomDesignCategorySelectorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the CutomDesignCategorySelectorPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CutomDesignCategorySelectorPage = /** @class */ (function () {
+    function CutomDesignCategorySelectorPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    CutomDesignCategorySelectorPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CutomDesignCategorySelectorPage');
+    };
+    var _a, _b;
+    CutomDesignCategorySelectorPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cutom-design-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/'<!--\n  Generated template for the CutomDesignCategorySelectorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>cutom-design-category-selector</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<div>\n  <ion-icon name="man"></ion-icon>\n</div>\n<div>\n  <ion-icon name="man"></ion-icon>\n</div>\n</ion-content>\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" ? _b : Object])
+    ], CutomDesignCategorySelectorPage);
+    return CutomDesignCategorySelectorPage;
+}());
+
+//# sourceMappingURL=cutom-design-category-selector.js.map
+
+/***/ }),
+
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(421);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -662,39 +911,40 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 393:
+/***/ 421:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(436);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_membership_login_login__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_buyer_categories_categories__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_membership_signup_signup__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_buyer_men_men__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_membership_membership__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_products_products__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_orders_orders__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__store_orders_orderstore__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__store_productstore_productstore__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_buyer_product_details_product_details__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__store_profilestore_profileStore__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_shared_shared__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_admin_admindashboard_admindashboard__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_admin_order_details_order_details__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_color_picker__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_buyer_customDesign_design_canvas_design_canvas__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__directives_dragable_dragable__ = __webpack_require__(439);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ionic_long_press__ = __webpack_require__(440);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_draggable__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_fashion_category_selector_custom_fashion_category_selector__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_popover_popover__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_membership_login_login__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_buyer_categories_categories__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_membership_signup_signup__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_buyer_men_men__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_membership_membership__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_products_products__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_orders_orders__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__store_orders_orderstore__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__store_productstore_productstore__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_buyer_product_details_product_details__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__store_profilestore_profileStore__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_shared_shared__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_admin_admindashboard_admindashboard__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_admin_order_details_order_details__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_color_picker__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__directives_dragable_dragable__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ionic_long_press__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angular2_draggable__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_custom_design_custom_fashion_category_selector_custom_fashion_category_selector__ = __webpack_require__(499);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__ = __webpack_require__(500);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_assets_custom_assets__ = __webpack_require__(501);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_popover_popover__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_buyer_cutom_design_category_selector_cutom_design_category_selector__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -731,6 +981,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { PopoverController } from 'ionic-angular';
+
 
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -752,21 +1004,22 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__["a" /* CustomDressCategorySelectorComponent */],
                 __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_assets_custom_assets__["a" /* CustomAssetsComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__components_popover_popover__["a" /* PopoverComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_buyer_cutom_design_category_selector_cutom_design_category_selector__["a" /* CutomDesignCategorySelectorPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/admin/add-product/add-product.module#AddProductPageModule', name: 'AddProductPage', segment: 'add-product', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin/admindashboard/admindashboard.module#AdmindashboardPageModule', name: 'AdmindashboardPage', segment: 'admindashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/admin/order-details/order-details.module#OrderDetailsPageModule', name: 'OrderDetailsPage', segment: 'order-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/customDesign/custom-design/custom-design-home.module#CustomDesignHomePageModule', name: 'CustomDesignHomePage', segment: 'custom-design-home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/customDesign/design-canvas/design-canvas.module#DesignCanvasPageModule', name: 'DesignCanvasPage', segment: 'design-canvas', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/cutom-design-category-selector/cutom-design-category-selector.module#CutomDesignCategorySelectorPageModule', name: 'custom-category-selector', segment: 'app', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/men/men.module#MenPageModule', name: 'MenPage', segment: 'men', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/admin/admindashboard/admindashboard.module#AdmindashboardPageModule', name: 'AdmindashboardPage', segment: 'admindashboard', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__angular_common_http__["b" /* HttpClientModule */],
@@ -789,6 +1042,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__components_custom_design_custom_dress_category_selector_custom_dress_category_selector__["a" /* CustomDressCategorySelectorComponent */],
                 __WEBPACK_IMPORTED_MODULE_26__components_custom_design_custom_assets_custom_assets__["a" /* CustomAssetsComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__components_popover_popover__["a" /* PopoverComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__pages_buyer_cutom_design_category_selector_cutom_design_category_selector__["a" /* CutomDesignCategorySelectorPage */]
             ],
             providers: [
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
@@ -809,7 +1063,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 418:
+/***/ 445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -824,7 +1078,7 @@ var OrderModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 419:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -843,19 +1097,19 @@ var CustomDesignSelectionModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 436:
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_membership_login_login__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_shared__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admindashboard_admindashboard__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_profilestore_profileStore__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_membership_login_login__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_buyer_customDesign_custom_design_custom_design_home__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_shared_shared__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admindashboard_admindashboard__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_profilestore_profileStore__ = __webpack_require__(75);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -979,7 +1233,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 437:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -996,13 +1250,13 @@ var LoginModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 439:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AbsoluteDragDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1068,13 +1322,13 @@ var AbsoluteDragDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 442:
+/***/ 499:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomFashionCategorySelectorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1132,13 +1386,13 @@ var CustomFashionCategorySelectorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 443:
+/***/ 500:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomDressCategorySelectorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_shared_shared__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1194,15 +1448,96 @@ var CustomDressCategorySelectorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 67:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomAssetsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(414);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mobx__ = __webpack_require__(133);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/**
+ * Generated class for the CustomAssetsComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var CustomAssetsComponent = /** @class */ (function () {
+    function CustomAssetsComponent() {
+        this.allCustomAssets = [];
+        this.onAssetsSelection = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.onCancel = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.seletedItem = '';
+        this.errorMessage = '';
+        console.log('Hello CustomAssetsComponent Component');
+    }
+    CustomAssetsComponent.prototype.onSelection = function (item) {
+        this.seletedItem = item;
+        // this.onAssetsSelection.emit(item);
+    };
+    CustomAssetsComponent.prototype.close = function () {
+        this.onCancel.emit(false);
+    };
+    CustomAssetsComponent.prototype.onConfirm = function () {
+        var _this = this;
+        if (this.seletedItem) {
+            this.onAssetsSelection.emit(this.seletedItem);
+        }
+        else {
+            this.errorMessage = 'please select atleast one item';
+            setTimeout(function () {
+                _this.errorMessage = '';
+            }, 2000);
+        }
+    };
+    CustomAssetsComponent.prototype.ifSelected = function (item) {
+        if (item == this.seletedItem) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Array)
+    ], CustomAssetsComponent.prototype, "allCustomAssets", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */])
+    ], CustomAssetsComponent.prototype, "onAssetsSelection", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */])
+    ], CustomAssetsComponent.prototype, "onCancel", void 0);
+    CustomAssetsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'custom-assets',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-assets\custom-assets.html"*/'<!-- Generated template for the CustomAssetsComponent component -->\n\n<div class="inner-popup">\n\n    <div class="assets">\n\n <img  class="images" [class.selected-item]="ifSelected(item)" *ngFor="let item of allCustomAssets" src="{{item}}" (click)="onSelection(item)">\n\n</div>\n\n <p *ngIf="errorMessage && errorMessage!=\'\'">{{errorMessage}}</p>\n\n <div class="action">\n\n <button ion-button (click)="onConfirm()">OK</button>\n\n <button ion-button (click)="close()">cancel</button>\n\n</div>\n\n</div>\n\n\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-assets\custom-assets.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], CustomAssetsComponent);
+    return CustomAssetsComponent;
+}());
+
+//# sourceMappingURL=custom-assets.js.map
+
+/***/ }),
+
+/***/ 73:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderStore; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1229,6 +1564,126 @@ var OrderStore = /** @class */ (function () {
                 }
                 console.log(_this.filteredOrders);
             }
+            else if (_this.filteredOrders) {
+                window.localStorage.setItem('orders', JSON.stringify(_this.filteredOrders));
+            }
+        });
+    }
+    OrderStore.prototype.clear = function () {
+        this.myOrders = [];
+        this.filter = '';
+        this.filteredOrders = [];
+    };
+    OrderStore.prototype.setOrders = function (orders) {
+        this.myOrders = orders;
+        window.localStorage.setItem('products', JSON.stringify(orders));
+        if (this.filter && this.filter != '') {
+            this.filterOrders(this.filter);
+        }
+        else {
+            this.filteredOrders = orders;
+        }
+    };
+    OrderStore.prototype.filterOrders = function (status) {
+        console.log(status);
+        if (status) {
+            this.filter = status;
+            this.filteredOrders = this.myOrders.filter(function (x) { return x.status == status; });
+            // return this.filteredOrders;
+        }
+        else {
+            this.filteredOrders = this.myOrders;
+        }
+    };
+    Object.defineProperty(OrderStore.prototype, "getOrders", {
+        get: function () {
+            // return this.myOrders;
+            return this.filteredOrders;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
+        __metadata("design:type", Array)
+    ], OrderStore.prototype, "myOrders", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
+        __metadata("design:type", Array)
+    ], OrderStore.prototype, "filteredOrders", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
+        __metadata("design:type", String)
+    ], OrderStore.prototype, "filter", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], OrderStore.prototype, "clear", null);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], OrderStore.prototype, "setOrders", null);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], OrderStore.prototype, "filterOrders", null);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_0_mobx__["c" /* computed */],
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [])
+    ], OrderStore.prototype, "getOrders", null);
+    OrderStore = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], OrderStore);
+    return OrderStore;
+}());
+
+//# sourceMappingURL=orderstore.js.map
+
+/***/ }),
+
+/***/ 74:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductStore; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mobx__ = __webpack_require__(145);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ProductStore = /** @class */ (function () {
+    function ProductStore() {
+        var _this = this;
+        this.allProducts = [];
+        this.customProducts = [];
+        Object(__WEBPACK_IMPORTED_MODULE_2_mobx__["b" /* autorun */])(function () {
+            if (JSON.parse(localStorage.getItem('products')) && JSON.parse(localStorage.getItem('products')) != {}) {
+                var obj = JSON.parse(localStorage.getItem('products'));
+                ;
+                if (obj && obj.accountType) {
+                    _this.allProducts = obj;
+                }
+                console.log(_this.allProducts);
+            }
             else if (_this.allProducts) {
                 window.localStorage.setItem('products', JSON.stringify(_this.allProducts));
             }
@@ -1249,14 +1704,22 @@ var OrderStore = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    ProductStore.prototype.seveCustomProducts = function (products) {
+        console.log('custom products', products);
+        this.customProducts = products.slice();
+    };
     ProductStore.prototype.getproductForCustomDesign = function (dressCategory, fashionCategory) {
-        var p = this.allProducts.find(function (x) { return x.dressCategory == dressCategory.key && x.fashionCategory == fashionCategory.key; });
+        var p = this.customProducts.find(function (x) { return x.dressCategory == dressCategory.key && x.fashionCategory == fashionCategory.key; });
         return p;
     };
     __decorate([
         __WEBPACK_IMPORTED_MODULE_2_mobx__["d" /* observable */],
         __metadata("design:type", Array)
     ], ProductStore.prototype, "allProducts", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_2_mobx__["d" /* observable */],
+        __metadata("design:type", Array)
+    ], ProductStore.prototype, "customProducts", void 0);
     __decorate([
         __WEBPACK_IMPORTED_MODULE_2_mobx__["a" /* action */],
         __metadata("design:type", Function),
@@ -1274,6 +1737,12 @@ var OrderStore = /** @class */ (function () {
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [])
     ], ProductStore.prototype, "products", null);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_2_mobx__["a" /* action */],
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], ProductStore.prototype, "seveCustomProducts", null);
     ProductStore = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [])
@@ -1285,12 +1754,12 @@ var OrderStore = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 68:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1379,13 +1848,16 @@ var ProfileStore = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 69:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__men_men__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_products_products__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__ = __webpack_require__(74);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1397,116 +1869,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var OrderStore = /** @class */ (function () {
-    function OrderStore() {
-        var _this = this;
-        this.myOrders = [];
-        this.filteredOrders = [];
-        this.filter = '';
-        Object(__WEBPACK_IMPORTED_MODULE_0_mobx__["b" /* autorun */])(function () {
-            if (JSON.parse(localStorage.getItem('orders')) && JSON.parse(localStorage.getItem('orders')) != {}) {
-                var obj = JSON.parse(localStorage.getItem('orders'));
-                ;
-                if (obj && obj.accountType) {
-                    _this.filteredOrders = obj;
-                }
-                console.log(_this.filteredOrders);
-            }
-            else if (_this.filteredOrders) {
-                window.localStorage.setItem('orders', JSON.stringify(_this.filteredOrders));
-            }
-        });
+
+
+
+var CategoriesPage = /** @class */ (function () {
+    function CategoriesPage(navCtrl, productService, navParams, productStore) {
+        this.navCtrl = navCtrl;
+        this.productService = productService;
+        this.navParams = navParams;
+        this.productStore = productStore;
     }
-    OrderStore.prototype.clear = function () {
-        this.myOrders = [];
-        this.filter = '';
-        this.filteredOrders = [];
+    CategoriesPage.prototype.ionViewDidLoad = function () {
+        this.getProducts();
+        console.log('ionViewDidLoad CategoriesPage');
     };
-    OrderStore.prototype.setOrders = function (orders) {
-        this.myOrders = orders;
-        window.localStorage.setItem('products', JSON.stringify(orders));
-        if (this.filter && this.filter != '') {
-            this.filterOrders(this.filter);
-        }
-        else {
-            this.filteredOrders = orders;
-        }
+    CategoriesPage.prototype.goToMensPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__men_men__["a" /* MenPage */]);
     };
-    OrderStore.prototype.filterOrders = function (status) {
-        console.log(status);
-        if (status) {
-            this.filter = status;
-            this.filteredOrders = this.myOrders.filter(function (x) { return x.status == status; });
-            // return this.filteredOrders;
-        }
-        else {
-            this.filteredOrders = this.myOrders;
-        }
+    CategoriesPage.prototype.getProducts = function () {
+        var _this = this;
+        this.productService.getProducts().subscribe(function (res) {
+            _this.productStore.saveProducts(res);
+        });
     };
-    Object.defineProperty(OrderStore.prototype, "getOrders", {
-        get: function () {
-            // return this.myOrders;
-            return this.filteredOrders;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    var _a, _b;
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
-        __metadata("design:type", typeof (_a = typeof Array !== "undefined" && Array) === "function" ? _a : Object)
-    ], OrderStore.prototype, "myOrders", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
-        __metadata("design:type", typeof (_b = typeof Array !== "undefined" && Array) === "function" ? _b : Object)
-    ], OrderStore.prototype, "filteredOrders", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["d" /* observable */],
-        __metadata("design:type", String)
-    ], OrderStore.prototype, "filter", void 0);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], OrderStore.prototype, "clear", null);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], OrderStore.prototype, "setOrders", null);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["a" /* action */],
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], OrderStore.prototype, "filterOrders", null);
-    __decorate([
-        __WEBPACK_IMPORTED_MODULE_0_mobx__["c" /* computed */],
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [])
-    ], OrderStore.prototype, "getOrders", null);
-    OrderStore = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], OrderStore);
-    return OrderStore;
+    CategoriesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-categories',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/'<!--\n\n  Generated template for the CategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>E Garments</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n\n\n  <ion-card class="card-categories" (click)="goToMensPage()">\n\n    <img src="assets/design-assets/men-category.png" />\n\n    <div class="card-title">Stylish Trends</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Seasonal</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-4.png" />\n\n    <div class="card-title">Most Rated</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-5.png" />\n\n    <div class="card-title">New Arrivals</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Top Trending</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-4.png" />\n\n    <div class="card-title">Functions</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-5.png" />\n\n    <div class="card-title">Party</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n  <ion-card class="card-categories" (click)="goToMensPage()">\n\n    <img src="assets/design-assets/men-category.png" />\n\n    <div class="card-title">Marriage</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Culture Dresses</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */]])
+    ], CategoriesPage);
+    return CategoriesPage;
 }());
 
-//# sourceMappingURL=orderstore.js.map
+//# sourceMappingURL=categories.js.map
 
 /***/ }),
 
-/***/ 84:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__ = __webpack_require__(74);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1561,394 +1970,7 @@ var ProductsProvider = /** @class */ (function () {
 
 //# sourceMappingURL=products.js.map
 
-/***/ }),
-
-/***/ 89:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_profilestore_profileStore__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/*
-  Generated class for the SharedProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var SharedProvider = /** @class */ (function () {
-    function SharedProvider(http, profileStore, adminOrdersStore) {
-        this.http = http;
-        this.profileStore = profileStore;
-        this.adminOrdersStore = adminOrdersStore;
-        console.log('Hello SharedProvider Provider');
-    }
-    SharedProvider.prototype.clearStores = function () {
-        // this.profileStore.clear();
-        // this.adminOrdersStore.clear();
-    };
-    SharedProvider.prototype.getFashionCategories = function () {
-        return this.http.get('./../assets/custom-fashion-categories.json').
-            pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
-            console.log('profucts', data);
-            return data.fashionCategories;
-        }));
-    };
-    SharedProvider.prototype.getdressCategories = function () {
-        return this.http.get('./../assets/dress-category.json').
-            pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
-            console.log('profucts', data);
-            return data.dressCategories;
-        }));
-    };
-    SharedProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_2__store_profilestore_profileStore__["a" /* ProfileStore */],
-            __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__["a" /* OrderStore */]])
-    ], SharedProvider);
-    return SharedProvider;
-}());
-
-//# sourceMappingURL=shared.js.map
-
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__men_men__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_products_products__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__ = __webpack_require__(67);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CategoriesPage = /** @class */ (function () {
-    function CategoriesPage(navCtrl, productService, navParams, productStore) {
-        this.navCtrl = navCtrl;
-        this.productService = productService;
-        this.navParams = navParams;
-        this.productStore = productStore;
-    }
-    CategoriesPage.prototype.ionViewDidLoad = function () {
-        this.getProducts();
-        console.log('ionViewDidLoad CategoriesPage');
-    };
-    CategoriesPage.prototype.goToMensPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__men_men__["a" /* MenPage */]);
-    };
-    CategoriesPage.prototype.getProducts = function () {
-        var _this = this;
-        this.productService.getProducts().subscribe(function (res) {
-            _this.productStore.saveProducts(res);
-        });
-    };
-    CategoriesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-categories',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\buyer\categories\categories.html"*/'<!--\n\n  Generated template for the CategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n  \n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n    <ion-title>E Garments</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n\n\n  <ion-card  (click)="goToMensPage()">\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Men</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Women</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Boys</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/firstCategory.png"/>\n\n    <div class="card-title">Girls</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\buyer\categories\categories.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */]])
-    ], CategoriesPage);
-    return CategoriesPage;
-}());
-
-//# sourceMappingURL=categories.js.map
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__men_men__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_products_products__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__ = __webpack_require__(68);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CategoriesPage = /** @class */ (function () {
-    function CategoriesPage(navCtrl, productService, navParams, productStore) {
-        this.navCtrl = navCtrl;
-        this.productService = productService;
-        this.navParams = navParams;
-        this.productStore = productStore;
-    }
-    CategoriesPage.prototype.ionViewDidLoad = function () {
-        this.getProducts();
-        console.log('ionViewDidLoad CategoriesPage');
-    };
-    CategoriesPage.prototype.goToMensPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__men_men__["a" /* MenPage */]);
-    };
-    CategoriesPage.prototype.getProducts = function () {
-        var _this = this;
-        this.productService.getProducts().subscribe(function (res) {
-            _this.productStore.saveProducts(res);
-        });
-    };
-    CategoriesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-categories',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/'<!--\n\n  Generated template for the CategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>E Garments</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n\n\n  <ion-card class="card-categories" (click)="goToMensPage()">\n\n    <img src="assets/design-assets/men-category.png" />\n\n    <div class="card-title">Stylish Trends</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Seasonal</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-4.png" />\n\n    <div class="card-title">Most Rated</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-5.png" />\n\n    <div class="card-title">New Arrivals</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Top Trending</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-4.png" />\n\n    <div class="card-title">Functions</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/cat-5.png" />\n\n    <div class="card-title">Party</div>\n\n    <div class="card-subtitle">72 Listings</div>\n\n  </ion-card>\n\n  <ion-card class="card-categories" (click)="goToMensPage()">\n\n    <img src="assets/design-assets/men-category.png" />\n\n    <div class="card-title">Marriage</div>\n\n    <div class="card-subtitle">41 Listings</div>\n\n  </ion-card>\n\n\n\n  <ion-card class="card-categories">\n\n    <img src="assets/design-assets/women-category.png" />\n\n    <div class="card-title">Culture Dresses</div>\n\n    <div class="card-subtitle">64 Listings</div>\n\n  </ion-card>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\categories\categories.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_products_products__["a" /* ProductsProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__["a" /* ProductStore */]])
-    ], CategoriesPage);
-    return CategoriesPage;
-}());
-
-//# sourceMappingURL=categories.js.map
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomDesignHomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__ = __webpack_require__(419);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__design_canvas_design_canvas__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_productstore_productstore__ = __webpack_require__(67);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-// import { ScreenOrientation } from 'ionic-native';
-// import {ScreenOrientation} from "@ionic-native/screen-orientation";
-
-
-
-var CustomDesignHomePage = /** @class */ (function () {
-    function CustomDesignHomePage(navCtrl, productStore, navParams, productsProvider) {
-        this.navCtrl = navCtrl;
-        this.productStore = productStore;
-        this.navParams = navParams;
-        this.productsProvider = productsProvider;
-        this.fashionCategory = '';
-        this.dressCategory = '';
-        this.color = "black";
-        this.showAssets = false;
-        this.dragableAssets = [];
-        this.inBounds = true;
-        this.edge = {
-            top: true,
-            bottom: true,
-            left: true,
-            right: true
-        };
-        this.customDesignSelectionModel = new __WEBPACK_IMPORTED_MODULE_2__model_custom_design_details_model__["a" /* CustomDesignSelectionModel */]();
-    }
-    CustomDesignHomePage.prototype.onEventLog = function (colorPicker, event) {
-        console.log(colorPicker, event);
-        this.customDesignSelectionModel.selectedColor = event;
-    };
-    CustomDesignHomePage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png'];
-        // this.customAssets = [{"width":20,"height":20,"path":"/assets/imgs/pocket-icon.png"}, {"width":20,"height":20,"path":"/assets/imgs/avatar.png"}, {"width":20,"height":20,"path":"/assets/imgs/logo.png"}]
-        // ScreenOrientation.lockOrientation('landscape')
-        console.log('ionViewDidLoad CustomDesignPage');
-        this.productsProvider.getSvgs().subscribe(function (res) {
-            _this.svgs = res;
-            console.log(res);
-        });
-        screen.orientation.lock('landscape');
-    };
-    CustomDesignHomePage.prototype.ionViewDidLeave = function () {
-        screen.orientation.lock('portrait');
-        console.log('ionViewDidLeave CustomDesignPage');
-    };
-    CustomDesignHomePage.prototype.onFashionCategorySelection = function (cat) {
-        this.fashionCategory = cat;
-        this.getSelectedDress();
-    };
-    CustomDesignHomePage.prototype.onDressCategorySelection = function (cat) {
-        this.dressCategory = cat;
-        this.getSelectedDress();
-    };
-    CustomDesignHomePage.prototype.getSelectedDress = function () {
-        this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
-        console.log(this.selectedProduct);
-    };
-    CustomDesignHomePage.prototype.selectColor = function (selectedColor) {
-        this.color = selectedColor;
-    };
-    CustomDesignHomePage.prototype.onCustomAssetSelection = function (item) {
-        debugger;
-        if (item) {
-            this.showAssets = false;
-            this.dragableAssets.push(item);
-        }
-    };
-    CustomDesignHomePage.prototype.active = function (item) {
-        this.selectedToResize = item;
-    };
-    CustomDesignHomePage.prototype.selectAssets = function () {
-        this.showAssets = true;
-    };
-    CustomDesignHomePage.prototype.closePopup = function () {
-        this.showAssets = false;
-    };
-    CustomDesignHomePage.prototype.setBadge = function (size) {
-        this.size = size;
-    };
-    CustomDesignHomePage.prototype.checkEdge = function (event) {
-        this.edge = event;
-        console.log('edge:', event);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('itemSlider'),
-        __metadata("design:type", Object)
-    ], CustomDesignHomePage.prototype, "itemSlider", void 0);
-    CustomDesignHomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-design',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/'<!--\n\n  Generated template for the CustomDesignPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>custom-design</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col size="3">\n\n        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n        </custom-fashion-category-selector>\n\n      </ion-col>\n\n      <ion-col size="6">\n\n      \n\n        <!-- {{selectedProduct | json}} -->\n\n        <!-- <ion-icon name="color-palette"  [cpHeight]=\'auto\'  [style.color]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" ></ion-icon> -->\n\n        <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>\n\n        <!-- <input  [value]="color" [style.background]="color" [cpPosition]="\'bottom\'" [(colorPicker)]="color" /> -->\n\n        <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->\n\n      <div class="drag-boundary" [ngClass]="{ \'top-b\': !edge?.top, \'bottom-b\': !edge?.bottom, \'left-b\': !edge?.left, \'right-b\': !edge?.right }" #myBounds>\n\n          <div *ngIf="selectedProduct">\n\n          \n\n              <svg  version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"\n\n              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"\n\n              style="fill:color;" xml:space="preserve">\n\n              <path  class="test"  [attr.d]="selectedProduct.menFront"/>\n\n            </svg>\n\n    \n\n            </div>\n\n\n\n            <div *ngIf="dragableAssets && dragableAssets.length > 0" style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">\n\n                <img *ngFor="let asset of dragableAssets"\n\n                [ngStyle]="selectedToResize==asset ? {height:size+\'px\',width:size+\'px\'}:\'\'" class="icons" ion-long-press\n\n                [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset}}">\n\n            </div>\n\n        \n\n      </div>\n\n        \n\n       \n\n        <!-- <input type="color" value="#0000ff">\n\n<img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->\n\n\n\n        \n\n        <ion-item *ngIf="dragableAssets && dragableAssets.length > 0">\n\n          <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">\n\n            {{size}}</ion-range>\n\n        </ion-item>\n\n        <div class="flex" *ngIf="selectedProduct">\n\n          <!-- colors -->\n\n          <div class="color-selection" (click)="selectColor(color)" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>\n\n        </div>\n\n        <!-- <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" /> -->\n\n        <div class="flex " *ngIf="selectedProduct">\n\n          <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>\n\n        </div>\n\n        <!-- <ion-item>\n\n          <ion-input type=\'text\' placeholder="Extra Instructions...."></ion-input>\n\n        </ion-item> -->\n\n        <!-- <button ion-button>save</button>\n\n        <button ion-button (click)="selectAssets()">asssets</button> -->\n\n      </ion-col>\n\n\n\n      <ion-col size="3">\n\n\n\n        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n        </custom-dress-category-selector>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <div class="popup" *ngIf="showAssets">\n\n    <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()"\n\n      (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>\n\n\n\n  </div>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\customDesign\custom-design\custom-design-home.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__store_productstore_productstore__["a" /* ProductStore */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__providers_products_products__["a" /* ProductsProvider */]])
-    ], CustomDesignHomePage);
-    return CustomDesignHomePage;
-}());
-
-//# sourceMappingURL=custom-design-home.js.map
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmindashboardPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_orders_orders__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__order_details_order_details__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_popover_popover__ = __webpack_require__(236);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-// import {} from '../../../store/orders/orderstore'; 
-/**
- * Generated class for the AdmindashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AdmindashboardPage = /** @class */ (function () {
-    function AdmindashboardPage(navCtrl, navParams, orderService, ordersStore, popoverCtrl) {
-        // this.productService.getVehicles().subscribe(res => {
-        //   this.products = res
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.orderService = orderService;
-        this.ordersStore = ordersStore;
-        this.popoverCtrl = popoverCtrl;
-    }
-    AdmindashboardPage.prototype.ionViewDidLoad = function () {
-        //  if(this.ordersStore.myOrders.length==0){
-        var _this = this;
-        this.orderService.getorders().subscribe(function (res) {
-            _this.orders = res;
-            console.log(_this.orders);
-        });
-        // }
-    };
-    AdmindashboardPage.prototype.filterOrders = function (status) {
-        // this.ordersStore.filterOrders(status);
-    };
-    AdmindashboardPage.prototype.productDetails = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__order_details_order_details__["a" /* OrderDetailsPage */]);
-    };
-    AdmindashboardPage.prototype.action1 = function () {
-        var popover = this.popoverCtrl.create(__WEBPACK_IMPORTED_MODULE_5__components_popover_popover__["a" /* PopoverComponent */]);
-        popover.present();
-    };
-    AdmindashboardPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admindashboard',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\admindashboard\admindashboard.html"*/'<!--\n\n  Generated template for the AdmindashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar style="position:absolute">\n\n    <button ion-button menuToggle start>\n\n      <ion-icon name="menu"></ion-icon>\n\n  </button>\n\n \n\n    <ion-title>admindashboard</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="action1()">\n\n        <ion-icon name="more"></ion-icon>\n\n    </button>\n\n  </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<!-- {{ordersStore.getOrders | json}} -->\n\n    <!-- <button (click)="filterOrders(\'pending\')"></button> -->\n\n  <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">\n\n          \n\n    <ion-item>\n\n      <ion-avatar item-start>\n\n        <img src="assets/imgs/logo.png">\n\n      </ion-avatar>\n\n      <h2>{{order.buyer.name}}</h2>\n\n      <p>{{order.orderDate}}</p>\n\n    </ion-item>\n\n  \n\n    <!-- <img src="img/advance-card-bttf.png"> -->\n\n  \n\n    <ion-card-content>\n\n     <p>{{order.status}}</p>\n\n     <h6>{{order.buyer.contactNo}}</h6>\n\n    </ion-card-content>\n\n\n\n    <ion-item>\n\n     \n\n     Total Price\n\n      <ion-badge item-end>{{order.totalPrice}}</ion-badge>\n\n    </ion-item>\n\n\n\n \n\n  \n\n    <ion-row>\n\n      <ion-col>\n\n        <button ion-button icon-start clear small>\n\n          <ion-icon name="thumbs-up"></ion-icon>\n\n          <div>12 Likes</div>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col>\n\n        <button ion-button icon-start clear small>\n\n          <ion-icon name="text"></ion-icon>\n\n          <div>4 Comments</div>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col center text-center>\n\n        <ion-note>\n\n          11h ago\n\n        </ion-note>\n\n      </ion-col>\n\n    </ion-row>\n\n  \n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\admindashboard\admindashboard.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_orders_orders__["a" /* OrdersProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__store_orders_orderstore__["a" /* OrderStore */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* PopoverController */]])
-    ], AdmindashboardPage);
-    return AdmindashboardPage;
-}());
-
-//# sourceMappingURL=admindashboard.js.map
-
 /***/ })
 
-},[279]);
+},[307]);
 //# sourceMappingURL=main.js.map

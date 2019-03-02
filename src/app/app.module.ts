@@ -28,8 +28,9 @@ import { AngularDraggableModule } from 'angular2-draggable';
 import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
 import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
 import { CustomAssetsComponent } from "./../components/custom-design/custom-assets/custom-assets";
-import { PopoverController } from 'ionic-angular';
+// import { PopoverController } from 'ionic-angular';
 import { PopoverComponent} from '../components/popover/popover';
+import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-category-selector/cutom-design-category-selector";
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +47,7 @@ import { PopoverComponent} from '../components/popover/popover';
     CustomDressCategorySelectorComponent,
     CustomAssetsComponent,
     PopoverComponent,
-    
+    CutomDesignCategorySelectorPage    
     
   ],
   imports: [
@@ -74,7 +75,7 @@ import { PopoverComponent} from '../components/popover/popover';
     CustomDressCategorySelectorComponent,
     CustomAssetsComponent,
     PopoverComponent,
-   
+    CutomDesignCategorySelectorPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
