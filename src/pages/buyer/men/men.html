@@ -23,7 +23,7 @@
     <p>{{product.description}}</p>
   </ion-item>
 
-  <img src="assets/imgs/firstCategory.png">
+  <img src="{{product.images[0].url}}">
 
   <ion-card-content>
     <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
@@ -32,8 +32,8 @@
   <ion-row>
     <ion-col>
       <button ion-button icon-start clear small>
-        <ion-icon class="ap-colorr" name="thumbs-up"></ion-icon>
-        <div>12 Likes</div>
+        <ion-icon class="ap-colorr" name="cash"></ion-icon>
+        <div>Price </div><span>{{product.price}}</span>
       </button>
     </ion-col>
     <ion-col>

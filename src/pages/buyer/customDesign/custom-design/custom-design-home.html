@@ -26,8 +26,8 @@
       <ion-col size="6">
       
         <!-- {{selectedProduct | json}} -->
-        <ion-icon name="color-palette"  [cpHeight]='auto'  [style.color]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" ></ion-icon>
-        <ion-icon *ngIf="selectedProduct" name="heart" (click)="selectAssets()"></ion-icon>
+        <!-- <ion-icon name="color-palette"  [cpHeight]='auto'  [style.color]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" ></ion-icon> -->
+        <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>
         <!-- <input  [value]="color" [style.background]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" /> -->
         <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->
       <div class="drag-boundary" [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds>
@@ -59,16 +59,16 @@
             {{size}}</ion-range>
         </ion-item>
         <div class="flex" *ngIf="selectedProduct">
-          colors
-          <div class="color-selection" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>
+          <!-- colors -->
+          <div class="color-selection" (click)="selectColor(color)" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>
         </div>
         <!-- <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" /> -->
         <div class="flex " *ngIf="selectedProduct">
           <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>
         </div>
-        <ion-item>
+        <!-- <ion-item>
           <ion-input type='text' placeholder="Extra Instructions...."></ion-input>
-        </ion-item>
+        </ion-item> -->
         <!-- <button ion-button>save</button>
         <button ion-button (click)="selectAssets()">asssets</button> -->
       </ion-col>

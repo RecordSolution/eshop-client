@@ -4,7 +4,7 @@
         <ion-item text-wrap no-lines>
           <ion-chip class="chip-size" item-content color="black">
             <!-- <ion-icon name="heart" color="primary"></ion-icon> -->
-            <img class="icon" src="{{cat.menIcon}}">
+            <img [class.selected-item]="isSelectedItem(cat)" class="icon" src="{{cat.menIcon}}">
             <ion-label>{{cat.key}}</ion-label>
           </ion-chip>
         </ion-item>

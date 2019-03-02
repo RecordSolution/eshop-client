@@ -5,7 +5,7 @@
           <ion-chip class="chip-size" item-content>
             <ion-label>{{cat.key}}</ion-label>
             <!-- <ion-icon name="heart" color="primary"></ion-icon> -->
-            <img class="icon" src="{{cat.menIcon}}">
+            <img class="icon" [class.selected-item]="isSelectedItem(cat)" src="{{cat.menIcon}}">
           </ion-chip>
         </ion-item>
       </ion-list>

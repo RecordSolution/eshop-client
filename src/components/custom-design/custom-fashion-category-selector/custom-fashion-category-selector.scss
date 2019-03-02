@@ -11,6 +11,9 @@ custom-fashion-category-selector {
     //         height: auto;
     //     }
     // }
+         .selected-item{
+            border:2px solid greenyellow;
+        }
     .chip-list{
         margin: 0 !important;
         float: left;

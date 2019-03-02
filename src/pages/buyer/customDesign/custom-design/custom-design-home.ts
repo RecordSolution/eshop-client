@@ -41,6 +41,8 @@ export class CustomDesignHomePage {
   }
   ionViewDidLoad() {
     this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
+    // this.customAssets = [{"width":20,"height":20,"path":"/assets/imgs/pocket-icon.png"}, {"width":20,"height":20,"path":"/assets/imgs/avatar.png"}, {"width":20,"height":20,"path":"/assets/imgs/logo.png"}]
+
     // ScreenOrientation.lockOrientation('landscape')
     
     console.log('ionViewDidLoad CustomDesignPage');
@@ -66,9 +68,11 @@ export class CustomDesignHomePage {
     this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
     console.log(this.selectedProduct);
   }
-
+  selectColor(selectedColor){
+    this.color=selectedColor;
+  }
   onCustomAssetSelection(item) {
-    debugger
+    // debugger
     if(item){
       this.showAssets = false;
       this.dragableAssets.push(item);

@@ -19,7 +19,7 @@
                     "color": "yellow"
                 },
                 {
-                    "url": "assets/imgs/logo.png",
+                    "url": "assets/imgs/kurta.png",
                     "size": "md",
                     "color": "red"
                 },
@@ -56,12 +56,12 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/imgs/kurta.png",
+                    "url": "/assets/imgs/shirt.jpg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "assets/imgs/logo.png",
+                    "url": "assets/imgs/kurta.png",
                     "size": "md",
                     "color": "red"
                 },
@@ -98,12 +98,12 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/imgs/pent.jpg",
+                    "url": "/assets/imgs/shirt.jpg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "assets/imgs/logo.png",
+                    "url": "assets/imgs/kurta.png",
                     "size": "md",
                     "color": "red"
                 },
@@ -145,7 +145,7 @@
                     "color": "yellow"
                 },
                 {
-                    "url": "assets/imgs/logo.png",
+                    "url": "assets/imgs/kurta.png",
                     "size": "md",
                     "color": "red"
                 },
