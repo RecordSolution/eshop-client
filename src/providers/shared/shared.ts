@@ -25,7 +25,7 @@ export class SharedProvider {
   getFashionCategories() {
     return this.http.get('./../assets/custom-fashion-categories.json').
     pipe(map((data: any) => {
-      console.log('profucts', data);
+      console.log('fashion', data);
      return data.fashionCategories;
     }))
   }

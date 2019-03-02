@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild , ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
@@ -6,6 +6,7 @@ import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
 import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
+import  html2canvas from 'html2canvas';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -13,6 +14,9 @@ import { ProductsProvider } from '../../../../providers/products/products';
 })
 export class CustomDesignHomePage {
   @ViewChild('itemSlider') itemSlider: any;
+  @ViewChild('screen') screen: ElementRef;
+  @ViewChild('canvas') canvas: ElementRef;
+  @ViewChild('downloadLink') downloadLink: ElementRef;
   fashionCategory: string = '';
   dressCategory: string = '';
   customDesignSelectionModel: CustomDesignSelectionModel;
@@ -41,13 +45,11 @@ export class CustomDesignHomePage {
   }
   ionViewDidLoad() {
     this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
-    // this.customAssets = [{"width":20,"height":20,"path":"/assets/imgs/pocket-icon.png"}, {"width":20,"height":20,"path":"/assets/imgs/avatar.png"}, {"width":20,"height":20,"path":"/assets/imgs/logo.png"}]
-
     // ScreenOrientation.lockOrientation('landscape')
     
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getSvgs().subscribe(res =>{
-      this.svgs = res;
+      this.svgs= res;
       console.log(res)
     })
     screen.orientation.lock('landscape');
@@ -72,7 +74,6 @@ export class CustomDesignHomePage {
     this.color=selectedColor;
   }
   onCustomAssetSelection(item) {
-    // debugger
     if(item){
       this.showAssets = false;
       this.dragableAssets.push(item);
@@ -93,6 +94,25 @@ export class CustomDesignHomePage {
   checkEdge(event) {
     this.edge = event;
     console.log('edge:', event);
+  }
+  downloadImage(){
+    
+    
+    html2canvas(this.screen.nativeElement, {
+      useCORS: true,
+      width:300,
+      height:300
+  }).then((canvas:any) => {
+      debugger
+  
+      this.canvas.nativeElement.src = canvas.toDataURL();
+      // document.getElementById('test').appendChild(canvas);
+
+
+      // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+      // this.downloadLink.nativeElement.download = 'marble-diagram.png';
+      // this.downloadLink.nativeElement.click();
+    });
   }
   // next() {
   //   this.itemSlider.slideNext();
