@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 443:
+/***/ 444:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddProductPageModule", function() { return AddProductPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_product__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_product__ = __webpack_require__(453);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,13 @@ var AddProductPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 452:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddProductPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72,7 +72,7 @@ var AddProductPage = /** @class */ (function () {
     };
     AddProductPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-product',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\add-product\add-product.html"*/'<!--\n  Generated template for the AddProductPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>addProduct</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-label>Product name</ion-label>\n  <ion-input [(ngModel)]="name"></ion-input>\n  <ion-label>Product description</ion-label>\n  <ion-input></ion-input>\n  <ion-item>\n    <ion-label>Product Colors</ion-label>\n    <ion-select [(ngModel)]="colors">\n        <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>\n      </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Product Category</ion-label>\n    <ion-select [(ngModel)]="category">\n        <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>\n      </ion-select>\n  </ion-item>\n  <ion-item>\n    <ion-label>Product Gender</ion-label>\n    <ion-select [(ngModel)]="gender">\n        <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>\n      </ion-select>\n  </ion-item>\n  <ion-item>\n    <ion-label>Product Sizes</ion-label>\n    <ion-select [(ngModel)]="sizes">\n        <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>\n      </ion-select>\n  </ion-item>\n\n  <ion-label>Upload picture</ion-label>\n  \n\n</ion-content>\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\add-product\add-product.html"*/,
+            selector: 'page-add-product',template:/*ion-inline-start:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\add-product\add-product.html"*/'<!--\n\n  Generated template for the AddProductPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>addProduct</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-label>Product name</ion-label>\n\n  <ion-input [(ngModel)]="name"></ion-input>\n\n  <ion-label>Product description</ion-label>\n\n  <ion-input></ion-input>\n\n  <ion-item>\n\n    <ion-label>Product Colors</ion-label>\n\n    <ion-select [(ngModel)]="colors">\n\n        <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>\n\n      </ion-select>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label>Product Category</ion-label>\n\n    <ion-select [(ngModel)]="category">\n\n        <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>\n\n      </ion-select>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Product Gender</ion-label>\n\n    <ion-select [(ngModel)]="gender">\n\n        <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>\n\n      </ion-select>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-label>Product Sizes</ion-label>\n\n    <ion-select [(ngModel)]="sizes">\n\n        <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>\n\n      </ion-select>\n\n  </ion-item>\n\n\n\n  <ion-label>Upload picture</ion-label>\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Programmingwork\ionicongoing\e-shopping\eshop-client\src\pages\admin\add-product\add-product.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], AddProductPage);

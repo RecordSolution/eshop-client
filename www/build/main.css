@@ -24722,6 +24722,12 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+ion-icon .icon-inner {
+  height: 1em;
+  width: 1em;
+  display: none;
+}
+
 .my-sidemenu .content {
   background-color: #2D3238;
 }
@@ -24805,7 +24811,7 @@ custom-fashion-category-selector .flex .cat {
   height: auto;
 }
 
-popover ion-popover {
+popover .list {
   height: 90px !important;
   top: 47px !important;
   left: 329.5px !important;
@@ -24914,12 +24920,154 @@ page-order-details ion-card ion-card-title {
   height: 70px;
 }
 
-.logo {
-  padding: 20px;
-  height: 300px;
+.main {
+  background-color: #F5F5F5;
+}
+
+.main .logo {
+  padding-top: 61%;
+  height: 42%;
   text-align: center;
 }
 
-.logo-img {
-  max-width: 250px;
+.main .logo-img {
+  max-width: 93px;
+}
+
+.main .card {
+  border-radius: 2vw;
+}
+
+.main .card ion-card-content {
+  padding: 54px 17px 54px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.main .card ion-card-content .login .button-ios-primary {
+  color: white;
+  background-color: #8d939e;
+  width: 34%;
+  position: absolute;
+  margin-top: 8%;
+  border-radius: 6vw;
+  margin-left: 26%;
+}
+
+.main .card ion-card-content .forgotpassword {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main .card ion-card-content .forgotpassword a {
+  color: darkgray;
+}
+
+.main .card ion-card-content .loginfields {
+  border-bottom: 0.5px solid #e2d4d4;
+}
+
+.main .card ion-card-content ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.main .card ion-card-content :-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+.main .card ion-card-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+.main .card ion-card-content :-ms-input-placeholder {
+  text-align: center;
+}
+
+.main .signup {
+  font-size: 18px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.main .signup a {
+  color: gray;
+}
+
+.register {
+  background-color: #F5F5F5;
+}
+
+.register .logo {
+  padding-top: 30%;
+  height: 26%;
+  text-align: center;
+}
+
+.register .logo-img {
+  max-width: 93px;
+}
+
+.register .card {
+  border-radius: 2vw;
+}
+
+.register .card ion-card-content {
+  padding: 54px 17px 54px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.register .card ion-card-content .login .button-ios-primary {
+  color: white;
+  background-color: #8d939e;
+  width: 34%;
+  position: absolute;
+  margin-top: 8%;
+  border-radius: 6vw;
+  margin-left: 26%;
+}
+
+.register .card ion-card-content .forgotpassword {
+  padding-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.register .card ion-card-content .forgotpassword a {
+  color: darkgray;
+}
+
+.register .card ion-card-content .loginfields {
+  border-bottom: 0.5px solid #e2d4d4;
+}
+
+.register .card ion-card-content ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.register .card ion-card-content :-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+.register .card ion-card-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+.register .card ion-card-content :-ms-input-placeholder {
+  text-align: center;
+}
+
+.register .signin {
+  font-size: 18px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.register .signin a {
+  color: gray;
 }
