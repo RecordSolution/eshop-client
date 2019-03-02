@@ -6,6 +6,7 @@ import { observable, autorun, action, computed } from 'mobx';
 export class ProductStore {
 
     @observable allProducts: Array<any> = [];
+    @observable customProducts: Array<any> = [];
 
     constructor() {
 
@@ -37,8 +38,12 @@ export class ProductStore {
         return this.allProducts;
 
     }
+    @action seveCustomProducts(products) {
+        console.log('custom products', products);
+        this.customProducts = [...products];
+    }
     getproductForCustomDesign(dressCategory, fashionCategory) {
-       let p = this.allProducts.find(x=>x.dressCategory==dressCategory.key && x.fashionCategory==fashionCategory.key);
-       return p;
+        let p = this.customProducts.find(x => x.dressCategory == dressCategory.key && x.fashionCategory == fashionCategory.key);
+        return p;
     }
 }

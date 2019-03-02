@@ -16,7 +16,7 @@ export class MembershipProvider {
   }
   
   login(userCredentials) {
-    return this.http.get('./../assets/json/membership.json').pipe(map((res: any) => {
+    return this.http.get('./../assets/membership.json').pipe(map((res: any) => {
       let ifUser = res.user.find(x => x.email == userCredentials.email && x.password == userCredentials.password);
       if (ifUser) {
         this.profileStore.setUserData(ifUser);

@@ -16,11 +16,21 @@ export class ProductsProvider {
     this.getProducts();
   }
  getProducts(value?: string) {
-    return this.http.get('./../assets/json/products.json').
+    return this.http.get('./../assets/products.json').
     pipe(map((data: any) => {
       console.log('profucts', data.products);
      this.productStore.saveProducts(data.products);
       return data.products;
+
+    }))
+  }
+  getSvgs(value?: string) {
+    debugger
+    // return this.http.get('/assets/svg-data.json').
+    return this.http.get('/assets/custom-products.json').
+    pipe(map((data: any) => {
+      this.productStore.seveCustomProducts(data.customProducts);
+      return data.customProducts;
 
     }))
   }

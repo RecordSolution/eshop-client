@@ -6,11 +6,11 @@
 -->
 
 <ion-header>
-  
+
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>E Garments</ion-title>
   </ion-navbar>
 
@@ -19,29 +19,56 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card  (click)="goToMensPage()">
-    <img src="assets/imgs/firstCategory.png"/>
-    <div class="card-title">Men</div>
+  <ion-card class="card-categories" (click)="goToMensPage()">
+    <img src="assets/design-assets/men-category.png" />
+    <div class="card-title">Stylish Trends</div>
     <div class="card-subtitle">41 Listings</div>
   </ion-card>
 
-  <ion-card>
-    <img src="assets/imgs/firstCategory.png"/>
-    <div class="card-title">Women</div>
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/women-category.png" />
+    <div class="card-title">Seasonal</div>
     <div class="card-subtitle">64 Listings</div>
   </ion-card>
 
-  <ion-card>
-    <img src="assets/imgs/firstCategory.png"/>
-    <div class="card-title">Boys</div>
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/cat-4.png" />
+    <div class="card-title">Most Rated</div>
     <div class="card-subtitle">72 Listings</div>
   </ion-card>
 
-  <ion-card>
-    <img src="assets/imgs/firstCategory.png"/>
-    <div class="card-title">Girls</div>
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/cat-5.png" />
+    <div class="card-title">New Arrivals</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/women-category.png" />
+    <div class="card-title">Top Trending</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
+
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/cat-4.png" />
+    <div class="card-title">Functions</div>
     <div class="card-subtitle">72 Listings</div>
   </ion-card>
 
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/cat-5.png" />
+    <div class="card-title">Party</div>
+    <div class="card-subtitle">72 Listings</div>
+  </ion-card>
+  <ion-card class="card-categories" (click)="goToMensPage()">
+    <img src="assets/design-assets/men-category.png" />
+    <div class="card-title">Marriage</div>
+    <div class="card-subtitle">41 Listings</div>
+  </ion-card>
+
+  <ion-card class="card-categories">
+    <img src="assets/design-assets/women-category.png" />
+    <div class="card-title">Culture Dresses</div>
+    <div class="card-subtitle">64 Listings</div>
+  </ion-card>
 
 </ion-content>

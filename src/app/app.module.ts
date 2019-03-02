@@ -21,13 +21,13 @@ import { SharedProvider } from '../providers/shared/shared';
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { OrderDetailsPage } from '../pages/admin/order-details/order-details';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { DesignCanvasPage } from "./../pages/buyer/customDesign/design-canvas/design-canvas";
 // import { ScreenOrientation } from "@ionic-native/screen-orientation";
 import { AbsoluteDragDirective } from "./../directives/dragable/dragable";
 import { LongPressModule } from 'ionic-long-press'
 import { AngularDraggableModule } from 'angular2-draggable';
 import { CustomFashionCategorySelectorComponent } from "./../components/custom-design/custom-fashion-category-selector/custom-fashion-category-selector";
 import { CustomDressCategorySelectorComponent } from "./../components/custom-design/custom-dress-category-selector/custom-dress-category-selector";
+import { CustomAssetsComponent } from "./../components/custom-design/custom-assets/custom-assets";
 import { PopoverController } from 'ionic-angular';
 import { PopoverComponent} from '../components/popover/popover';
 @NgModule({
@@ -41,10 +41,10 @@ import { PopoverComponent} from '../components/popover/popover';
     CustomDesignHomePage,
     AdmindashboardPage,
     OrderDetailsPage,
-    DesignCanvasPage,
     AbsoluteDragDirective,
     CustomFashionCategorySelectorComponent,
     CustomDressCategorySelectorComponent,
+    CustomAssetsComponent,
     PopoverComponent,
     
     
@@ -70,9 +70,9 @@ import { PopoverComponent} from '../components/popover/popover';
     CustomDesignHomePage,
     AdmindashboardPage,
     OrderDetailsPage,
-    DesignCanvasPage,
     CustomFashionCategorySelectorComponent,
     CustomDressCategorySelectorComponent,
+    CustomAssetsComponent,
     PopoverComponent,
    
   ],

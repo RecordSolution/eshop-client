@@ -14,15 +14,11 @@ export class OrdersProvider {
 
   }
  getorders(value?: string) {
-
-  console.log("getOrders");
-    return this.http.get('./../assets/json/orders.json').pipe(
+    return this.http.get('./../assets/orders.json').pipe(
     map((data: any) => {
-      console.log('Orders Here', data.orders);
-     this.ordersStore.setOrders(data.orders);
+      console.log('Orders', data.orders);
+   this.ordersStore.setOrders(data.orders);
      return data.orders;
-     
-
     }))
   }
 }

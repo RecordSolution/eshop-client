@@ -24754,7 +24754,7 @@ ion-icon .icon-inner {
 }
 
 .my-navbar .toolbar .toolbar-background {
-  background-color: #2D3238;
+  background-color: #0a756f;
 }
 
 .my-navbar .toolbar-content .toolbar-title {
@@ -24789,26 +24789,77 @@ ion-icon .icon-inner {
   border: none;
 }
 
-custom-dress-category-selector .flex {
-  display: inline-block;
-  height: 100vh;
-  background-color: lightgray;
-}
-
-custom-dress-category-selector .flex .cat {
-  width: 33%;
+custom-assets .inner-popup {
+  width: 100%;
+  padding: 5%;
   height: auto;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
 }
 
-custom-fashion-category-selector .flex {
-  display: inline-block;
-  height: 100vh;
-  background-color: lightgray;
+custom-assets .inner-popup .assets {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-custom-fashion-category-selector .flex .cat {
-  width: 33%;
-  height: auto;
+custom-assets .inner-popup .selected-item {
+  border: 2px solid greenyellow;
+}
+
+custom-assets .inner-popup .images {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+custom-assets .inner-popup .action {
+  margin-top: 5px;
+}
+
+custom-dress-category-selector .selected-item {
+  border: 2px solid greenyellow;
+}
+
+custom-dress-category-selector .chip-list {
+  margin: 0 !important;
+  float: right;
+}
+
+custom-dress-category-selector .chip-size {
+  width: 110px;
+  background-color: rgba(164, 203, 210, 0.49);
+}
+
+custom-dress-category-selector .icon {
+  width: 32px;
+  height: 32px;
+  background: #2ce3e4;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+custom-fashion-category-selector .selected-item {
+  border: 2px solid greenyellow;
+}
+
+custom-fashion-category-selector .chip-list {
+  margin: 0 !important;
+  float: left;
+}
+
+custom-fashion-category-selector .chip-size {
+  width: 110px;
+  background-color: rgba(164, 203, 210, 0.49);
+}
+
+custom-fashion-category-selector .icon {
+  width: 32px;
+  height: 32px;
+  background: #2ce3e4;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 popover .list {
@@ -24839,19 +24890,27 @@ page-order-details ion-card ion-card-title {
 
 .card-background-page .card-title {
   position: absolute;
-  top: 36%;
+  top: 28%;
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .card-background-page .card-subtitle {
   font-size: 1.0em;
   position: absolute;
+  margin-top: 17px;
   top: 52%;
   width: 100%;
-  color: #fff;
+  color: #e2e2e2;
+}
+
+.card-background-page .card-categories {
+  height: 80px;
+  border: 1px;
+  border-radius: 15px;
+  background-color: brown;
 }
 
 .left-side {
@@ -24873,8 +24932,8 @@ page-order-details ion-card ion-card-title {
 }
 
 .icons {
-  width: 20%;
-  height: 20%;
+  width: 70px;
+  height: 70px;
   padding: 8px;
 }
 
@@ -24899,6 +24958,71 @@ page-order-details ion-card ion-card-title {
   border: 1px solid gray;
   width: 30px;
   padding: 2px;
+}
+
+.popup {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: rgba(146, 146, 146, 0.6);
+  padding: 15%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+input {
+  /* removes default styling from input color element */
+  padding: 0;
+  border: none;
+  /* makes input (color swatch) 100% size of container */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* mix blend mode makes the color of the swatch alter the image behind it. */
+  mix-blend-mode: hue;
+  /* try screen, multiply or other blend modes for different effects */
+  cursor: pointer;
+}
+
+/* removes default styling from input color element */
+::-webkit-color-swatch {
+  border: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  border: none;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.buy-button {
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: 1px solid #f53d3d;
+  color: #f53d3d;
+}
+
+.ap-color {
+  color: #f53d3d;
 }
 
 .slider {
