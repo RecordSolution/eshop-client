@@ -22,7 +22,12 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-  goBuyerHomePage(){
+  goBuyerHomePage() {
     this.navCtrl.setRoot(CustomDesignHomePage);
   }
+
+  Signup() {
+    this.navCtrl.setRoot(CategoriesPage)
+  }
+
 }
