@@ -45,7 +45,7 @@ export class CustomDesignHomePage {
     
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getSvgs().subscribe(res =>{
-      this.svgs= res;
+      this.svgs = res;
       console.log(res)
     })
     screen.orientation.lock('landscape');

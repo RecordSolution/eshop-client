@@ -10,10 +10,12 @@
             <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='buyer'" menuClose ion-item  (click)="openPage('home')" >
                 Home
             </button>
-            <button *ngIf="profileStore.currentUserData &&  profileStore.currentUserData.accountType=='buyer'" menuClose ion-item  (click)="openPage('customDesign')" >
+            <!-- <button *ngIf="profileStore.currentUserData &&  profileStore.currentUserData.accountType=='buyer'" menuClose ion-item  (click)="openPage('customDesign')" >
               Custom Design
-          </button>
-
+          </button> -->
+          <button  menuClose ion-item  (click)="openPage('customDesign')" >
+            Custom Design
+        </button>
 
           <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='admin'" menuClose ion-item  (click)="openPage('adminOrders')" >
             Orders

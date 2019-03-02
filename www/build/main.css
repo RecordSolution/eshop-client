@@ -24789,12 +24789,6 @@ ion-icon .icon-inner {
   border: none;
 }
 
-ion-icon .icon-inner {
-  height: 1em;
-  width: 1em;
-  display: none;
-}
-
 custom-assets .inner-popup {
   width: 100%;
   padding: 5%;
@@ -24858,6 +24852,14 @@ custom-fashion-category-selector .icon {
   background: #2ce3e4;
   border-radius: 50%;
   padding: 3px;
+}
+
+popover .list {
+  height: 90px !important;
+  top: 47px !important;
+  left: 329.5px !important;
+  border-radius: 1vw !important;
+  width: 64px !important;
 }
 
 page-order-details ion-card {

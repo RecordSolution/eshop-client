@@ -25,4 +25,8 @@ export class SignupPage {
   goBuyerHomePage(){
     this.navCtrl.setRoot(CustomDesignHomePage);
   }
+
+  Signup(){
+    this.navCtrl.setRoot(CategoriesPage);
+  }
 }
