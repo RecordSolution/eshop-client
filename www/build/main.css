@@ -24920,31 +24920,31 @@ page-order-details ion-card ion-card-title {
   height: 70px;
 }
 
-.main {
+page-login .main {
   background-color: #F5F5F5;
 }
 
-.main .logo {
+page-login .main .logo {
   padding-top: 61%;
   height: 42%;
   text-align: center;
 }
 
-.main .logo-img {
+page-login .main .logo-img {
   max-width: 93px;
 }
 
-.main .card {
+page-login .main .card {
   border-radius: 2vw;
 }
 
-.main .card ion-card-content {
+page-login .main .card ion-card-content {
   padding: 54px 17px 54px;
   font-size: 1.4rem;
   line-height: 1.4;
 }
 
-.main .card ion-card-content .login .button-ios-primary {
+page-login .main .card ion-card-content .login .button-ios-primary {
   color: white;
   background-color: #8d939e;
   width: 34%;
@@ -24954,45 +24954,45 @@ page-order-details ion-card ion-card-title {
   margin-left: 26%;
 }
 
-.main .card ion-card-content .forgotpassword {
+page-login .main .card ion-card-content .forgotpassword {
   padding-top: 20px;
   text-align: center;
   font-weight: bold;
 }
 
-.main .card ion-card-content .forgotpassword a {
+page-login .main .card ion-card-content .forgotpassword a {
   color: darkgray;
 }
 
-.main .card ion-card-content .loginfields {
+page-login .main .card ion-card-content .loginfields {
   border-bottom: 0.5px solid #e2d4d4;
 }
 
-.main .card ion-card-content ::-webkit-input-placeholder {
+page-login .main .card ion-card-content ::-webkit-input-placeholder {
   text-align: center;
 }
 
-.main .card ion-card-content :-moz-placeholder {
+page-login .main .card ion-card-content :-moz-placeholder {
   /* Firefox 18- */
   text-align: center;
 }
 
-.main .card ion-card-content ::-moz-placeholder {
+page-login .main .card ion-card-content ::-moz-placeholder {
   /* Firefox 19+ */
   text-align: center;
 }
 
-.main .card ion-card-content :-ms-input-placeholder {
+page-login .main .card ion-card-content :-ms-input-placeholder {
   text-align: center;
 }
 
-.main .signup {
+page-login .main .signup {
   font-size: 18px;
   padding-top: 20px;
   text-align: center;
 }
 
-.main .signup a {
+page-login .main .signup a {
   color: gray;
 }
 
