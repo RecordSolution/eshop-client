@@ -14,8 +14,10 @@ import html2canvas from 'html2canvas';
 })
 export class CustomDesignHomePage {
   @ViewChild('itemSlider') itemSlider: any;
-  @ViewChild('screen') screen: ElementRef;
-  @ViewChild('canvas') canvas: ElementRef;
+  @ViewChild('frontScreen') frontScreen: ElementRef;
+  @ViewChild('backScreen') backScreen: ElementRef;
+  @ViewChild('frontCanvas') frontCanvas: ElementRef;
+  @ViewChild('backCanvas') backCanvas: ElementRef;
   @ViewChild('downloadLink') downloadLink: ElementRef;
 
   fashionCategory: string = '';
@@ -28,10 +30,19 @@ export class CustomDesignHomePage {
   customAssets: Array<any>;
   showAssets: boolean = false;
   dragableAssets: Array<any> = [];
+  dragableBackAssets: Array<any> = [];
   selectedToResize: any;
   svgs: any;
   inBounds = true;
+  backInBounds = true;
+  assetView:string;
   edge = {
+    top: true,
+    bottom: true,
+    left: true,
+    right: true
+  };
+  backEdge = {
     top: true,
     bottom: true,
     left: true,
@@ -81,16 +92,24 @@ export class CustomDesignHomePage {
     this.color = selectedColor;
   }
   onCustomAssetSelection(item) {
+    debugger;
     if (item) {
       this.showAssets = false;
-      this.dragableAssets.push(item);
+      if(this.assetView == 'front'){
+        this.dragableAssets.push(item);
+      }
+      else if(this.assetView == 'back'){
+        this.dragableBackAssets.push(item);
+      }
     }
   }
   active(item) {
     this.selectedToResize = item;
   }
-  selectAssets() {
+  selectAssets(view) {
+    debugger;
     this.showAssets = true;
+    this.assetView = view;
   }
   closePopup() {
     this.showAssets = false
@@ -102,17 +121,38 @@ export class CustomDesignHomePage {
     this.edge = event;
     console.log('edge:', event);
   }
+  checkBackEdge(event){
+    this.backEdge = event;
+    console.log('backEdge:', event);
+  }
   downloadImage() {
 
 
-    html2canvas(this.screen.nativeElement, {
+    html2canvas(this.frontScreen.nativeElement, {
       useCORS: true,
+      scale:5,
       width: 300,
       height: 300
     }).then((canvas: any) => {
       debugger
 
-      this.canvas.nativeElement.src = canvas.toDataURL();
+      this.frontCanvas.nativeElement.src = canvas.toDataURL();
+      // document.getElementById('test').appendChild(canvas);
+
+
+      // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+      // this.downloadLink.nativeElement.download = 'marble-diagram.png';
+      // this.downloadLink.nativeElement.click();
+    });
+    html2canvas(this.backScreen.nativeElement, {
+      useCORS: true,
+      scale:5,
+      width: 300,
+      height: 300
+    }).then((canvas: any) => {
+      debugger
+
+      this.backCanvas.nativeElement.src = canvas.toDataURL();
       // document.getElementById('test').appendChild(canvas);
 
 
