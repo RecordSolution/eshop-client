@@ -1,0 +1,32 @@
+{
+    "customAssets": [
+        {
+            "id": "kasd892das",
+            "name": "logo1",
+            "icon":"/assets/imgs/avatar.png",
+            "width":30,
+            "height":30
+        },
+        {
+            "id": "ka39cn",
+            "name": "logo1",
+            "icon":"/assets/imgs/appLogo.png",
+            "width":30,
+            "height":30
+        },
+        {
+            "id": "lwmrd3049rn",
+            "name": "logo1",
+            "icon":"/assets/imgs/pocket-icon.png",
+            "width":30,
+            "height":30
+        },
+        {
+            "id": "o9druo3n",
+            "name": "logo1",
+            "icon":"/assets/imgs/avatar.png",
+            "width":30,
+            "height":30
+        }
+    ]
+}

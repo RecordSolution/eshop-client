@@ -7,6 +7,7 @@ export class ProductStore {
 
     @observable allProducts: Array<any> = [];
     @observable customProducts: Array<any> = [];
+    @observable customAssets: Array<any> = [];
 
     constructor() {
 
@@ -38,8 +39,15 @@ export class ProductStore {
         return this.allProducts;
 
     }
+    @action seveCustomAssets(assets) {
+        console.log('custom assets', assets);
+        this.customAssets = [...assets];
+    }
+    @computed get getCustomAssets(){
+        return this.customAssets;
+    }
     @action seveCustomProducts(products) {
-        console.log('custom products', products);
+
         this.customProducts = [...products];
     }
     getproductForCustomDesign(dressCategory, fashionCategory) {

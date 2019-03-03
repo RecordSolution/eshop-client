@@ -1,4 +1,4 @@
-import { Component, ViewChild , ElementRef} from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
@@ -6,7 +6,7 @@ import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
 import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
-import  html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -17,6 +17,7 @@ export class CustomDesignHomePage {
   @ViewChild('screen') screen: ElementRef;
   @ViewChild('canvas') canvas: ElementRef;
   @ViewChild('downloadLink') downloadLink: ElementRef;
+
   fashionCategory: string = '';
   dressCategory: string = '';
   customDesignSelectionModel: CustomDesignSelectionModel;
@@ -24,11 +25,11 @@ export class CustomDesignHomePage {
   crossActive: boolean;
   size: any;
   selectedProduct: any;
-  customAssets: Array<string>;
+  customAssets: Array<any>;
   showAssets: boolean = false;
   dragableAssets: Array<any> = [];
   selectedToResize: any;
-  svgs : any;
+  svgs: any;
   inBounds = true;
   edge = {
     top: true,
@@ -36,8 +37,8 @@ export class CustomDesignHomePage {
     left: true,
     right: true
   };
-  constructor(public navCtrl: NavController, 
-    public productStore: ProductStore, 
+  constructor(public navCtrl: NavController,
+    public productStore: ProductStore,
     public navParams: NavParams,
     private productsProvider: ProductsProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
@@ -47,14 +48,17 @@ export class CustomDesignHomePage {
     this.customDesignSelectionModel.selectedColor = event;
   }
   ionViewDidLoad() {
-    this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
+
+    // this.customAssets = [{icon:'/assets/imgs/pocket-icon.png'}, {icon:'/assets/imgs/avatar.png'}, {icon:'/assets/imgs/logo.png'}]
+    // this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    this.selectedProduct = this.navParams.get('data'); 
+    this.selectedProduct = this.navParams.get('data');
     console.log('ionViewDidLoad CustomDesignPage');
-    // this.productsProvider.getSvgs().subscribe(res =>{
-    //   this.svgs= res;
-    //   console.log(res)
-    // })
+    this.productsProvider.getDesigingAssets().subscribe(res => {
+      this.customAssets = [...res];
+      //   this.svgs= res;
+      //   console.log(res)
+    })
     screen.orientation.lock('landscape');
   }
   ionViewDidLeave() {
@@ -73,41 +77,41 @@ export class CustomDesignHomePage {
   //   this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
   //   console.log(this.selectedProduct);
   // }
-  selectColor(selectedColor){
-    this.color=selectedColor;
+  selectColor(selectedColor) {
+    this.color = selectedColor;
   }
   onCustomAssetSelection(item) {
-    if(item){
+    if (item) {
       this.showAssets = false;
       this.dragableAssets.push(item);
     }
   }
-  active(item){
-    this.selectedToResize=item;
+  active(item) {
+    this.selectedToResize = item;
   }
   selectAssets() {
     this.showAssets = true;
   }
-  closePopup(){
-    this.showAssets=false
+  closePopup() {
+    this.showAssets = false
   }
   setBadge(size) {
-    this.size = size
+    this.selectedToResize.width = size
   }
   checkEdge(event) {
     this.edge = event;
     console.log('edge:', event);
   }
-  downloadImage(){
-    
-    
+  downloadImage() {
+
+
     html2canvas(this.screen.nativeElement, {
       useCORS: true,
-      width:300,
-      height:300
-  }).then((canvas:any) => {
+      width: 300,
+      height: 300
+    }).then((canvas: any) => {
       debugger
-  
+
       this.canvas.nativeElement.src = canvas.toDataURL();
       // document.getElementById('test').appendChild(canvas);
 

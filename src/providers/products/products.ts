@@ -25,12 +25,20 @@ export class ProductsProvider {
     }))
   }
   getSvgs(value?: string) {
-    debugger
+    // debugger
     // return this.http.get('/assets/svg-data.json').
     return this.http.get('/assets/custom-products.json').
     pipe(map((data: any) => {
       this.productStore.seveCustomProducts(data.customProducts);
       return data.customProducts;
+
+    }))
+  }
+  getDesigingAssets(){
+    return this.http.get('/assets/custom-assets.json').
+    pipe(map((data: any) => {
+      this.productStore.seveCustomAssets(data.customAssets);
+      return data.customAssets;
 
     }))
   }

@@ -17,59 +17,64 @@
 
 
 <ion-content padding class="main">
-  <ion-grid  class="drag-boundary" #screen   [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds>
+    <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>
+  <ion-grid class="drag-boundary" #screen
+    [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
+    #myBounds>
     <ion-row>
       <ion-col size="6">
         front
-          <div  *ngIf="selectedProduct" >
-          
-              <svg  width="300" height="300" version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"
-              style="fill:color;" xml:space="preserve">
-              <path  class="test"  [attr.d]="selectedProduct.menFront"/>
-            </svg>
-    
-            </div>
+        <div *ngIf="selectedProduct">
+
+          <svg width="300" height="300" version="1.1" [attr.fill]="color" id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
+            <path class="test" [attr.d]="selectedProduct.menFront" />
+          </svg>
+
+        </div>
         <!-- <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
         </custom-fashion-category-selector> -->
       </ion-col>
       <ion-col size="6">
-      Back
+        Back
         <!-- {{selectedProduct | json}} -->
-  <!-- {{selectedProduct | json}} -->
+        <!-- {{selectedProduct | json}} -->
         <!-- <ion-icon name="color-palette"  [cpHeight]='auto'  [style.color]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" ></ion-icon> -->
         <!-- <input  [value]="color" [style.background]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" /> -->
         <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->
-      <!-- <div  class="drag-boundary" #screen   [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds> -->
-         <!-- {{svgs.json}} -->
-             
-        <div  *ngIf="selectedProduct" >
-          
-              <svg  width="300" height="300" version="1.1" [attr.fill]="color" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626 645"
-              style="fill:color;" xml:space="preserve">
-              <path  class="test"  [attr.d]="selectedProduct.menBack"/>
-            </svg>
-    
-            </div>
+        <!-- <div  class="drag-boundary" #screen   [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds> -->
+        <!-- {{svgs.json}} -->
 
-            <div *ngIf="dragableAssets && dragableAssets.length > 0" style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-                <img *ngFor="let asset of dragableAssets"
-                [ngStyle]="selectedToResize==asset ? {height:size+'px',width:size+'px'}:''" class="icons" ion-long-press
-                [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset}}">
-            </div>
-           
-      <!-- </div> -->
-        
-   
+        <div *ngIf="selectedProduct">
+
+          <svg width="300" height="300" version="1.1" [attr.fill]="color" id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
+            <path class="test" [attr.d]="selectedProduct.menBack" />
+          </svg>
+
+        </div>
+
+        <div *ngIf="dragableAssets && dragableAssets.length > 0"
+          style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+          <img *ngFor="let asset of dragableAssets"
+            [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}" class="icons"
+            ion-long-press [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)"
+            [bounds]="myBounds" [inBounds]="inBounds" src="{{asset.icon}}">
+        </div>
+
+        <!-- </div> -->
+
+
         <!-- <input type="color" value="#0000ff">
 <img src="https://www.gstatic.com/webp/gallery3/1_webp_ll.png"> -->
 
-        
-       
-        
+
+
+
         <!-- <img *ngIf="selectedProduct" src="{{selectedProduct.images[0].url}}" /> -->
-      
+
         <!-- <button ion-button (click)="selectAssets()">asssets</button> -->
       </ion-col>
 
@@ -80,30 +85,33 @@
       </ion-col> -->
     </ion-row>
   </ion-grid>
-  <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>
+  <ion-item *ngIf="selectedToResize">
+    <ion-range min="30" max="100" [(ngModel)]="selectedToResize.width" snaps="true" color="secondary"
+      (ionChange)="setBadge(selectedToResize.width)">
+      {{size}}</ion-range>
+  </ion-item>
+ 
   <div class="popup" *ngIf="showAssets">
-      <custom-assets [allCustomAssets]="customAssets" (onCancel)="closePopup()"
-        (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>
-  
-    </div>
+    <custom-assets [allCustomAssets]="productStore.getCustomAssets" (onCancel)="closePopup()"
+      (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>
+
+  </div>
 
   <div class="flex" *ngIf="selectedProduct">
-      <!-- colors -->
-      <div class="color-selection" (click)="selectColor(color)" [style.background]="color" *ngFor="let color of selectedProduct.colors"></div>
-    </div>
-    <div class="flex " *ngIf="selectedProduct">
-          <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>
-        </div>
-        <ion-item>
-          <ion-input type='text' placeholder="Extra Instructions...."></ion-input>
-        </ion-item>
-        <button ion-button (click)="downloadImage()">save</button>
+    <!-- colors -->
+    <div class="color-selection" (click)="selectColor(color)" [style.background]="color"
+      *ngFor="let color of selectedProduct.colors"></div>
+  </div>
+  <div class="flex " *ngIf="selectedProduct">
+    <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>
+  </div>
   <ion-item>
-      <ion-range min="30" max="100" [(ngModel)]="size" snaps="true" color="secondary" (ionChange)="setBadge(size)">
-        {{size}}</ion-range>
-    </ion-item>
- 
- 
+    <ion-input type='text' placeholder="Extra Instructions...."></ion-input>
+  </ion-item>
+  <button ion-button (click)="downloadImage()">save</button>
+  
+
+
   <img #canvas style=" width:500px;
   height:500px;">
   <a #downloadLink></a>

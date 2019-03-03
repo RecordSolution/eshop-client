@@ -28,9 +28,9 @@ export class CategoriesPage {
   }
 
   getProducts() {
-    this.productService.getProducts().subscribe(res => {
-      this.productStore.saveProducts(res);
-    })
+    // this.productService.getProducts().then(res => {
+    //   // this.productStore.saveProducts(res);
+    // })
 
   }
 }

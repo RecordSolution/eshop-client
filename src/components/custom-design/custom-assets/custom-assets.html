@@ -1,7 +1,7 @@
 <!-- Generated template for the CustomAssetsComponent component -->
 <div class="inner-popup">
     <div class="assets">
- <img  class="images" [class.selected-item]="ifSelected(item)" *ngFor="let item of allCustomAssets" src="{{item}}" (click)="onSelection(item)">
+ <img  class="images" [class.selected-item]="ifSelected(item)" *ngFor="let item of allCustomAssets" src="{{item.icon}}" (click)="onSelection(item)">
 </div>
  <p *ngIf="errorMessage && errorMessage!=''">{{errorMessage}}</p>
  <div class="action">
