@@ -4,6 +4,7 @@ import { ProductsProvider } from '../../../providers/products/products';
 // import { Subscriber } from 'rxjs/Subscriber';
 import { Product } from '../../../shared/models/product';
 import { ProductDetailsPage } from '../product-details/product-details';
+import { ProductStore } from '../../../store/productstore/productstore';
 
 /**
  * Generated class for the MenPage page.
@@ -18,12 +19,13 @@ import { ProductDetailsPage } from '../product-details/product-details';
   templateUrl: 'men.html',
 })
 export class MenPage {
-  products: Array<Product>;
+  products: Array<Product>=[];
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    public productStore:ProductStore,
     public productService: ProductsProvider) {
     this.productService.getProducts().subscribe(res => {
-      this.products = res;
+      // this.products = res;
     });
   }
 
