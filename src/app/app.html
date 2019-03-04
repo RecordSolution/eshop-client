@@ -16,6 +16,9 @@
           <button  menuClose ion-item  (click)="openPage('customDesign')" >
             Custom Design
         </button>
+        <button  menuClose ion-item  (click)="openPage('buyer-orders')" >
+            My Orders
+        </button>
 
           <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='admin'" menuClose ion-item  (click)="openPage('adminOrders')" >
             Orders

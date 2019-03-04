@@ -4,11 +4,11 @@ import { Product } from "./product";
 export class OrderModel{
     id:string;
     status:string;
-    orderDate:string;
+    orderDate:Date;
     addressToDeliver:string;
     cutomerContact:string;
-    estimatedDateToDeliver:string;
-    totalPrice:string;
+    estimatedDateToDeliver:Date;
+    totalPrice:number;
     color:any;
     size:string;
     quantity:number;

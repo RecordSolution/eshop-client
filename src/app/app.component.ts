@@ -9,6 +9,7 @@ import { SharedProvider } from "./../providers/shared/shared";
 import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard';
 import { ProfileStore } from './../store/profilestore/profileStore'
 import { CutomDesignCategorySelectorPage } from '../pages/buyer/cutom-design-category-selector/cutom-design-category-selector';
+import { UserOrdersPage } from '../pages/buyer/user-orders/user-orders';
 // import { DesignCanvasPage } from '../pages/buyer/customDesign/design-canvas/design-canvas';
 @Component({
   templateUrl: 'app.html'
@@ -89,6 +90,9 @@ export class MyApp implements OnChanges{
     }
     else if(pageName=='adminProducts'){
       this.nav.push(AdmindashboardPage);
+    }
+    else if(pageName=='buyer-orders'){
+      this.nav.push(UserOrdersPage)
     }
   
     else if(pageName=='logout'){

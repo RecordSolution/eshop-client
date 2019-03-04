@@ -14,5 +14,40 @@
 
 
 <ion-content padding>
-
+    <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">
+          
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/logo.png">
+          </ion-avatar>
+          <h2>{{order.buyer.name}}</h2>
+          <p>{{order.orderDate}}</p>
+        </ion-item>
+      
+        <!-- <img src="img/advance-card-bttf.png"> -->
+      
+        <ion-card-content>
+         <p>{{order.status}}</p>
+         <h6>{{order.buyer.contactNo}}</h6>
+        </ion-card-content>
+    
+        <ion-item>
+         
+         Total Price
+          <ion-badge item-end>{{order.totalPrice}}</ion-badge>
+        </ion-item>
+    
+     
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              
+              <div (click)="productDetails()" >Show Details</div>
+            </button>
+          </ion-col>
+         
+        </ion-row>
+      
+      </ion-card>
 </ion-content>

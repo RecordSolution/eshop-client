@@ -31,6 +31,7 @@ import { CustomAssetsComponent } from "./../components/custom-design/custom-asse
 // import { PopoverController } from 'ionic-angular';
 import { PopoverComponent} from '../components/popover/popover';
 import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-category-selector/cutom-design-category-selector";
+import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
 @NgModule({
   declarations: [
     MyApp,
@@ -47,7 +48,8 @@ import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-c
     CustomDressCategorySelectorComponent,
     CustomAssetsComponent,
     PopoverComponent,
-    CutomDesignCategorySelectorPage    
+    CutomDesignCategorySelectorPage,
+    UserOrdersPage    
     
   ],
   imports: [
@@ -75,7 +77,8 @@ import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-c
     CustomDressCategorySelectorComponent,
     CustomAssetsComponent,
     PopoverComponent,
-    CutomDesignCategorySelectorPage
+    CutomDesignCategorySelectorPage,
+    UserOrdersPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

@@ -1,4 +1,4 @@
-import { observable, autorun,action, computed } from 'mobx';
+import { observable, autorun, action, computed } from 'mobx';
 // import {  } from 'mobx';
 import { Injectable } from "@angular/core";
 // import { Birthday } from '../models/birthday';  
@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class ProfileStore {
     @observable userData: any;
-
+    
     constructor() {
         autorun(() => {
             if (JSON.parse(localStorage.getItem('userData')) && JSON.parse(localStorage.getItem('userData')) != {}) {

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OrdersProvider } from '../../../providers/orders/orders';
+import { OrderStore } from '../../../store/orders/orderstore';
 
 /**
  * Generated class for the UserOrdersPage page.
@@ -14,12 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user-orders.html',
 })
 export class UserOrdersPage {
+  orders: Array<any>=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public orderService: OrdersProvider,
+     public ordersStore : OrderStore,public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserOrdersPage');
-  }
+    //  if(this.ordersStore.myOrders.length==0){
+
+      this.orderService.getorders().subscribe(res =>{
+         this.orders=res;
+        console.log(this.orders);
+      })
+
+    // }
+  
+}
 
 }

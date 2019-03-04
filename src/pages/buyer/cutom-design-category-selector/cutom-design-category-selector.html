@@ -7,32 +7,37 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>cutom-design-category-selector</ion-title>
+    <ion-title>Cutom Design</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-grid>
-        <ion-row>
-          <ion-col size="4"><div>
-                  <ion-icon name="man" (click)="forgotpassword()"></ion-icon>
-                </div>
-                <div>
-                  <ion-icon name="woman"></ion-icon>
-                </div>
-            
-          </ion-col>
-          <ion-col size="4">
-              <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
-                </custom-dress-category-selector>
-          </ion-col>
-          <ion-col size="4">
-              <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
-            </custom-fashion-category-selector>
-          </ion-col>
-        </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="column gendar-column" size="4">
+        <div>
+          <p style="float: left">Gendar</p>
+          <br><br><br>
+          <img class="gendar" src="/assets/icon/man-icon.png">
+        </div>
+        <div>
+          <img class="gendar" src="/assets/icon/women-icon.png">
+        </div>
+
+      </ion-col>
+      <ion-col class="column" size="4">
+        <p style="float: left"> Dress Type</p>
+        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
+        </custom-dress-category-selector>
+      </ion-col>
+      <ion-col class="column" size="4">
+        <p style="float: left"> Style Type</p>
+        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
+        </custom-fashion-category-selector>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
+
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
@@ -51,6 +53,7 @@ export class CustomDesignHomePage {
   constructor(public navCtrl: NavController,
     public productStore: ProductStore,
     public navParams: NavParams,
+    public alertCtrl:AlertController,
     private productsProvider: ProductsProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
@@ -124,6 +127,42 @@ export class CustomDesignHomePage {
   checkBackEdge(event){
     this.backEdge = event;
     console.log('backEdge:', event);
+  }
+  forgotpassword() {
+    let alert = this.alertCtrl.create({
+
+      title: 'Extra Instructions',
+      inputs: [
+
+        {
+          name: 'details',
+          placeholder: 'Enter Details',
+          type: 'text'
+
+        }
+        
+      ],
+      buttons: [
+
+        {
+
+          text: 'Cancel',
+          role: 'Cancel',
+          handler: data => {
+
+          }
+        },
+        {
+
+          cssClass: 'ok',
+          text: 'ok',
+          handler: data => {
+
+          }
+        }
+      ]
+    });
+    alert.present();
   }
   downloadImage() {
 

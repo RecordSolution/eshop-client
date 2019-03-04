@@ -1,16 +1,16 @@
-import { observable, autorun, computed , action} from 'mobx';
+import { observable, autorun, computed, action } from 'mobx';
 import { Orders } from './../../shared/models/orders';
 import { Injectable } from "@angular/core";
 
 
 @Injectable()
-export class OrderStore{
+export class OrderStore {
 
-    @observable  myOrders : Array<any>= [];
-    @observable filteredOrders : Array<any> =[];
-    @observable filter:string = '';
+    @observable myOrders: Array<any> = [];
+    @observable filteredOrders: Array<any> = [];
+    @observable filter: string = '';
 
-    constructor(){
+    constructor() {
 
         autorun(() => {
             if (JSON.parse(localStorage.getItem('orders')) && JSON.parse(localStorage.getItem('orders')) != {}) {
@@ -23,57 +23,61 @@ export class OrderStore{
             else if (this.filteredOrders) {
                 window.localStorage.setItem('orders', JSON.stringify(this.filteredOrders));
             }
-      
+
         });
     }
 
-    @action clear(){
-        this.myOrders=[];
-        this.filter='';
-        this.filteredOrders=[];
+
+    @action addNewOrder(order) {
+        this.myOrders.push(order);
     }
-    @action setOrders(orders){
+    @action clear() {
+        this.myOrders = [];
+        this.filter = '';
+        this.filteredOrders = [];
+    }
+    @action setOrders(orders) {
 
         this.myOrders = orders;
         window.localStorage.setItem('products', JSON.stringify(orders));
-        if(this.filter && this.filter!=''){
+        if (this.filter && this.filter != '') {
 
             this.filterOrders(this.filter);
 
         }
-        else{
+        else {
 
             this.filteredOrders = orders;
         }
-        
+
 
     }
-    @action filterOrders(status?){
+    @action filterOrders(status?) {
 
         console.log(status)
 
 
-        if(status){
+        if (status) {
             this.filter = status;
-            this.filteredOrders = this.myOrders.filter(x=>x.status==status);
+            this.filteredOrders = this.myOrders.filter(x => x.status == status);
 
 
             // return this.filteredOrders;
         }
-        else{
+        else {
             this.filteredOrders = this.myOrders;
-          
+
         }
 
     }
 
 
-    @computed  get getOrders() {
+    @computed get getOrders() {
 
         // return this.myOrders;
 
         return this.filteredOrders;
 
-        
+
     }
 }

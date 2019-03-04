@@ -1,11 +1,12 @@
 <!-- Generated template for the CustomFashionCategorySelectorComponent component -->
 <!-- <div class="flex"> -->
-    <ion-list class="chip-list" *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)" [class.selected-item]="isSelectedItem(cat)">
+    <ion-list class="chip-list" *ngFor="let cat of fasionDesignes"  (click)="onSelectCategory(cat)">
         <ion-item text-wrap no-lines>
           <ion-chip class="chip-size" item-content>
+              <img class="icon" [class.selected-item]="isSelectedItem(cat)" src="{{cat.menIcon}}">
             <ion-label>{{cat.key}}</ion-label>
             <!-- <ion-icon name="heart" color="primary"></ion-icon> -->
-            <img class="icon" [class.selected-item]="isSelectedItem(cat)" src="{{cat.menIcon}}">
+           
           </ion-chip>
         </ion-item>
       </ion-list>

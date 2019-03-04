@@ -12,7 +12,7 @@ export class Product{
         totalQuantity:number;
         gendar:string;
         sizes:Array<string>;
-        price:string;
+        price:number;
         descriprion:string
     
 }
