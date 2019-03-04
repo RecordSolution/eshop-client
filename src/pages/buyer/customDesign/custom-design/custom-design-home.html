@@ -17,14 +17,15 @@
 
 
 <ion-content padding class="main">
-    <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets()"></ion-icon>
-  <ion-grid class="drag-boundary" #screen
-    [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
-    #myBounds>
+    
+  <ion-grid *ngIf="selectedProduct" >
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="6" #frontScreen  style="position:relative;">
+      <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets('front')"></ion-icon>
         front
-        <div *ngIf="selectedProduct">
+        <div style="width:300px;" class="drag-boundary" 
+        [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
+        #myBounds>
 
           <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -33,10 +34,19 @@
           </svg>
 
         </div>
+       front  {{dragableAssets | json}}
+        <div *ngIf="dragableAssets && dragableAssets.length > 0"
+          style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+          <img *ngFor="let asset of dragableAssets"
+            [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}" class="icons"
+            ion-long-press [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)"
+            [bounds]="myBounds" [inBounds]="inBounds" src="{{asset.icon}}">
+        </div>
         <!-- <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
         </custom-fashion-category-selector> -->
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="6" #backScreen style="position:relative;">
+          <ion-icon *ngIf="selectedProduct" name="albums" (click)="selectAssets('back')"></ion-icon>
         Back
         <!-- {{selectedProduct | json}} -->
         <!-- {{selectedProduct | json}} -->
@@ -46,7 +56,9 @@
         <!-- <div  class="drag-boundary" #screen   [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds> -->
         <!-- {{svgs.json}} -->
 
-        <div *ngIf="selectedProduct">
+        <div style="width:300px;" class="drag-boundary" 
+        [ngClass]="{ 'top-b': !backEdge?.top, 'bottom-b': !backEdge?.bottom, 'left-b': !backEdge?.left, 'right-b': !backEdge?.right }"
+        #myBackBounds>
 
           <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -55,14 +67,14 @@
           </svg>
 
         </div>
-
-        <div *ngIf="dragableAssets && dragableAssets.length > 0"
-          style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-          <img *ngFor="let asset of dragableAssets"
-            [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}" class="icons"
-            ion-long-press [interval]="400" (onPressing)="active(asset)" ngDraggable (edge)="checkEdge($event)"
-            [bounds]="myBounds" [inBounds]="inBounds" src="{{asset.icon}}">
-        </div>
+ back {{dragableBackAssets | json}}
+        <div *ngIf="dragableBackAssets && dragableBackAssets.length > 0"
+            style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+            <img *ngFor="let a of dragableBackAssets"
+              [ngStyle]="{height:a.width+'px',width:a.width+'px'}" class="icons"
+              ion-long-press [interval]="400" (onPressing)="active(a)" ngDraggable (backEdge)="checkBackEdge($event)"
+              [bounds]="myBackBounds" [inBounds]="backInBounds" src="{{a.icon}}">
+          </div>
 
         <!-- </div> -->
 
@@ -112,7 +124,9 @@
   
 
 
-  <img #canvas style=" width:500px;
+  <img #frontCanvas style=" width:500px;
+  height:500px;">
+  <img #backCanvas style=" width:500px;
   height:500px;">
   <a #downloadLink></a>
 </ion-content>
