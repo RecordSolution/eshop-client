@@ -1,12 +1,18 @@
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>LogIn</ion-title>
-  </ion-navbar>
-</ion-header> -->
-
-
 <ion-content class="main">
-<div class="logo">
+
+    <div class="card" style="height : 50%;">
+
+        <img src="../../../assets/imgs/logo.png" alt="Avatar" >
+        <div class="container">
+            <input class="inputfields" [(ngModel)]="userCredentials.email" type="text" placeholder="Enter Email here">
+          <input class="inputfields" [(ngModel)]="userCredentials.password" type="password" placeholder="Enter password here">
+          <ion-label>Forgot your password?</ion-label>   
+        </div>
+        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Sign In</button>
+      </div>
+     <ion-label class="signuplbl"> <a (click)="signup()">New?Signup Here</a></ion-label>
+
+<!-- <div class="logo">
   <img class="logo-img" src="assets/imgs/logo.png">
 </div>
 
@@ -35,7 +41,7 @@
 <div class="signup">
 
   <a (click)="signup()">Signup</a>
-</div>
+</div> -->
   <!-- <ion-list>
 
     <ion-item>

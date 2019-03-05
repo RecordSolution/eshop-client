@@ -63,7 +63,8 @@ export class LoginPage implements OnInit {
   }
 
   signup() {
-    this.navCtrl.push(SignupPage);
+     this.navCtrl.push(SignupPage)
+    console.log("here");
   }
 
   logIn() {
