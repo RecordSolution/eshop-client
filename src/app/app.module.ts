@@ -32,6 +32,7 @@ import { CustomAssetsComponent } from "./../components/custom-design/custom-asse
 import { PopoverComponent} from '../components/popover/popover';
 import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-category-selector/cutom-design-category-selector";
 import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
+import { AddProductPage } from '../pages/admin/add-product/add-product';
 @NgModule({
   declarations: [
     MyApp,
@@ -49,7 +50,8 @@ import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
     CustomAssetsComponent,
     PopoverComponent,
     CutomDesignCategorySelectorPage,
-    UserOrdersPage    
+    UserOrdersPage,
+    AddProductPage    
     
   ],
   imports: [
@@ -58,9 +60,7 @@ import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
     HttpClientModule,
     ColorPickerModule,
     AngularDraggableModule,
-    LongPressModule,
-  
-
+    LongPressModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,7 +78,8 @@ import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
     CustomAssetsComponent,
     PopoverComponent,
     CutomDesignCategorySelectorPage,
-    UserOrdersPage
+    UserOrdersPage,
+    AddProductPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

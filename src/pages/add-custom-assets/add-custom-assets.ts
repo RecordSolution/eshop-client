@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the AddProductPage page.
+ * Generated class for the AddCustomAssetsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-product',
-  templateUrl: 'add-product.html',
+  selector: 'page-add-custom-assets',
+  templateUrl: 'add-custom-assets.html',
 })
-export class AddProductPage {
+export class AddCustomAssetsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddProductPage');
-  }
-
-  filepicker(event){
-    console.log(event)
+    console.log('ionViewDidLoad AddCustomAssetsPage');
   }
 
 }

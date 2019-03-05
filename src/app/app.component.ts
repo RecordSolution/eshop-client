@@ -10,6 +10,7 @@ import { AdmindashboardPage } from '../pages/admin/admindashboard/admindashboard
 import { ProfileStore } from './../store/profilestore/profileStore'
 import { CutomDesignCategorySelectorPage } from '../pages/buyer/cutom-design-category-selector/cutom-design-category-selector';
 import { UserOrdersPage } from '../pages/buyer/user-orders/user-orders';
+import { AddProductPage } from '../pages/admin/add-product/add-product';
 // import { DesignCanvasPage } from '../pages/buyer/customDesign/design-canvas/design-canvas';
 @Component({
   templateUrl: 'app.html'
@@ -39,11 +40,11 @@ export class MyApp implements OnChanges{
           }
 
         } else {
-          this.rootPage = LoginPage;
+          this.rootPage = AdmindashboardPage;
         }
       }
       else {
-        this.rootPage = LoginPage;
+        this.rootPage = AdmindashboardPage;
       }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -84,6 +85,9 @@ export class MyApp implements OnChanges{
     }
     else if(pageName=='customDesign'){
       this.nav.push(CutomDesignCategorySelectorPage);
+    }
+    else if(pageName=='add-product'){
+      this.nav.push(AddProductPage);
     }
     else if(pageName=='adminOrders'){
       this.nav.push(AdmindashboardPage);

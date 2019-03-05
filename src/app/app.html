@@ -19,7 +19,9 @@
         <button  menuClose ion-item  (click)="openPage('buyer-orders')" >
             My Orders
         </button>
-
+        <button  menuClose ion-item  (click)="openPage('add-product')" >
+          Add Product
+      </button>
           <button *ngIf="profileStore.currentUserData && profileStore.currentUserData.accountType=='admin'" menuClose ion-item  (click)="openPage('adminOrders')" >
             Orders
         </button>

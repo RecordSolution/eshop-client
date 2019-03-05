@@ -13,37 +13,76 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-label>Product name</ion-label>
-  <ion-input [(ngModel)]="name"></ion-input>
-  <ion-label>Product description</ion-label>
+  <ion-item>
+    <ion-label>Product name</ion-label>
+    <!-- <ion-list> -->
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Short Description</ion-label>
+    <!-- <ion-list> -->
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Detail Description</ion-label>
+    <!-- <ion-list> -->
+    <textarea type="text" [(ngModel)]="name"></textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <!-- <ion-list> -->
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Product Colors</ion-label>
+    <ion-select>
+      <ion-option>SM</ion-option>
+      <ion-option>MD</ion-option>
+      <ion-option>LG</ion-option>
+      <ion-option>XL</ion-option>
+    </ion-select>
+  </ion-item>
+  <!-- <ion-item> <input class="input" [value]="color" [style.background]="color" [cpPosition]="'bottom'"
+      [(colorPicker)]="color" />
+    <button ion-button>
+      Add
+    </button>
+  </ion-item> -->
+  <ion-item>
+    <input type="file" (change)="filepicker($event)">
+  </ion-item>
+
+  <!-- </ion-list> -->
+  <!-- <ion-label>Product description</ion-label>
   <ion-input></ion-input>
   <ion-item>
     <ion-label>Product Colors</ion-label>
-    <ion-select [(ngModel)]="colors">
+    <ion-select>
         <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>
       </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Product Category</ion-label>
-    <ion-select [(ngModel)]="category">
+    <ion-select >
         <ion-option *ngFor="" [value]="count" (ionChange)=""></ion-option>
       </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Product Gender</ion-label>
-    <ion-select [(ngModel)]="gender">
+    <ion-select >
         <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>
       </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Product Sizes</ion-label>
-    <ion-select [(ngModel)]="sizes">
+    <ion-select >
         <ion-option *ngFor="" [value]="" (ionChange)=""></ion-option>
       </ion-select>
   </ion-item>
 
   <ion-label>Upload picture</ion-label>
-  
+  <ion-input type="file"></ion-input> -->
 
 </ion-content>
