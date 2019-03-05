@@ -12,6 +12,20 @@
 
 <ion-content class="register">
 
+  
+    <div class="card" style="height : 60%;">
+
+        <img src="../../../assets/imgs/logo.png" alt="Avatar" >
+        <div class="container">
+            <input class="inputfields"  type="text" placeholder="Enter Name here">
+          <input class="inputfields" type="text" placeholder="Enter Email here">
+          <input class="inputfields" type="password" placeholder="Enter password here"> 
+        </div>
+        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Signup</button>
+      </div>
+     <ion-label class="signuplbl"> <a (click)="login()">Member?Login Here</a></ion-label>
+
+<!-- 
   <div class="logo">
     <img class="logo-img" src="assets/imgs/logo.png">
   </div>
@@ -44,7 +58,7 @@
   <div class="signin">
   
     <a (click)="signup()">Alrady a Member?</a>
-  </div>
+  </div> -->
 
   <!-- <ion-list>
 

@@ -29,4 +29,7 @@ export class SignupPage {
   Signup(){
     this.navCtrl.setRoot(CategoriesPage)
   }
+  login(){
+    this.navCtrl.setRoot('LoginPage');
+  }
 }
