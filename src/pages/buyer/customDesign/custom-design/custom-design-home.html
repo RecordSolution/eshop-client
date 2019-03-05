@@ -43,13 +43,20 @@
           </svg>
 
         </div>
-        <!-- front  {{dragableAssets | json}} -->
+       <!-- front  {{dragableAssets | json}} -->
         <div *ngIf="dragableAssets && dragableAssets.length > 0"
           style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-          <ion-icon name="cross"></ion-icon>
-          <img *ngFor="let asset of dragableAssets" [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}"
-            class="icons" ion-long-press [interval]="400" (onPressing)="active(asset)" ngDraggable
-            (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" src="{{asset.icon}}">
+          <div *ngFor="let asset of dragableAssets; let i = index;" style="display:grid; text-align: center;position: relative;" ngDraggable [bounds]="myBounds" [inBounds]="inBounds" (edge)="checkEdge($event)">
+            
+            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="asset.isRotateIcon = true" (mouseleave)="asset.isRotateIcon = false" >
+              <ion-icon name="refresh" *ngIf="asset.isRotateIcon" class="refresher" (click)="imageRotate(i,'front')" style="color:red;"></ion-icon>
+            <img 
+            [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}"  [style.transform]="'rotate(' + (asset.rotate) + 'deg)'" class="icons"
+            ion-long-press [interval]="400" (onPressing)="active(asset)"  
+             src="{{asset.icon}}">
+             </div>
+          </div>
+         
         </div>
         <!-- <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
         </custom-fashion-category-selector> -->
@@ -77,13 +84,21 @@
           </svg>
 
         </div>
-        <!-- back {{dragableBackAssets | json}} -->
+ <!-- back {{dragableBackAssets | json}} -->
         <div *ngIf="dragableBackAssets && dragableBackAssets.length > 0"
-          style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-          <img *ngFor="let a of dragableBackAssets" [ngStyle]="{height:a.width+'px',width:a.width+'px'}" class="icons"
-            ion-long-press [interval]="400" (onPressing)="active(a)" ngDraggable (backEdge)="checkBackEdge($event)"
-            [bounds]="myBackBounds" [inBounds]="backInBounds" src="{{a.icon}}">
-        </div>
+            style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+            <div  *ngFor="let a of dragableBackAssets; let i = index"    ngDraggable (backEdge)="checkBackEdge($event)"
+            [bounds]="myBackBounds" [inBounds]="backInBounds" >
+            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="a.isRotateIcon = true" (mouseleave)="a.isRotateIcon = false" >
+              <ion-icon name="refresh" *ngIf="a.isRotateIcon" class="refresher" (click)="imageRotate(i,'back')" style="color:red;"></ion-icon>
+              <img 
+              [ngStyle]="{height:a.width+'px',width:a.width+'px'}" [style.transform]="'rotate(' + (a.rotate) + 'deg)'" class="icons"
+              ion-long-press [interval]="400" (onPressing)="active(a)"src="{{a.icon}}">
+            </div>
+              
+            </div>
+            
+          </div>
 
         <!-- </div> -->
 

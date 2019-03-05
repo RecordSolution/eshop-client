@@ -23,8 +23,10 @@ export class CategoriesPage {
     console.log('ionViewDidLoad CategoriesPage');
   }
 
-  goToMensPage() {
-    this.navCtrl.push(MenPage);
+  goToProductsPage(category) {
+    this.navCtrl.push(MenPage, { 'Category': category });
+
+    // this.navCtrl.push(MenPage);
   }
 
   getProducts() {

@@ -95,8 +95,10 @@ export class CustomDesignHomePage {
     this.color = selectedColor;
   }
   onCustomAssetSelection(item) {
-    debugger;
     if (item) {
+      item.rotate = '';
+      item.rotate = 0;
+      item.isRotateIcon = false;
       this.showAssets = false;
       if(this.assetView == 'front'){
         this.dragableAssets.push(item);
@@ -110,7 +112,7 @@ export class CustomDesignHomePage {
     this.selectedToResize = item;
   }
   selectAssets(view) {
-    debugger;
+    
     this.showAssets = true;
     this.assetView = view;
   }
@@ -173,12 +175,8 @@ export class CustomDesignHomePage {
       width: 300,
       height: 300
     }).then((canvas: any) => {
-      debugger
-
       this.frontCanvas.nativeElement.src = canvas.toDataURL();
       // document.getElementById('test').appendChild(canvas);
-
-
       // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
       // this.downloadLink.nativeElement.download = 'marble-diagram.png';
       // this.downloadLink.nativeElement.click();
@@ -189,8 +187,6 @@ export class CustomDesignHomePage {
       width: 300,
       height: 300
     }).then((canvas: any) => {
-      debugger
-
       this.backCanvas.nativeElement.src = canvas.toDataURL();
       // document.getElementById('test').appendChild(canvas);
 
@@ -199,6 +195,24 @@ export class CustomDesignHomePage {
       // this.downloadLink.nativeElement.download = 'marble-diagram.png';
       // this.downloadLink.nativeElement.click();
     });
+  }
+  imageRotate = (index,view) => {
+    if(view == 'front'){
+      if(this.dragableAssets[index].rotate >= 0 && this.dragableAssets[index].rotate < 270){
+        this.dragableAssets[index].rotate = this.dragableAssets[index].rotate + 90
+      }
+      else{
+        this.dragableAssets[index].rotate = 0;
+      }
+       
+    }else if( view == 'back'){
+      if(this.dragableBackAssets[index].rotate >= 0 && this.dragableBackAssets[index].rotate < 270){
+        this.dragableBackAssets[index].rotate = this.dragableBackAssets[index].rotate + 90
+      }
+      else{
+        this.dragableBackAssets[index].rotate = 0;
+      }
+    }
   }
   // next() {
   //   this.itemSlider.slideNext();

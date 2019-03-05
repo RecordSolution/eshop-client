@@ -20,6 +20,7 @@ import { ProductStore } from '../../../store/productstore/productstore';
 })
 export class MenPage {
   products: Array<Product>=[];
+  category: string='';
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public productStore:ProductStore,
@@ -30,6 +31,7 @@ export class MenPage {
   }
 
   ionViewDidLoad() {
+    this.category = this.navParams.get('category');
     console.log('ionViewDidLoad MenPage');
   }
 
