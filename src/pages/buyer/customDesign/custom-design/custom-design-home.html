@@ -25,6 +25,7 @@
 
 
 <ion-content padding class="main">
+  {{selectedProduct | json}}
     <ion-icon name="create" (click)="forgotpassword()"></ion-icon>
   <ion-grid class="grid" *ngIf="selectedProduct">
     <ion-row>
@@ -35,12 +36,12 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>
-
-          <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
+        <img src ="{{selectedProduct.images[0].url}}">
+          <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
             <path class="test" [attr.d]="selectedProduct.menFront" />
-          </svg>
+          </svg> -->
 
         </div>
        <!-- front  {{dragableAssets | json}} -->
@@ -143,7 +144,7 @@
   </div>
 
 
-  <!-- <button ion-button (click)="downloadImage()">save</button> -->
+  <button ion-button (click)="downloadImage()">save</button>
   result
   <div style="display: flex">
     <img #frontCanvas style=" width:300px;

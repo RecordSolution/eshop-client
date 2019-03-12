@@ -33,6 +33,7 @@ import { PopoverComponent} from '../components/popover/popover';
 import { CutomDesignCategorySelectorPage } from "./../pages/buyer/cutom-design-category-selector/cutom-design-category-selector";
 import { UserOrdersPage } from "./../pages/buyer/user-orders/user-orders";
 import { AddProductPage } from '../pages/admin/add-product/add-product';
+import { CustomProductSelectionComponent } from '../components/custom-design/custom-product-selection/custom-product-selection';
 @NgModule({
   declarations: [
     MyApp,
@@ -51,7 +52,8 @@ import { AddProductPage } from '../pages/admin/add-product/add-product';
     PopoverComponent,
     CutomDesignCategorySelectorPage,
     UserOrdersPage,
-    AddProductPage    
+    AddProductPage ,
+    CustomProductSelectionComponent   
     
   ],
   imports: [
@@ -79,7 +81,8 @@ import { AddProductPage } from '../pages/admin/add-product/add-product';
     PopoverComponent,
     CutomDesignCategorySelectorPage,
     UserOrdersPage,
-    AddProductPage
+    AddProductPage,
+    CustomProductSelectionComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

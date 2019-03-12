@@ -6,6 +6,7 @@ import { CustomDressCategorySelectorComponent } from './custom-design/custom-dre
 import { ColorPickerComponent } from './color-picker/color-picker';
 import { CustomAssetsComponent } from './custom-design/custom-assets/custom-assets';
 import { PopoverComponent } from './popover/popover';
+import { CustomProductSelectionComponent } from './custom-design/custom-product-selection/custom-product-selection';
 @NgModule({
     declarations: [SearchComponent,
         ImageViewerComponent,
@@ -13,7 +14,8 @@ import { PopoverComponent } from './popover/popover';
         CustomDressCategorySelectorComponent,
         ColorPickerComponent,
         CustomAssetsComponent,
-        PopoverComponent],
+        PopoverComponent,
+    CustomProductSelectionComponent],
 
     imports: [],
     exports: [SearchComponent,
@@ -22,7 +24,8 @@ import { PopoverComponent } from './popover/popover';
         CustomDressCategorySelectorComponent,
         ColorPickerComponent,
         CustomAssetsComponent,
-        PopoverComponent
+        PopoverComponent,
+    CustomProductSelectionComponent
     ]
 })
 export class ComponentsModule { }

@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": "920jdnd02jdwd2md",
+            "id": "920jdnd02jdwd2md1",
             "name": "t-shirt panda",
             "shortDescription": "mens only",
             "colors": [
@@ -43,7 +43,7 @@
             "descriprion": "this is panda original shiry for mens and this is awesome"
         },
         {
-            "id": "920jdnd02jdwd2md",
+            "id": "920jdnd02jdwd2md2",
             "name": "t-shirt panda",
             "shortDescription": "mens only",
             "colors": [
@@ -85,7 +85,7 @@
             "descriprion": "this is panda original shiry for mens and this is awesome"
         },
         {
-            "id": "920jdnd02jdwd2md",
+            "id": "920jdnd02jdwd2md3",
             "name": "t-shirt panda",
             "shortDescription": "mens only",
             "colors": [
@@ -122,7 +122,7 @@
             "descriprion": "this is panda original shiry for mens and this is awesome"
         },
         {
-            "id": "920jdnd02jdwd2md",
+            "id": "920jdnd02jdwd2md4",
             "name": "t-shirt panda",
             "shortDescription": "mens only",
             "colors": [
@@ -153,6 +153,174 @@
             "dressCategory": "t-shirt",
             "fashionCategory":"INDIAN",
             "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md5",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
+            "images": [
+                {
+                    "url": "/assets/product-images/photo-9.jpeg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "/assets/product-images/photo-10.jpeg",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/product-images/photo-11.jpeg",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md6",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
+            "images": [
+                {
+                    "url": "/assets/product-images/photo-9.jpeg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "/assets/product-images/photo-10.jpeg",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/product-images/photo-11.jpeg",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"INDIAN",
+            "gendar": "men",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md7",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
+            "images": [
+                {
+                    "url": "/assets/product-images/photo-9.jpeg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "/assets/product-images/photo-10.jpeg",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/product-images/photo-11.jpeg",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"party",
+            "gendar": "male",
+            "sizes": [
+                "sm",
+                "lg",
+                "md",
+                "xl",
+                "xxl"
+            ],
+            "price": "40",
+            "descriprion": "this is panda original shiry for mens and this is awesome"
+        },
+        {
+            "id": "920jdnd02jdwd2md8",
+            "name": "t-shirt panda",
+            "shortDescription": "mens only",
+            "colors": [
+                "#790",
+                "#233234",
+                "#20235"
+            ],
+            "availableQuantity":80,
+            "soldQuantity":30,
+            "totalQuantity":100,
+            "images": [
+                {
+                    "url": "/assets/product-images/photo-9.jpeg",
+                    "size": "sm",
+                    "color": "yellow"
+                },
+                {
+                    "url": "/assets/product-images/photo-10.jpeg",
+                    "size": "md",
+                    "color": "red"
+                },
+                {
+                    "url": "/assets/product-images/photo-11.jpeg",
+                    "size": "xl",
+                    "color": "black"
+                }
+            ],
+            "dressCategory": "t-shirt",
+            "fashionCategory":"party",
+            "gendar": "male",
             "sizes": [
                 "sm",
                 "lg",

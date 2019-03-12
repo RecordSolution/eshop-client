@@ -4,7 +4,11 @@ import { AlertController } from 'ionic-angular';
 import { ProductStore } from '../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../providers/products/products';
 import { CustomDesignHomePage } from '../customDesign/custom-design/custom-design-home';
-
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { SharedProvider } from '../../../providers/shared/shared';
+import { CustomProductSelectionComponent } from '../../../components/custom-design/custom-product-selection/custom-product-selection';
+import { CustomDesignViewModel } from '../customDesign/model/custom-design-view.model';
+import { OrderStore } from '../../../store/orders/orderstore';
 /**
  * Generated class for the CutomDesignCategorySelectorPage page.
  *
@@ -22,14 +26,59 @@ export class CutomDesignCategorySelectorPage {
   dressCategory: string = '';
   selectedProduct: any;
   svgs:any;
-
+  designForm : FormGroup;
+  dressDesignes:Array<any>=[];
+  fasionDesignes:Array<any>=[];
+  submitted:boolean = false;
+//   validation_messages = {
+//       'name': [
+//       { type: 'text', message: 'Please enter your name.' }
+//     ],
+//     'email': [
+//       { type: 'text', message: 'Please enter your email.' }
+//     ],
+//     'ph': [
+//       { type: 'text', message: 'Please enter your Mobile #.' }
+//     ],
+//     'cat': [
+//       { type: 'text', message: 'Please select  Category.' }
+//     ],
+//     'dressCat': [
+//       { type: 'text', message: 'Please select dress Category.' }
+//     ]
+// }
   constructor(public navCtrl: NavController,
     public alertCtrl:AlertController,
     public productStore: ProductStore, 
     public navParams: NavParams,
-    private productsProvider: ProductsProvider) {
-  }
+    private productsProvider: ProductsProvider,
+    public formBuilder: FormBuilder,
+    public sharedService: SharedProvider,
+    public orderStore:OrderStore) {
+      this.designForm = this.formBuilder.group({
+        name: ['', Validators.required],
+        email: ['', Validators.required],
+        ph: ['', Validators.required],
+        cat: ['', Validators.required],
+        dressCat: ['', Validators.required],
+        gender: ['', Validators.required]
+        
+    });
 
+    // Initial value for the field.
+    // this.form.get('myField').setValue('11223344/55');
+  }
+  
+  ngOnInit(){
+    this.sharedService.getdressCategories().subscribe(res=>{
+      console.log(res);
+      this.dressDesignes=res;
+    })
+    this.sharedService.getFashionCategories().subscribe(res=>{
+      console.log(res);
+      this.fasionDesignes=res;
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CutomDesignCategorySelectorPage');
 
@@ -95,4 +144,29 @@ export class CutomDesignCategorySelectorPage {
     });
     alert.present();
   }
+  onSubmit() {
+    debugger;
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.designForm.invalid) {
+      this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
+      this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
+      this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
+      this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
+      this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
+      this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;
+        // return;
+        this.navCtrl.push(CustomProductSelectionComponent)
+    }else{
+      this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
+      this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
+      this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
+      this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
+      this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
+      this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;
+    }
+
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.designForm.value))
+}
 }

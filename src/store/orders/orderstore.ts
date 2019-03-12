@@ -1,6 +1,7 @@
 import { observable, autorun, computed, action } from 'mobx';
 import { Orders } from './../../shared/models/orders';
 import { Injectable } from "@angular/core";
+import { CustomDesignViewModel } from '../../pages/buyer/customDesign/model/custom-design-view.model';
 
 
 @Injectable()
@@ -9,9 +10,10 @@ export class OrderStore {
     @observable myOrders: Array<any> = [];
     @observable filteredOrders: Array<any> = [];
     @observable filter: string = '';
+    @observable customDesignOrder: CustomDesignViewModel;
 
     constructor() {
-
+        this.customDesignOrder = new CustomDesignViewModel();
         autorun(() => {
             if (JSON.parse(localStorage.getItem('orders')) && JSON.parse(localStorage.getItem('orders')) != {}) {
                 let obj = JSON.parse(localStorage.getItem('orders'));;

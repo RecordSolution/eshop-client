@@ -8,7 +8,8 @@ import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
 import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
-import html2canvas from 'html2canvas';
+import { OrderStore } from '../../../../store/orders/orderstore';
+// import html2canvas from 'html2canvas';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -54,7 +55,8 @@ export class CustomDesignHomePage {
     public productStore: ProductStore,
     public navParams: NavParams,
     public alertCtrl:AlertController,
-    private productsProvider: ProductsProvider) {
+    private productsProvider: ProductsProvider,
+    public orderStore:OrderStore) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -66,7 +68,8 @@ export class CustomDesignHomePage {
     // this.customAssets = [{icon:'/assets/imgs/pocket-icon.png'}, {icon:'/assets/imgs/avatar.png'}, {icon:'/assets/imgs/logo.png'}]
     // this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    this.selectedProduct = this.navParams.get('data');
+    // this.selectedProduct = this.navParams.get('data');
+    this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
       this.customAssets = [...res];
