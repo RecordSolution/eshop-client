@@ -25,7 +25,6 @@
 
 
 <ion-content padding class="main">
-  {{selectedProduct | json}}
     <ion-icon name="create" (click)="forgotpassword()"></ion-icon>
   <ion-grid class="grid" *ngIf="selectedProduct">
     <ion-row>
@@ -36,7 +35,7 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>
-        <img src ="{{selectedProduct.images[0].url}}">
+        <img src ="{{selectedProduct.images[0].front}}">
           <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
@@ -77,12 +76,12 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !backEdge?.top, 'bottom-b': !backEdge?.bottom, 'left-b': !backEdge?.left, 'right-b': !backEdge?.right }"
           #myBackBounds>
-
-          <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
+          <img src ="{{selectedProduct.images[0].back}}">
+          <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
             <path class="test" [attr.d]="selectedProduct.menBack" />
-          </svg>
+          </svg> -->
 
         </div>
  <!-- back {{dragableBackAssets | json}} -->
@@ -136,14 +135,101 @@
 
   <div class="flex" *ngIf="selectedProduct">
     <!-- colors -->
-    <div class="color-selection" (click)="selectColor(color)" [style.background]="color"
-      *ngFor="let color of selectedProduct.colors"></div>
+    <div class="color-selection"  [style.background]="color"
+      *ngFor="let color of selectedProduct.colors" (click)="selectColor(color)" [ngClass]="color == selectedColor ? 'active' : ''" ></div>
   </div>
   <div class="flex " *ngIf="selectedProduct">
-    <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>
+    <div class="size" *ngFor="let size of selectedProduct.sizes" (click)="selectSize(size)" [ngClass]="size == selectedSize ? 'active' : ''">{{size}}</div>
+  </div>
+<ion-list radio-group [(ngModel)]="selectedProduct.isStandardSize">
+  <ion-item>
+    <ion-label>Standard Size</ion-label>
+    <ion-radio slot="start" value="true" checked></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Custom Size</ion-label>
+    <ion-radio slot="start" value="false" ></ion-radio>
+  </ion-item>
+</ion-list>
+<div *ngIf="selectedProduct.isStandardSize == 'false'">
+    <ion-list >
+        <ion-item class="form-group" >
+            <ion-grid item-content>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"    placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
   </div>
 
+<!-- <form>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+<ion-item>
+  <ion-label position="floating">Floating Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+      </ion-col>
+      <ion-col col-6>
 
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</form> -->
   <button ion-button (click)="downloadImage()">save</button>
   result
   <div style="display: flex">

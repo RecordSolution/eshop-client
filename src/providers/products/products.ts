@@ -24,6 +24,14 @@ export class ProductsProvider {
 
     }))
   }
+  getCustomDesinProducts() {
+    return this.http.get('./../assets/custom-design.json').pipe(map((data: any) => {
+     this.productStore.saveCustomDesignProducts(data.customDesignProducts);
+     debugger
+      return data.customDesignProducts;
+
+    }))
+  }
   getSvgs(value?: string) {
     // debugger
     // return this.http.get('/assets/svg-data.json').

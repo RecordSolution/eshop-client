@@ -11,8 +11,10 @@ export class CustomDesignViewModel{
     images:Array<object> = [];
     sizes:Array<string> = [];
     standardSize:string;
+   isStandardSize:string;
     selectedItem = {};
     constructor(){
+        this.isStandardSize = "true";
         this.name = "";
         this.email = "";
         this.ph = 0;

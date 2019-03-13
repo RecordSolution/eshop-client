@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { observable, autorun, action, computed } from 'mobx';
+import { CustomDesignViewModel } from '../../pages/buyer/customDesign/model/custom-design-view.model';
 
 @Injectable()
 export class ProductStore {
@@ -8,6 +9,7 @@ export class ProductStore {
     @observable allProducts: Array<any> = [];
     @observable customProducts: Array<any> = [];
     @observable customAssets: Array<any> = [];
+    @observable customDesignProducts: Array<CustomDesignViewModel> = [];
 
     constructor() {
 
@@ -33,6 +35,9 @@ export class ProductStore {
     @action saveProducts(products: Array<any>) {
         this.allProducts = [...products];
         window.localStorage.setItem('products', JSON.stringify(this.allProducts));
+    }
+    @action saveCustomDesignProducts(products: Array<CustomDesignViewModel>) {
+        this.customDesignProducts = [...products];
     }
     @computed get products() {
 

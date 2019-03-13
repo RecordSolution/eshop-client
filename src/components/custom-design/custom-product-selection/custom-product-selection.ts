@@ -5,6 +5,7 @@ import { CustomDesignHomePage } from '../../../pages/buyer/customDesign/custom-d
 import { OrderStore } from '../../../store/orders/orderstore';
 import * as _ from 'lodash';
 import { CustomDesignViewModel } from '../../../pages/buyer/customDesign/model/custom-design-view.model';
+import { ProductStore } from '../../../store/productstore/productstore';
 /**
  * Generated class for the CustomProductSelectionComponent component.
  *
@@ -19,17 +20,14 @@ export class CustomProductSelectionComponent implements OnInit {
 products:Array<CustomDesignViewModel> = [];
   text: string;
   slectedItem:any;
-  constructor( public productService:ProductsProvider,public navCtrl: NavController,public orderStore:OrderStore) {
+  constructor(public productStore: ProductStore, public productService:ProductsProvider,public navCtrl: NavController,public orderStore:OrderStore) {
    
   }
   ngOnInit(){
-    // console.log(orderStore.customDesignOrder);
-    debugger;
-    
-    this.productService.getProducts().subscribe(res => {
-      if(res && res.length > 0){
-        for(let i=0; i < res.length;i++){
-          if((res[i].dressCategory == this.orderStore.customDesignOrder.dressCategory) && (res[i].fashionCategory == this.orderStore.customDesignOrder.fashionCategory) && (res[i].gendar == this.orderStore.customDesignOrder.gender)){
+    this.productService.getCustomDesinProducts().subscribe(res => {
+      if(this.productStore.customDesignProducts && this.productStore.customDesignProducts.length > 0){
+        for(let i=0; i < this.productStore.customDesignProducts.length;i++){
+          if((this.productStore.customDesignProducts[i].dressCategory == this.orderStore.customDesignOrder.dressCategory) && (this.productStore.customDesignProducts[i].fashionCategory == this.orderStore.customDesignOrder.fashionCategory) && (this.productStore.customDesignProducts[i].gender == this.orderStore.customDesignOrder.gender)){
             this.products.push(res[i])
           }
         }

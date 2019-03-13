@@ -1,21 +1,22 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 // import { ScreenOrientation } from 'ionic-native';
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
-import { CustomDesignSelectionModel } from "./model/custom_design-details.model"
+import { CustomDesignSelectionModel } from "./model/custom_design-details.model";
 import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
 import { OrderStore } from '../../../../store/orders/orderstore';
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
+import * as _ from 'lodash'; 
 @IonicPage()
 @Component({
   selector: 'custom-design',
   templateUrl: 'custom-design-home.html',
 })
-export class CustomDesignHomePage {
+export class CustomDesignHomePage implements OnInit {
   @ViewChild('itemSlider') itemSlider: any;
   @ViewChild('frontScreen') frontScreen: ElementRef;
   @ViewChild('backScreen') backScreen: ElementRef;
@@ -35,6 +36,9 @@ export class CustomDesignHomePage {
   dragableAssets: Array<any> = [];
   dragableBackAssets: Array<any> = [];
   selectedToResize: any;
+  selectedItem:Object;
+  selectedSize:string;
+  selectedColor:string;
   svgs: any;
   inBounds = true;
   backInBounds = true;
@@ -69,7 +73,7 @@ export class CustomDesignHomePage {
     // this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
     // this.selectedProduct = this.navParams.get('data');
-    this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
+
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
       this.customAssets = [...res];
@@ -77,6 +81,13 @@ export class CustomDesignHomePage {
       //   console.log(res)
     })
     screen.orientation.lock('landscape');
+  }
+  ngOnInit(){
+    this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
+    this.selectedProduct.isStandardSize = "true";
+    this.selectedItem = this.selectedProduct.images[0];
+    this.selectedColor = this.selectedProduct.colors[0];
+    this.selectedSize = this.selectedProduct.sizes[0];
   }
   ionViewDidLeave() {
     screen.orientation.lock('portrait');
@@ -94,8 +105,14 @@ export class CustomDesignHomePage {
   //   this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
   //   console.log(this.selectedProduct);
   // }
-  selectColor(selectedColor) {
-    this.color = selectedColor;
+  selectColor(color) {
+    this.selectedItem = _.find(this.selectedProduct.colors, function(o) { return o = color; });
+  //  let index =  this.selectedProduct.filter(x => x.color = color);
+  //  this.selectedItem = this.selectedProduct.images[index];
+    this.selectedColor = color;
+  }
+  selectSize(size) {
+    this.selectedSize = size;
   }
   onCustomAssetSelection(item) {
     if (item) {

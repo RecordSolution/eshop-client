@@ -1,0 +1,102 @@
+{
+    "customDesignProducts": [
+        {
+            "id": "kasd892das",
+            "fashionCategory": "casual",
+            "dressCategory": "kurta",
+            "gender": "male",
+            "colors": [
+                "#787878",
+                "black",
+                "red"
+            ],
+            "price": 60,
+            "images": [
+                {
+                    "front": "/assets/imgs/kurta.png",
+                    "back": "/assets/imgs/kurta.png",
+                    "color": "#787878"
+                },
+                {
+                    "front": "/assets/imgs/kurta.png",
+                    "back": "/assets/imgs/kurta.png",
+                    "color": "black"
+                },
+                {
+                    "front": "/assets/imgs/kurta.png",
+                    "back": "/assets/imgs/kurta.png",
+                    "color": "red"
+                }
+            ],
+            "sizes": [
+                "SM",
+                "MD"
+                
+            ],
+            "standardSize":"according to size selection"
+        },
+        {
+            "id": "9348ru93hf",
+            "fashionCategory": "party",
+            "dressCategory": "t-shirt",
+            "gender": "male",
+            "colors": [
+                "#787878",
+                "#898989",
+                "#666666"
+            ],
+            "price": 60,
+            "images": [
+                {
+                    "front": "/assets/product-images/photo-9.jpeg",
+                    "back": "/assets/product-images/photo-9.jpeg",
+                    "color": "#787878"
+                },
+                {
+                    "front": "/assets/product-images/photo-9.jpeg",
+                    "back": "/assets/product-images/photo-9.jpeg",
+                    "color": "#898989"
+                },
+                {
+                    "front": "/assets/product-images/photo-9.jpeg",
+                    "back": "/assets/product-images/photo-9.jpeg",
+                    "color": "#666666"
+                }
+            ],
+            "sizes": [
+                "SM",
+                "LG",
+                "XL"
+            ],
+            "standardSize":"according to size selection"
+        },
+        {
+            "id": "9348ru93hf1",
+            "fashionCategory": "party",
+            "dressCategory": "t-shirt",
+            "gender": "male",
+            "colors": [
+                "#787878",
+                "#898989"
+            ],
+            "price": 60,
+            "images": [
+                {
+                    "front": "/assets/product-images/photo-9.jpeg",
+                    "back": "/assets/product-images/photo-9.jpeg",
+                    "color": "#787878"
+                },
+                {
+                    "front": "/assets/product-images/photo-9.jpeg",
+                    "back": "/assets/product-images/photo-9.jpeg",
+                    "color": "#898989"
+                }
+            ],
+            "sizes": [
+                "SM",
+                "LG"
+            ],
+            "standardSize":"according to size selection"
+        }
+    ]
+}
