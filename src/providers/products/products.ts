@@ -26,7 +26,7 @@ export class ProductsProvider {
   }
   getSvgs(value?: string) {
     // debugger
-    // return this.http.get('/assets/svg-data.json').
+    // return this.http.get('/assets/custom-design-products.json').
     return this.http.get('/assets/custom-products.json').
     pipe(map((data: any) => {
       this.productStore.seveCustomProducts(data.customProducts);

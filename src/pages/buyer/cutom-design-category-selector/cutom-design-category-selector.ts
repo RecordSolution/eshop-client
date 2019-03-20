@@ -92,10 +92,12 @@ export class CutomDesignCategorySelectorPage {
   onDressCategorySelection(cat) {
     this.dressCategory = cat;
     this.getSelectedDress();
+    debugger
   }
   onFashionCategorySelection(cat) {
     this.fashionCategory = cat;
     this.getSelectedDress();
+    debugger
   }
   getSelectedDress() {
     this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
@@ -147,7 +149,6 @@ export class CutomDesignCategorySelectorPage {
   onSubmit() {
     debugger;
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.designForm.invalid) {
       this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;

@@ -25,7 +25,7 @@
 
 
 <ion-content padding class="main">
-  {{selectedProduct | json}}
+  <!-- {{selectedProduct | json}} -->
     <ion-icon name="create" (click)="forgotpassword()"></ion-icon>
   <ion-grid class="grid" *ngIf="selectedProduct">
     <ion-row>
@@ -36,12 +36,12 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>
-        <img src ="{{selectedProduct.images[0].url}}">
-          <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
+        <!-- <img  src ="{{matchImage('front')}}"> -->
+          <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
             <path class="test" [attr.d]="selectedProduct.menFront" />
-          </svg> -->
+          </svg>
 
         </div>
        <!-- front  {{dragableAssets | json}} -->
@@ -67,7 +67,6 @@
         </ion-icon>
 
         <!-- {{selectedProduct | json}} -->
-        <!-- {{selectedProduct | json}} -->
         <!-- <ion-icon name="color-palette"  [cpHeight]='auto'  [style.color]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" ></ion-icon> -->
         <!-- <input  [value]="color" [style.background]="color" [cpPosition]="'bottom'" [(colorPicker)]="color" /> -->
         <!-- <img [attr.fill]="color"   src="/assets/imgs/t-shirt.svg">  -->
@@ -77,6 +76,7 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !backEdge?.top, 'bottom-b': !backEdge?.bottom, 'left-b': !backEdge?.left, 'right-b': !backEdge?.right }"
           #myBackBounds>
+          <!-- <img style="width:'200px'; height:'200px'"  src ="{{matchImage('back')}}"> -->
 
           <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

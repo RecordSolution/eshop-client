@@ -47,7 +47,7 @@ export class ProductStore {
         return this.customAssets;
     }
     @action seveCustomProducts(products) {
-
+console.log("get custom products", products);
         this.customProducts = [...products];
     }
     getproductForCustomDesign(dressCategory, fashionCategory) {

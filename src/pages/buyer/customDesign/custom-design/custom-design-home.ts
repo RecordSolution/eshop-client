@@ -9,7 +9,7 @@ import { DesignCanvasPage } from '../design-canvas/design-canvas';
 import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
 import { OrderStore } from '../../../../store/orders/orderstore';
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -68,10 +68,11 @@ export class CustomDesignHomePage {
     // this.customAssets = [{icon:'/assets/imgs/pocket-icon.png'}, {icon:'/assets/imgs/avatar.png'}, {icon:'/assets/imgs/logo.png'}]
     // this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    // this.selectedProduct = this.navParams.get('data');
-    this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
+    this.selectedProduct = this.navParams.get('data');
+    // this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
+      debugger
       this.customAssets = [...res];
       //   this.svgs= res;
       //   console.log(res)
@@ -81,6 +82,14 @@ export class CustomDesignHomePage {
   ionViewDidLeave() {
     screen.orientation.lock('portrait');
     console.log('ionViewDidLeave CustomDesignPage');
+  }
+  matchImage(side){
+    console.log(this.selectedProduct)
+   let image = this.selectedProduct.images.find(x=>x.color==this.color && x.side==side);
+  if(image){
+    return image.img;
+  }
+  //  return image.img;
   }
   // onFashionCategorySelection(cat) {
   //   this.fashionCategory = cat;
