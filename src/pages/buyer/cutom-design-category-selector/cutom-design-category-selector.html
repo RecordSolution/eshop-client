@@ -26,52 +26,7 @@
                 
                 </select> -->
                 <form novalidate [formGroup]="designForm" (ngSubmit)="onSubmit()">
-                    <ion-item class="form-group">
-                        <ion-label stacked>
-                         
-                          Name
-                        </ion-label>
-                
-                        <ion-input type="text"  name="name" value=""  class="form-control" formControlName="name" [class.error]="!designForm.controls.name.valid && designForm.controls.name.dirty"  placeholder="Enter Name"></ion-input>
-                        
-                      </ion-item>
-                      <ion-item  *ngIf="!designForm.controls.name.valid &&
-                      designForm.controls.name.dirty"
-                      class="validator-error">
-                          <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                            Please input your name
-                          <!-- </div> -->
-                      </ion-item>
-                      <ion-item class="form-group">
-                          <ion-label stacked>
-                           
-                            Email
-                          </ion-label>
-                  
-                          <ion-input type="email" name="email" value="" class="form-control" formControlName="email" [class.error]="!designForm.controls.email.valid && designForm.controls.email.dirty"  placeholder="Enter Email"></ion-input>
-                        </ion-item>
-                        <ion-item  *ngIf="!designForm.controls.email.valid &&
-                      designForm.controls.email.dirty"
-                      class="validator-error">
-                          <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                            Please input your Email
-                          <!-- </div> -->
-                      </ion-item>
-                        <ion-item class="form-group">
-                            <ion-label stacked>
-                              
-                              Mobile #
-                            </ion-label>
-                    
-                            <ion-input type="text" name="ph" value="" class="form-control" formControlName="ph" [class.error]="!designForm.controls.ph.valid && designForm.controls.ph.dirty"  placeholder="Enter Mobile #"></ion-input>
-                          </ion-item>
-                          <ion-item  *ngIf="!designForm.controls.ph.valid &&
-                      designForm.controls.ph.dirty"
-                      class="validator-error">
-                          <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                            Please input your Mpbile #
-                          <!-- </div> -->
-                      </ion-item>
+                  <input class="inputfields" type="test" placeholder="enter your naem">
                           <ion-item class="form-group">
                               <ion-label floating>
                                 
