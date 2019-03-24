@@ -68,8 +68,10 @@ export class CustomDesignHomePage {
     // this.customAssets = [{icon:'/assets/imgs/pocket-icon.png'}, {icon:'/assets/imgs/avatar.png'}, {icon:'/assets/imgs/logo.png'}]
     // this.customAssets = ['/assets/imgs/pocket-icon.png', '/assets/imgs/avatar.png', '/assets/imgs/logo.png']
     // ScreenOrientation.lockOrientation('landscape')
-    this.selectedProduct = this.navParams.get('data');
-    // this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
+    //====> for svg custom design
+    // this.selectedProduct = this.navParams.get('data');
+    // or image custom designs
+    this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
       debugger

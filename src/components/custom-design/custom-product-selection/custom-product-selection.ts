@@ -30,6 +30,7 @@ products:Array<CustomDesignViewModel> = [];
       if(res && res.length > 0){
         for(let i=0; i < res.length;i++){
           if((res[i].dressCategory == this.orderStore.customDesignOrder.dressCategory) && (res[i].fashionCategory == this.orderStore.customDesignOrder.fashionCategory) && (res[i].gendar == this.orderStore.customDesignOrder.gender)){
+           debugger
             this.products.push(res[i])
           }
         }
