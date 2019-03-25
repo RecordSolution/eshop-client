@@ -151,9 +151,9 @@ export class CutomDesignCategorySelectorPage {
     this.submitted = true;
     // stop here if form is invalid
     if (this.designForm.invalid) {
-      this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
-      this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
-      this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
+      // this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
+      // this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
+      // this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
       this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
       this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
       this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;

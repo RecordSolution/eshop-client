@@ -103,30 +103,37 @@
               </ion-form> -->
 
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="column gendar-column" size="4">
-        <div>
-          <p style="float: left">Gendar</p>
-          <br><br><br>
-          <img class="gendar" src="/assets/icon/man-icon.png">
-        </div>
-        <div>
-          <img class="gendar" src="/assets/icon/women-icon.png">
-        </div>
-
-      </ion-col>
-      <ion-col class="column" size="4">
-        <p style="float: left"> Dress Type</p>
-        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
-        </custom-dress-category-selector>
-      </ion-col>
-      <ion-col class="column" size="4">
-        <p style="float: left"> Style Type</p>
-        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
-        </custom-fashion-category-selector>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+              <ion-grid>
+                <ion-row>
+              <ion-col class="column gendar-column" size="4">
+                <div>
+                  <img class="gendar" src="/assets/icon/man-icon.png">
+                </div>
+            
+              </ion-col>
+              <ion-col class="column gendar-column" size="4">
+                <div>
+                  <img class="gendar" src="/assets/icon/women-icon.png">
+                </div>
+              </ion-col>
+                </ion-row>
+              </ion-grid>
+            
+            
+              <ion-grid>
+                <ion-row>
+                 
+                  <ion-col class="column" size="4">
+                    <p style="float: left"> Dress Type</p>
+                    <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
+                    </custom-dress-category-selector>
+                  </ion-col>
+                  <ion-col class="column" size="4">
+                    <p style="float: left"> Style Type</p>
+                    <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
+                    </custom-fashion-category-selector>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
 
 </ion-content>
