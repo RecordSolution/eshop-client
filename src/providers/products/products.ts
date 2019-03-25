@@ -24,23 +24,24 @@ export class ProductsProvider {
 
     }))
   }
-  getSvgs(value?: string) {
+  getcustomDesignProducts(value?: string) {
     // debugger
     return this.http.get('/assets/custom-design-products.json').
     // return this.http.get('/assets/custom-products.json').
     pipe(map((data: any) => {
-      this.productStore.seveCustomProducts(data.customProducts);
-      return data.customProducts;
+      this.productStore.seveCustomProducts(data.customDesignProducts);
+      debugger
+      return data.customDesignProducts;
 
     }))
   }
   getDesigingAssets(){
     return this.http.get('/assets/custom-assets.json').
     pipe(map((data: any) => {
-      // this.productStore.seveCustomAssets(data.customAssets);
-      // return data.customAssets;
-      this.productStore.seveCustomAssets(data.customDesignProducts);
-      return data.customDesignProducts;
+      this.productStore.seveCustomAssets(data.customAssets);
+      return data.customAssets;
+      // this.productStore.seveCustomAssets(data.customDesignProducts);
+      // return data.customDesignProducts;
     }))
   }
 }

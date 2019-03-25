@@ -9,6 +9,7 @@ import { SharedProvider } from '../../../providers/shared/shared';
 import { CustomProductSelectionComponent } from '../../../components/custom-design/custom-product-selection/custom-product-selection';
 import { CustomDesignViewModel } from '../customDesign/model/custom-design-view.model';
 import { OrderStore } from '../../../store/orders/orderstore';
+import { CustomCategorySelector } from './model/viewModel';
 /**
  * Generated class for the CutomDesignCategorySelectorPage page.
  *
@@ -23,9 +24,11 @@ import { OrderStore } from '../../../store/orders/orderstore';
 })
 export class CutomDesignCategorySelectorPage {
   fashionCategory: string = '';
+  categoryViewModel:CustomCategorySelector;
   dressCategory: string = '';
   selectedProduct: any;
   svgs:any;
+  gendar:string;
   designForm : FormGroup;
   dressDesignes:Array<any>=[];
   fasionDesignes:Array<any>=[];
@@ -70,6 +73,7 @@ export class CutomDesignCategorySelectorPage {
   }
   
   ngOnInit(){
+    this.categoryViewModel=new CustomCategorySelector();
     this.sharedService.getdressCategories().subscribe(res=>{
       console.log(res);
       this.dressDesignes=res;
@@ -82,69 +86,42 @@ export class CutomDesignCategorySelectorPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CutomDesignCategorySelectorPage');
 
-    this.productsProvider.getSvgs().subscribe(res =>{
+    this.productsProvider.getcustomDesignProducts().subscribe(res =>{
       this.svgs= res;
       console.log(res)
     })
-    screen.orientation.lock('landscape');
+    // screen.orientation.lock('landscape');
   }
 
   onDressCategorySelection(cat) {
-    this.dressCategory = cat;
-    this.getSelectedDress();
+    this.categoryViewModel.dressCategory = cat;
+    // this.getSelectedDress();
     debugger
   }
   onFashionCategorySelection(cat) {
-    this.fashionCategory = cat;
-    this.getSelectedDress();
+    this.categoryViewModel.fashionCategory = cat;
+    // this.getSelectedDress();
     debugger
   }
   getSelectedDress() {
-    this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
-    console.log(this.selectedProduct);
-  if(this.selectedProduct)  {
-    this.showDetails();
+    debugger
+    this.orderStore.customDesignOrder.gender = this.categoryViewModel.gendar;
+    this.orderStore.customDesignOrder.dressCategory = this.categoryViewModel.dressCategory.key;
+    this.orderStore.customDesignOrder.fashionCategory = this.categoryViewModel.fashionCategory.key;
+      // return;
+      this.navCtrl.push(CustomProductSelectionComponent)
+  //   this.selectedProduct = this.productStore.getproductForCustomDesign(this.dressCategory, this.fashionCategory);
+  //   console.log(this.selectedProduct);
+  // if(this.selectedProduct)  {
+  //   this.showDetails();
+  // }
   }
+  gendarSelection(gendar){
+    this.categoryViewModel.gendar=gendar;
   }
   showDetails() {
     
     this.navCtrl.push(CustomDesignHomePage, { 'data': this.selectedProduct });
-  }
-  forgotpassword() {
-    let alert = this.alertCtrl.create({
-
-      title: 'Forgot Password',
-      inputs: [
-
-        {
-
-          name: 'email',
-          placeholder: 'Enter Email Address',
-          type: 'text'
-
-        }
-      ],
-      buttons: [
-
-        {
-
-          text: 'Cancel',
-          role: 'Cancel',
-          handler: data => {
-
-          }
-        },
-        {
-
-          cssClass: 'ok',
-          text: 'ok',
-          handler: data => {
-
-          }
-        }
-      ]
-    });
-    alert.present();
   }
   onSubmit() {
     debugger;
@@ -154,18 +131,21 @@ export class CutomDesignCategorySelectorPage {
       // this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
       // this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
       // this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
-      this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
-      this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
-      this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;
+      // this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
+      // this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
+      // this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;s
+       this.orderStore.customDesignOrder.gender = this.categoryViewModel.gendar;
+      this.orderStore.customDesignOrder.dressCategory = this.categoryViewModel.dressCategory;
+      this.orderStore.customDesignOrder.fashionCategory = this.categoryViewModel.fashionCategory;
         // return;
         this.navCtrl.push(CustomProductSelectionComponent)
     }else{
-      this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
-      this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
-      this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
-      this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
-      this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
-      this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;
+      // this.orderStore.customDesignOrder.name = this.designForm.controls.name.value;
+      // this.orderStore.customDesignOrder.email = this.designForm.controls.email.value;
+      // this.orderStore.customDesignOrder.ph = this.designForm.controls.ph.value;
+      // this.orderStore.customDesignOrder.gender = this.designForm.controls.gender.value;
+      // this.orderStore.customDesignOrder.dressCategory = this.designForm.controls.dressCat.value;
+      // this.orderStore.customDesignOrder.fashionCategory = this.designForm.controls.cat.value;
     }
 
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.designForm.value))

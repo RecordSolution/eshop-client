@@ -1,5 +1,5 @@
 export class CustomCategorySelector{
     gendar:string;
-    dressCategory:string;
-    fashionCategory:string;
+    dressCategory:any;
+    fashionCategory:any;
 }

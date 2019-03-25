@@ -32,7 +32,7 @@
       <ion-col class="column" size="6" #frontScreen style="position:relative;">
         <ion-icon style="float: left;" *ngIf="selectedProduct" name="albums" (click)="selectAssets('front')">Front
         </ion-icon>
-{{selectedProduct | json}}
+<!-- {{selectedProduct | json}} -->
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>

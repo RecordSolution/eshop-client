@@ -76,6 +76,7 @@ export class CustomDesignHomePage {
     this.productsProvider.getDesigingAssets().subscribe(res => {
       debugger
       this.customAssets = [...res];
+      this.color=this.selectedProduct.colors[0];
       //   this.svgs= res;
       //   console.log(res)
     })
