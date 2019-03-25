@@ -42,6 +42,11 @@ export class ProductDetailsPage {
 
   }
 
+  SelectedSize(sizes){
+    console.log(sizes);
+
+  }
+
   onBuy() {
 
     console.log("order her ===>", JSON.stringify(this.order));
