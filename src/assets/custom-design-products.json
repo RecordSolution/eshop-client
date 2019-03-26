@@ -26,12 +26,12 @@
                 {
                     "side":"front",
                     "img": "/assets/imgs/shirt.jpg",
-                    "color": "#black"
+                    "color": "black"
                 },
                 {
                     "side":"back",
                     "img": "/assets/imgs/shirt.jpg",
-                    "color": "#black"
+                    "color": "black"
                 },
                 {
                     "side":"front",
