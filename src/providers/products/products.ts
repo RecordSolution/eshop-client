@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
 import { ProductStore } from '../../store/productstore/productstore';
+import { AssetsStore } from '../../store/assetsstore/assetsstore';
 /*
   Generated class for the ProfuctsProvider provider.
 
@@ -11,7 +12,7 @@ import { ProductStore } from '../../store/productstore/productstore';
 @Injectable()
 export class ProductsProvider {
 
-  constructor(public http: HttpClient, public productStore:ProductStore) {
+  constructor(public http: HttpClient, public productStore:ProductStore,public assetStore : AssetsStore) {
     console.log('Hello ProfuctsProvider Provider');
     this.getProducts();
   }
@@ -37,7 +38,7 @@ export class ProductsProvider {
   getDesigingAssets(){
     return this.http.get('/assets/custom-assets.json').
     pipe(map((data: any) => {
-      this.productStore.seveCustomAssets(data.customAssets);
+      this.assetStore.seveCustomAssets(data.customAssets);
       return data.customAssets;
 
     }))

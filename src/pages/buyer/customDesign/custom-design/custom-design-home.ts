@@ -70,6 +70,7 @@ export class CustomDesignHomePage {
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
       this.customAssets = [...res];
+      // console.log('here',this.customAssets)
       //   this.svgs= res;
       //   console.log(res)
     })
