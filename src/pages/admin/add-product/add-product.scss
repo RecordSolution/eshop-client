@@ -1,10 +1,21 @@
 page-add-product {
-    
-
+    .image{
+        width:200px;
+        height: 200px;
+    }
+.color-input{
+    padding: 0;
+    border: 2px gray solid;
+    position: relative; 
+    width: 20%;
+    height: 100%; 
+    mix-blend-mode: hue;
+    cursor: pointer;
+}
     .content{
         .button-ios {
            
-            background-color: lightgreen;
+            background-color: #909090;
             width: 98%;
             border-radius: 9px;
             margin-top: 11%

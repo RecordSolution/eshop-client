@@ -12,54 +12,66 @@
 
 </ion-header>
 
-<ion-content padding >
-  <div class="content"  >
+<ion-content padding>
+  <div class="content">
     <div class="fields">
 
-  <input type="text" class="textFields" [(ngModel)]="addProductModel.name" placeholder="Product Name">
-      <input type="text" class="textFields" [(ngModel)]="addProductModel.shortDescription" placeholder="Short Description" >
-     
-      <ion-select>
-          <ion-option selected disabled>Select Product Color</ion-option>
-          <ion-option value="green" >green</ion-option>
-          <ion-option value="blue">blue</ion-option>
-          <ion-option>purple</ion-option>
-        </ion-select>
-   <hr/>
-        <ion-select [(ngModel)]="dressCategory" (ionChange)="SelectedDressCategory()">
-            <ion-option selected disabled>Select Dress Category</ion-option>
-            <ion-option value="Men">Men</ion-option>
-            <ion-option value ="Women">Women</ion-option>
-            <ion-option value ="Child">Child</ion-option>
-          </ion-select>
-          <hr/>
-          <ion-select>
-              <ion-option selected disabled>Select Fashion Category</ion-option>
-              <ion-option>Men</ion-option>
-              <ion-option>Women</ion-option>
-              <ion-option>Child</ion-option>
-            </ion-select>
-            <hr/>
-            <ion-select  [(ngModel)]="Size" (ionChange)="SelectedSize()">
-                <ion-option selected disabled>Select Avaliable Sizes</ion-option>
-                <ion-option *ngFor="let size of avaliableSizes" [value]="size">{{size}}</ion-option>
-            
+      <input type="text" class="textFields" [(ngModel)]="addProductModel.name" placeholder="Product Name">
+      <input type="text" class="textFields" [(ngModel)]="addProductModel.shortDescription"
+        placeholder="Short Description">
 
-              </ion-select>
-              <!-- <ion-label>{{Size}}</ion-label> -->
+      <ion-select>
+        <ion-option selected disabled>Select Product Color</ion-option>
+        <ion-option value="green">green</ion-option>
+        <ion-option value="blue">blue</ion-option>
+        <ion-option>purple</ion-option>
+      </ion-select>
+      <hr />
+      <ion-select [(ngModel)]="dressCategory" (ionChange)="SelectedDressCategory()">
+        <ion-option selected disabled>Select Dress Category</ion-option>
+        <ion-option value="Men">Men</ion-option>
+        <ion-option value="Women">Women</ion-option>
+        <ion-option value="Child">Child</ion-option>
+      </ion-select>
+      <hr />
+      <ion-select>
+        <ion-option selected disabled>Select Fashion Category</ion-option>
+        <ion-option>Men</ion-option>
+        <ion-option>Women</ion-option>
+        <ion-option>Child</ion-option>
+      </ion-select>
+      <hr />
+      <!-- <ion-select [(ngModel)]="Size" (ionChange)="SelectedSize()">
+        <ion-option selected disabled>Select Avaliable Sizes</ion-option>
+        <ion-option *ngFor="let size of avaliableSizes" [value]="size">{{size}}</ion-option>
+
+
+      </ion-select> -->
+     
       <input type="text" [(ngModel)]="addProductModel.price" class="textFields" placeholder="Price">
- 
-      <div>
-          <ion-item>
-              <input type="file" style="
-              mix-blend-mode: normal;"  [(ngModel)]="addProductModel.images" (change)="filepicker($event)">
-            </ion-item> 
-      </div>
+
+
+      <input type="file" style="display: none;" id="fileToUpload" accept="image/jpeg, image/png"
+        (change)="filepicker($event)">
+
+      <!-- <ion-icon calss="media-icon" onclick="document.getElementById('fileToUpload').click()" color="primary">camera</ion-icon> -->
+      <button ion-button color="success" (click)="addProduct()" icon-start
+        onclick="document.getElementById('fileToUpload').click()">
+        <ion-icon name="camera" color="secondary">
+        </ion-icon>
+        Add Image
+      </button>
+
+
 
     </div>
 
   </div>
-
+  <div style="display: flex" *ngFor="let img of addProductModel.images">
+    <img class="image" src="{{img.base64File.src}}">
+    <br>
+    <input class="color-input" [value]="img.color" [style.background]="img.color" [cpPosition]="'left'" [(colorPicker)]="img.color" />
+  </div>
   <button ion-button color="success" (click)="addProduct()">Success</button>
 
 
@@ -125,7 +137,7 @@
         <label>Description</label>
         <input style="float : right" class="addproduct"type="text">
     </div> -->
-    
+
   <!-- <ion-item>
     <ion-label>Product name</ion-label>
     <ion-list> 
