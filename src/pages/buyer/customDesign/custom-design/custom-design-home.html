@@ -98,8 +98,8 @@
               <ion-icon name="refresh" *ngIf="a.isRotateIcon" class="refresher" (click)="imageRotate(i,'back')"
                 style="color:red;"></ion-icon>
               <img [ngStyle]="{height:a.width+'px',width:a.width+'px'}"
-                [style.transform]="'rotate(' + (a.rotate) + 'deg)'" class="icons" ion-long-press [interval]="400"
-                (onPressing)="active(a)" src="{{a.icon}}">
+                [style.transform]="'rotate(' + (a.rotate) + 'deg)'" class="icons" ion-long-press [interval]="200"
+                (click)="active(a)" src="{{a.icon}}">
             </div>
 
           </div>
