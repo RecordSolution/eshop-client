@@ -111,7 +111,7 @@ var OrdersProvider = /** @class */ (function () {
     }
     OrdersProvider.prototype.getorders = function (value) {
         var _this = this;
-        return this.http.get('./../assets/orders.json').pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (data) {
+        return this.http.get('assets/orders.json').pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (data) {
             console.log('Orders', data.orders);
             _this.ordersStore.setOrders(data.orders);
             return data.orders;
@@ -461,7 +461,7 @@ var CutomDesignCategorySelectorPage = /** @class */ (function () {
     };
     CutomDesignCategorySelectorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cutom-design-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/'<!--\n\n  Generated template for the CutomDesignCategorySelectorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Cutom Design</ion-title>\n\n    <ion-buttons end>\n\n        \n\n      <button (click)="getSelectedDress()">\n\n        \n\n      <ion-icon style="font-size: 40px"  name="checkmark"></ion-icon>\n\n    </button>\n\n    \n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="modal-content">\n\n\n\n         \n\n\n\n\n\n              <ion-grid>\n\n                <ion-row>\n\n              <ion-col class="column gendar-column" size="4">\n\n                <div (click)="gendarSelection(\'male\')">\n\n                  <img class="gendar" src="/assets/icon/man-icon.png">\n\n                </div>\n\n            \n\n              </ion-col>\n\n              <ion-col class="column gendar-column" size="4">\n\n                <div (click)="gendarSelection(\'female\')">\n\n                  <img class="gendar" src="/assets/icon/women-icon.png">\n\n                </div>\n\n              </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n            \n\n            \n\n              <ion-grid>\n\n                <ion-row>\n\n                 \n\n                  <ion-col class="column" size="4">\n\n                    <p style="float: left"> Dress Type</p>\n\n                    <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n                    </custom-dress-category-selector>\n\n                  </ion-col>\n\n                  <ion-col class="column" size="4">\n\n                    <p style="float: left"> Style Type</p>\n\n                    <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n                    </custom-fashion-category-selector>\n\n                  </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/,
+            selector: 'page-cutom-design-category-selector',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/'<!--\n\n  Generated template for the CutomDesignCategorySelectorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Cutom Design</ion-title>\n\n    <ion-buttons end>\n\n        \n\n      <button (click)="getSelectedDress()">\n\n        \n\n      <ion-icon style="font-size: 40px"  name="checkmark"></ion-icon>\n\n    </button>\n\n    \n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="modal-content">\n\n\n\n         \n\n\n\n\n\n              <ion-grid>\n\n                <ion-row>\n\n              <ion-col class="column gendar-column" size="4">\n\n                <div (click)="gendarSelection(\'male\')">\n\n                  <img class="gendar" src="assets/icon/man-icon.png">\n\n                </div>\n\n            \n\n              </ion-col>\n\n              <ion-col class="column gendar-column" size="4">\n\n                <div (click)="gendarSelection(\'female\')">\n\n                  <img class="gendar" src="assets/icon/women-icon.png">\n\n                </div>\n\n              </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n            \n\n            \n\n              <ion-grid>\n\n                <ion-row>\n\n                 \n\n                  <ion-col class="column" size="4">\n\n                    <p style="float: left"> Dress Type</p>\n\n                    <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">\n\n                    </custom-dress-category-selector>\n\n                  </ion-col>\n\n                  <ion-col class="column" size="4">\n\n                    <p style="float: left"> Style Type</p>\n\n                    <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">\n\n                    </custom-fashion-category-selector>\n\n                  </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\buyer\cutom-design-category-selector\cutom-design-category-selector.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -734,7 +734,7 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar align-title="center">\n\n    <ion-title >Sign Up</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="register">\n\n\n\n  \n\n    <div class="card" style="height : 60%;">\n\n\n\n        <img src="../../../assets/imgs/logo.png" alt="Avatar" >\n\n        <div class="container">\n\n            <input class="inputfields"  type="text" placeholder="Enter Name here">\n\n          <input class="inputfields" type="text" placeholder="Enter Email here">\n\n          <input class="inputfields" type="password" placeholder="Enter password here"> \n\n        </div>\n\n        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Signup</button>\n\n      </div>\n\n     <ion-label class="signuplbl"> <a (click)="login()">Member?Login Here</a></ion-label>\n\n\n\n<!-- \n\n  <div class="logo">\n\n    <img class="logo-img" src="assets/imgs/logo.png">\n\n  </div>\n\n  \n\n  <ion-card class="card">\n\n  \n\n    <ion-card-content>\n\n    <ion-list>\n\n  \n\n      <ion-input  class="loginfields" placeholder=" User Name "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder=" Email "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input class="loginfields" placeholder=" Password "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder="Re-type Password " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder="Contact info " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder=" Address" type="password" value=""></ion-input>\n\n   \n\n    <div class="login" >\n\n      <button ion-button color="primary" (click)="Signup()" block>Signup</button>\n\n    </div>\n\n    </ion-list>\n\n    </ion-card-content>\n\n  \n\n  </ion-card>\n\n  \n\n  <div class="signin">\n\n  \n\n    <a (click)="signup()">Alrady a Member?</a>\n\n  </div> -->\n\n\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input type="Email" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Re-type Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Contact Info</ion-label>\n\n      <ion-input type="number" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Address</ion-label>\n\n      <ion-textarea type="text" value=""></ion-textarea>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>\n\n  </div> -->\n\n\n\n</ion-content>\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n\n\n    <ion-input class="input" type="text" placeholder="Username"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Email"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Password"></ion-input> \n\n    <ion-input class="input" type="text" placeholder="Re-type-Password"></ion-input>\n\n    <ion-input class="input" type="text" placeholder="Contact"></ion-input>\n\n    <ion-input class="inputaddress"  id="address"type="text" placeholder="Address"> </ion-input>\n\n   <button>Sign Up</button>\n\n   <ion-label>Already Registered?</ion-label>\n\n\n\n</ion-content> -->\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/,
+            selector: 'page-signup',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/'<!--\n\n  Generated template for the SignupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar align-title="center">\n\n    <ion-title >Sign Up</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="register">\n\n\n\n  \n\n    <div class="card" style="height : 60%;">\n\n\n\n        <img src="assets/imgs/logo.png" alt="Avatar" >\n\n        <div class="container">\n\n            <input class="inputfields"  type="text" placeholder="Enter Name here">\n\n          <input class="inputfields" type="text" placeholder="Enter Email here">\n\n          <input class="inputfields" type="password" placeholder="Enter password here"> \n\n        </div>\n\n        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Signup</button>\n\n      </div>\n\n     <ion-label class="signuplbl"> <a (click)="login()">Member?Login Here</a></ion-label>\n\n\n\n<!-- \n\n  <div class="logo">\n\n    <img class="logo-img" src="assets/imgs/logo.png">\n\n  </div>\n\n  \n\n  <ion-card class="card">\n\n  \n\n    <ion-card-content>\n\n    <ion-list>\n\n  \n\n      <ion-input  class="loginfields" placeholder=" User Name "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder=" Email "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input class="loginfields" placeholder=" Password "  type="text" value=""></ion-input>\n\n      \n\n        <ion-input  class="loginfields" placeholder="Re-type Password " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder="Contact info " type="password" value=""></ion-input>\n\n   \n\n        <ion-input  class="loginfields" placeholder=" Address" type="password" value=""></ion-input>\n\n   \n\n    <div class="login" >\n\n      <button ion-button color="primary" (click)="Signup()" block>Signup</button>\n\n    </div>\n\n    </ion-list>\n\n    </ion-card-content>\n\n  \n\n  </ion-card>\n\n  \n\n  <div class="signin">\n\n  \n\n    <a (click)="signup()">Alrady a Member?</a>\n\n  </div> -->\n\n\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input type="Email" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Re-type Password</ion-label>\n\n      <ion-input type="password" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Contact Info</ion-label>\n\n      <ion-input type="number" value=""></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Address</ion-label>\n\n      <ion-textarea type="text" value=""></ion-textarea>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="goBuyerHomePage()" block>Sign Up</button>\n\n  </div> -->\n\n\n\n</ion-content>\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>signup</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="main">\n\n\n\n    <ion-input class="input" type="text" placeholder="Username"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Email"> </ion-input>\n\n    <ion-input class="input" type="text" placeholder="Password"></ion-input> \n\n    <ion-input class="input" type="text" placeholder="Re-type-Password"></ion-input>\n\n    <ion-input class="input" type="text" placeholder="Contact"></ion-input>\n\n    <ion-input class="inputaddress"  id="address"type="text" placeholder="Address"> </ion-input>\n\n   <button>Sign Up</button>\n\n   <ion-label>Already Registered?</ion-label>\n\n\n\n</ion-content> -->\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\signup\signup.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], SignupPage);
@@ -783,7 +783,7 @@ var map = {
 		9
 	],
 	"../pages/buyer/categories/categories.module": [
-		520,
+		517,
 		8
 	],
 	"../pages/buyer/customDesign/custom-design/custom-design-home.module": [
@@ -803,15 +803,15 @@ var map = {
 		5
 	],
 	"../pages/buyer/product-details/product-details.module": [
-		517,
+		518,
 		4
 	],
 	"../pages/buyer/user-orders/user-orders.module": [
-		518,
+		519,
 		3
 	],
 	"../pages/membership/signup/signup.module": [
-		519,
+		520,
 		2
 	]
 };
@@ -942,7 +942,7 @@ var CustomProductSelectionComponent = /** @class */ (function () {
     };
     CustomProductSelectionComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'custom-product-selection',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-product-selection\custom-product-selection.html"*/'<!--\n\n  Generated template for the CutomDesignCategorySelectorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n      <ion-title class="product-selection-header">Cutom Design <ion-icon name="checkmark" *ngIf="slectedItem" (click)="goToFinalCustomView()"></ion-icon></ion-title>\n\n      \n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding class="modal-content">\n\n    <ion-grid>\n\n        <ion-row *ngIf="products && products.length > 0">\n\n              <ion-col *ngFor="let product of products" size="6" col-6>\n\n                  <!-- <ion-thumbnail slot="start" size="50"  > -->\n\n                    {{product | json}}\n\n                     <img src=" {{product.images[0].img}}" class="thumbnail-image" (click)="selectedArticle(product)" [ngClass]="slectedItem && slectedItem.id == product.id ? \'selected\' : \'\'">\n\n                   <!-- </ion-thumbnail> -->\n\n               </ion-col>\n\n          </ion-row>\n\n          <ion-row *ngIf="products && products.length <= 0">\n\n            No Record Found.\n\n          </ion-row>\n\n    </ion-grid>\n\n    \n\n  \n\n  </ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-product-selection\custom-product-selection.html"*/
+            selector: 'custom-product-selection',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-product-selection\custom-product-selection.html"*/'<!--\n\n  Generated template for the CutomDesignCategorySelectorPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n      <ion-title class="product-selection-header">Cutom Design <ion-icon name="checkmark" *ngIf="slectedItem" (click)="goToFinalCustomView()"></ion-icon></ion-title>\n\n      \n\n    </ion-navbar>\n\n  \n\n  </ion-header>\n\n  \n\n  \n\n  <ion-content padding class="modal-content">\n\n    <ion-grid>\n\n        <ion-row *ngIf="products && products.length > 0">\n\n              <ion-col *ngFor="let product of products" size="6" col-6>\n\n                  <!-- <ion-thumbnail slot="start" size="50"  > -->\n\n                    <!-- {{product | json}} -->\n\n                     <img src=" {{product.images[0].img}}" class="thumbnail-image" (click)="selectedArticle(product)" [ngClass]="slectedItem && slectedItem.id == product.id ? \'selected\' : \'\'">\n\n                   <!-- </ion-thumbnail> -->\n\n               </ion-col>\n\n          </ion-row>\n\n          <ion-row *ngIf="products && products.length <= 0">\n\n            No Record Found.\n\n          </ion-row>\n\n    </ion-grid>\n\n    \n\n  \n\n  </ion-content>'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\components\custom-design\custom-product-selection\custom-product-selection.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_products_products__["a" /* ProductsProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__store_orders_orderstore__["a" /* OrderStore */]])
     ], CustomProductSelectionComponent);
@@ -1045,7 +1045,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/'<ion-content class="main">\n\n\n\n    <div class="card" style="height : 50%;">\n\n\n\n        <img src="../../../assets/imgs/logo.png" alt="Avatar" >\n\n        <div class="container">\n\n            <input class="inputfields" [(ngModel)]="userCredentials.email" type="text" placeholder="Enter Email here">\n\n          <input class="inputfields" [(ngModel)]="userCredentials.password" type="password" placeholder="Enter password here">\n\n          <ion-label>Forgot your password?</ion-label>   \n\n        </div>\n\n        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Sign In</button>\n\n      </div>\n\n     <ion-label class="signuplbl"> <a (click)="signup()">New?Signup Here</a></ion-label>\n\n\n\n<!-- <div class="logo">\n\n  <img class="logo-img" src="assets/imgs/logo.png">\n\n</div>\n\n\n\n<ion-card class="card">\n\n\n\n  <ion-card-content>\n\n  <ion-list>\n\n\n\n\n\n      <ion-input [(ngModel)]="userCredentials.email" class="loginfields" placeholder="Enter Email Here"  type="text" value=""></ion-input>\n\n    \n\n     \n\n      <ion-input [(ngModel)]="userCredentials.password" class="loginfields" placeholder="Enter Password Here" type="password" value=""></ion-input>\n\n  <div class="forgotpassword">\n\n\n\n    <a (click)="forgotpassword()">Forgot Password ?</a>\n\n  </div>\n\n  <div class="login" >\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  </ion-list>\n\n  </ion-card-content>\n\n\n\n</ion-card>\n\n\n\n<div class="signup">\n\n\n\n  <a (click)="signup()">Signup</a>\n\n</div> -->\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.email" type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.password" type="password" value=""></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n<a (click)="forgotpassword()">Forgot Password ?</a>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  <div padding>\n\n    <button ion-button color="primary"  (click)="signup()" block>Sign Up</button>\n\n  </div> -->\n\n<!-- <p (click)="signup()" >signup</p> -->\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/'<ion-content class="main">\n\n\n\n    <div class="card" style="height : 50%;">\n\n\n\n        <img src="assets/imgs/logo.png" alt="Avatar" >\n\n        <div class="container">\n\n            <input class="inputfields" [(ngModel)]="userCredentials.email" type="text" placeholder="Enter Email here">\n\n          <input class="inputfields" [(ngModel)]="userCredentials.password" type="password" placeholder="Enter password here">\n\n          <ion-label>Forgot your password?</ion-label>   \n\n        </div>\n\n        <button ion-button class="loginbtn"color="medium" (click)="logIn()" block>Sign In</button>\n\n      </div>\n\n     <ion-label class="signuplbl"> <a (click)="signup()">New?Signup Here</a></ion-label>\n\n\n\n<!-- <div class="logo">\n\n  <img class="logo-img" src="assets/imgs/logo.png">\n\n</div>\n\n\n\n<ion-card class="card">\n\n\n\n  <ion-card-content>\n\n  <ion-list>\n\n\n\n\n\n      <ion-input [(ngModel)]="userCredentials.email" class="loginfields" placeholder="Enter Email Here"  type="text" value=""></ion-input>\n\n    \n\n     \n\n      <ion-input [(ngModel)]="userCredentials.password" class="loginfields" placeholder="Enter Password Here" type="password" value=""></ion-input>\n\n  <div class="forgotpassword">\n\n\n\n    <a (click)="forgotpassword()">Forgot Password ?</a>\n\n  </div>\n\n  <div class="login" >\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  </ion-list>\n\n  </ion-card-content>\n\n\n\n</ion-card>\n\n\n\n<div class="signup">\n\n\n\n  <a (click)="signup()">Signup</a>\n\n</div> -->\n\n  <!-- <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Username</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.email" type="text" value=""></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Password</ion-label>\n\n      <ion-input [(ngModel)]="userCredentials.password" type="password" value=""></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n<a (click)="forgotpassword()">Forgot Password ?</a>\n\n\n\n  <div padding>\n\n    <button ion-button color="primary" (click)="logIn()" block>Sign In</button>\n\n  </div>\n\n  <div padding>\n\n    <button ion-button color="primary"  (click)="signup()" block>Sign Up</button>\n\n  </div> -->\n\n<!-- <p (click)="signup()" >signup</p> -->\n\n</ion-content>\n\n'/*ion-inline-end:"E:\ionic\egarments\egarments-client\eshop-client\src\pages\membership\login\login.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -1380,10 +1380,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/buyer/customDesign/design-canvas/design-canvas.module#DesignCanvasPageModule', name: 'DesignCanvasPage', segment: 'design-canvas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/cutom-design-category-selector/cutom-design-category-selector.module#CutomDesignCategorySelectorPageModule', name: 'custom-category-selector', segment: 'app', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/men/men.module#MenPageModule', name: 'MenPage', segment: 'men', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/product-details/product-details.module#ProductDetailsPageModule', name: 'ProductDetailsPage', segment: 'product-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/buyer/user-orders/user-orders.module#UserOrdersPageModule', name: 'UserOrdersPage', segment: 'user-orders', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/buyer/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/membership/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__angular_common_http__["b" /* HttpClientModule */],
@@ -1740,15 +1740,15 @@ var MyApp = /** @class */ (function () {
                         _this.rootPage = __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__["a" /* CategoriesPage */];
                     }
                     else {
-                        _this.rootPage = __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__["a" /* CategoriesPage */];
+                        _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_admin_admindashboard_admindashboard__["a" /* AdmindashboardPage */];
                     }
                 }
                 else {
-                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__["a" /* CategoriesPage */];
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_2__pages_membership_login_login__["a" /* LoginPage */];
                 }
             }
             else {
-                _this.rootPage = __WEBPACK_IMPORTED_MODULE_3__pages_buyer_categories_categories__["a" /* CategoriesPage */];
+                _this.rootPage = __WEBPACK_IMPORTED_MODULE_2__pages_membership_login_login__["a" /* LoginPage */];
             }
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -2167,7 +2167,7 @@ var ProductsProvider = /** @class */ (function () {
     }
     ProductsProvider.prototype.getProducts = function (value) {
         var _this = this;
-        return this.http.get('./../assets/products.json').
+        return this.http.get('assets/products.json').
             pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["map"])(function (data) {
             console.log('profucts', data.products);
             _this.productStore.saveProducts(data.products);
@@ -2177,7 +2177,7 @@ var ProductsProvider = /** @class */ (function () {
     ProductsProvider.prototype.getcustomDesignProducts = function (value) {
         var _this = this;
         // debugger
-        return this.http.get('/assets/custom-design-products.json').
+        return this.http.get('assets/custom-design-products.json').
             // return this.http.get('/assets/custom-products.json').
             pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["map"])(function (data) {
             _this.productStore.seveCustomProducts(data.customDesignProducts);
@@ -2187,7 +2187,7 @@ var ProductsProvider = /** @class */ (function () {
     };
     ProductsProvider.prototype.getDesigingAssets = function () {
         var _this = this;
-        return this.http.get('/assets/custom-assets.json').
+        return this.http.get('assets/custom-assets.json').
             pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["map"])(function (data) {
             _this.productStore.seveCustomAssets(data.customAssets);
             return data.customAssets;
@@ -2248,14 +2248,14 @@ var SharedProvider = /** @class */ (function () {
         // this.adminOrdersStore.clear();
     };
     SharedProvider.prototype.getFashionCategories = function () {
-        return this.http.get('./../assets/custom-fashion-categories.json').
+        return this.http.get('assets/custom-fashion-categories.json').
             pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
             console.log('fashion', data);
             return data.fashionCategories;
         }));
     };
     SharedProvider.prototype.getdressCategories = function () {
-        return this.http.get('./../assets/dress-category.json').
+        return this.http.get('assets/dress-category.json').
             pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["map"])(function (data) {
             console.log('profucts', data);
             return data.dressCategories;
@@ -2461,6 +2461,7 @@ var CustomDesignHomePage = /** @class */ (function () {
         //====> for svg custom design
         // this.selectedProduct = this.navParams.get('data');
         // or image custom designs
+        screen.orientation.lock('landscape');
         this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
         console.log('ionViewDidLoad CustomDesignPage');
         this.productsProvider.getDesigingAssets().subscribe(function (res) {

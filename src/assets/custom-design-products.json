@@ -14,33 +14,33 @@
             "images": [
                 {
                     "side":"front",
-                    "img": "/assets/imgs/kurta.png",
+                    "img": "assets/imgs/kurta.png",
                     "color": "#787878"
                 },
                 {
                     "side":"back",
-                    "img": "/assets/imgs/kurta.png",
+                    "img": "assets/imgs/kurta.png",
                     "color": "#787878"
                 },
                 
                 {
                     "side":"front",
-                    "img": "/assets/imgs/shirt.jpg",
+                    "img": "assets/imgs/shirt.jpg",
                     "color": "black"
                 },
                 {
                     "side":"back",
-                    "img": "/assets/imgs/shirt.jpg",
+                    "img": "assets/imgs/shirt.jpg",
                     "color": "black"
                 },
                 {
                     "side":"front",
-                    "img": "/assets/imgs/kurta.png",
+                    "img": "assets/imgs/kurta.png",
                     "color": "red"
                 },
                 {
                     "side":"back",
-                    "img": "/assets/imgs/kurta.png",
+                    "img": "assets/imgs/kurta.png",
                     "color": "red"
                 }
             ],
@@ -63,15 +63,15 @@
             "price": 60,
             "images": [
                 {
-                    "img": "/assets/imgs/shirt.png",
+                    "img": "assets/imgs/shirt.png",
                     "color": "#787878"
                 },
                 {
-                    "img": "/assets/imgs/shirt.jpg",
+                    "img": "assets/imgs/shirt.jpg",
                     "color": "#black"
                 },
                 {
-                    "img": "/assets/imgs/kurta.png",
+                    "img": "assets/imgs/kurta.png",
                     "color": "red"
                 }
             ],

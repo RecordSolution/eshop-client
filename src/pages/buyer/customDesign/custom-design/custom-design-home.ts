@@ -71,6 +71,7 @@ export class CustomDesignHomePage {
     //====> for svg custom design
     // this.selectedProduct = this.navParams.get('data');
     // or image custom designs
+    screen.orientation.lock('landscape');
     this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {

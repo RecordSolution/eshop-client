@@ -128,7 +128,7 @@
     </ion-row>
   </ion-grid>
   <ion-item *ngIf="selectedToResize">
-    <ion-range min="30" max="100" [(ngModel)]="selectedToResize.width" snaps="true" color="secondary"
+    <ion-range min="50" max="100" [(ngModel)]="selectedToResize.width" snaps="true" color="secondary"
       (ionChange)="setBadge(selectedToResize.width)">
       {{size}}</ion-range>
   </ion-item>

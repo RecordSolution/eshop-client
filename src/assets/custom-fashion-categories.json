@@ -3,44 +3,44 @@
         {
             "id": "kasd892das",
             "key": "casual",
-            "menIcon":"/assets/icon/casual-men-Icon.png",
-            "womenIcon":"/assets/icon/casual-women-Icon.png"
+            "menIcon":"assets/icon/casual-men-Icon.png",
+            "womenIcon":"assets/icon/casual-women-Icon.png"
         },
         {
             "id": "j309492das",
             "key": "function",
-            "menIcon":"/assets/icon/party-icon.png",
-            "womenIcon":"/assets/icon/casual-women-Icon.png"
+            "menIcon":"assets/icon/party-icon.png",
+            "womenIcon":"assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-nwioru30",
             "key": "party",
-            "menIcon":"/assets/icon/party-icon.png",
-            "womenIcon":"/assets/icon/casual-women-Icon.png"
+            "menIcon":"assets/icon/party-icon.png",
+            "womenIcon":"assets/icon/casual-women-Icon.png"
         },
         {
             "id": "kasc-nw032u9huc",
             "key": "marriage",
-            "menIcon":"/assets/icon/marriage-icon.png",
-            "womenIcon":"/assets/icon/casual-women-icon.png"
+            "menIcon":"assets/icon/marriage-icon.png",
+            "womenIcon":"assets/icon/casual-women-icon.png"
         },
         {
             "id": "k39uvn3rj2jdcjd98jd",
             "key": "night",
-            "menIcon":"/assets/icon/night-dress-icon.png",
-            "womenIcon":"/assets/icon/casual-women-icon.png"
+            "menIcon":"assets/icon/night-dress-icon.png",
+            "womenIcon":"assets/icon/casual-women-icon.png"
         },
         {
             "id": "kniw8y39rujdcjd98jd",
             "key": "office",
-            "menIcon":"/assets/icon/office-icon.png",
-            "womenIcon":"/assets/icon/casual-women-icon.png"
+            "menIcon":"assets/icon/office-icon.png",
+            "womenIcon":"assets/icon/casual-women-icon.png"
         },
         {
             "id": "ka6786-gjd98jd",
             "key": "student",
-            "menIcon":"/assets/icon/night-dress-icon.png",
-            "womenIcon":"/assets/icon/casual-women-icon.png"
+            "menIcon":"assets/icon/night-dress-icon.png",
+            "womenIcon":"assets/icon/casual-women-icon.png"
         }
     ]
 }

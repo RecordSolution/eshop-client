@@ -14,7 +14,7 @@ export class OrdersProvider {
 
   }
  getorders(value?: string) {
-    return this.http.get('./../assets/orders.json').pipe(
+    return this.http.get('assets/orders.json').pipe(
     map((data: any) => {
       console.log('Orders', data.orders);
    this.ordersStore.setOrders(data.orders);

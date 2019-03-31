@@ -16,7 +16,7 @@ export class ProductsProvider {
     this.getProducts();
   }
  getProducts(value?: string) {
-    return this.http.get('./../assets/products.json').
+    return this.http.get('assets/products.json').
     pipe(map((data: any) => {
       console.log('profucts', data.products);
      this.productStore.saveProducts(data.products);
@@ -26,7 +26,7 @@ export class ProductsProvider {
   }
   getcustomDesignProducts(value?: string) {
     // debugger
-    return this.http.get('/assets/custom-design-products.json').
+    return this.http.get('assets/custom-design-products.json').
     // return this.http.get('/assets/custom-products.json').
     pipe(map((data: any) => {
       this.productStore.seveCustomProducts(data.customDesignProducts);
@@ -36,7 +36,7 @@ export class ProductsProvider {
     }))
   }
   getDesigingAssets(){
-    return this.http.get('/assets/custom-assets.json').
+    return this.http.get('assets/custom-assets.json').
     pipe(map((data: any) => {
       this.productStore.seveCustomAssets(data.customAssets);
       return data.customAssets;

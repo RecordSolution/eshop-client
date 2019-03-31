@@ -14,17 +14,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-1.jpeg",
+                    "url": "assets/product-images/photo-1.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-2.jpeg",
+                    "url": "assets/product-images/photo-2.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-3.jpeg",
+                    "url": "assets/product-images/photo-3.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -56,17 +56,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-4.jpeg",
+                    "url": "assets/product-images/photo-4.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-5.jpeg",
+                    "url": "assets/product-images/photo-5.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-6.jpeg",
+                    "url": "assets/product-images/photo-6.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -98,12 +98,12 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-7.jpeg",
+                    "url": "assets/product-images/photo-7.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-8.jpeg",
+                    "url": "assets/product-images/photo-8.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -135,17 +135,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-9.jpeg",
+                    "url": "assets/product-images/photo-9.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-10.jpeg",
+                    "url": "assets/product-images/photo-10.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-11.jpeg",
+                    "url": "assets/product-images/photo-11.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -177,17 +177,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-9.jpeg",
+                    "url": "assets/product-images/photo-9.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-10.jpeg",
+                    "url": "assets/product-images/photo-10.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-11.jpeg",
+                    "url": "assets/product-images/photo-11.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -219,17 +219,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-9.jpeg",
+                    "url": "assets/product-images/photo-9.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-10.jpeg",
+                    "url": "assets/product-images/photo-10.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-11.jpeg",
+                    "url": "assets/product-images/photo-11.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -261,17 +261,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-9.jpeg",
+                    "url": "assets/product-images/photo-9.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-10.jpeg",
+                    "url": "assets/product-images/photo-10.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-11.jpeg",
+                    "url": "assets/product-images/photo-11.jpeg",
                     "size": "xl",
                     "color": "black"
                 }
@@ -303,17 +303,17 @@
             "totalQuantity":100,
             "images": [
                 {
-                    "url": "/assets/product-images/photo-9.jpeg",
+                    "url": "assets/product-images/photo-9.jpeg",
                     "size": "sm",
                     "color": "yellow"
                 },
                 {
-                    "url": "/assets/product-images/photo-10.jpeg",
+                    "url": "assets/product-images/photo-10.jpeg",
                     "size": "md",
                     "color": "red"
                 },
                 {
-                    "url": "/assets/product-images/photo-11.jpeg",
+                    "url": "assets/product-images/photo-11.jpeg",
                     "size": "xl",
                     "color": "black"
                 }

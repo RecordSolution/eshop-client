@@ -19,7 +19,7 @@
         <ion-row *ngIf="products && products.length > 0">
               <ion-col *ngFor="let product of products" size="6" col-6>
                   <!-- <ion-thumbnail slot="start" size="50"  > -->
-                    {{product | json}}
+                    <!-- {{product | json}} -->
                      <img src=" {{product.images[0].img}}" class="thumbnail-image" (click)="selectedArticle(product)" [ngClass]="slectedItem && slectedItem.id == product.id ? 'selected' : ''">
                    <!-- </ion-thumbnail> -->
                </ion-col>

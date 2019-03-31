@@ -23,14 +23,14 @@ export class SharedProvider {
   }
 
   getFashionCategories() {
-    return this.http.get('./../assets/custom-fashion-categories.json').
+    return this.http.get('assets/custom-fashion-categories.json').
     pipe(map((data: any) => {
       console.log('fashion', data);
      return data.fashionCategories;
     }))
   }
   getdressCategories() {
-    return this.http.get('./../assets/dress-category.json').
+    return this.http.get('assets/dress-category.json').
     pipe(map((data: any) => {
       console.log('profucts', data);
      return data.dressCategories;
