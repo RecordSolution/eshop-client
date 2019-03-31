@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 443:
+/***/ 517:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderDetailsPageModule", function() { return OrderDetailsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CutomDesignCategorySelectorPageModule", function() { return CutomDesignCategorySelectorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_details__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cutom_design_category_selector__ = __webpack_require__(178);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var OrderDetailsPageModule = /** @class */ (function () {
-    function OrderDetailsPageModule() {
+var CutomDesignCategorySelectorPageModule = /** @class */ (function () {
+    function CutomDesignCategorySelectorPageModule() {
     }
-    OrderDetailsPageModule = __decorate([
+    CutomDesignCategorySelectorPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__order_details__["a" /* OrderDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__cutom_design_category_selector__["a" /* CutomDesignCategorySelectorPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__order_details__["a" /* OrderDetailsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cutom_design_category_selector__["a" /* CutomDesignCategorySelectorPage */]),
             ],
         })
-    ], OrderDetailsPageModule);
-    return OrderDetailsPageModule;
+    ], CutomDesignCategorySelectorPageModule);
+    return CutomDesignCategorySelectorPageModule;
 }());
 
-//# sourceMappingURL=order-details.module.js.map
+//# sourceMappingURL=cutom-design-category-selector.module.js.map
 
 /***/ })
 

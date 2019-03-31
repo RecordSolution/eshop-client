@@ -36,15 +36,15 @@ export class MyApp implements OnChanges{
           if (data.accountType == 'buyer') {
             this.rootPage = CategoriesPage;
           } else {
-            this.rootPage = AdmindashboardPage;
+            this.rootPage = CategoriesPage;
           }
 
         } else {
-          this.rootPage = AdmindashboardPage;
+          this.rootPage = CategoriesPage;
         }
       }
       else {
-        this.rootPage = AdmindashboardPage;
+        this.rootPage = CategoriesPage;
       }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

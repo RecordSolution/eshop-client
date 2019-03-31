@@ -29,8 +29,8 @@ export class ProductsProvider {
     return this.http.get('/assets/custom-design-products.json').
     // return this.http.get('/assets/custom-products.json').
     pipe(map((data: any) => {
-      this.productStore.seveCustomProducts(data.customProducts);
-      return data.customProducts;
+      this.productStore.seveCustomProducts(data.customDesignProducts);
+      return data.customDesignProducts;
 
     }))
   }

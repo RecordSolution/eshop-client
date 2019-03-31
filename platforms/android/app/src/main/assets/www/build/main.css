@@ -24722,6 +24722,12 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+ion-icon .icon-inner {
+  height: 1em;
+  width: 1em;
+  display: none;
+}
+
 .my-sidemenu .content {
   background-color: #2D3238;
 }
@@ -24748,7 +24754,7 @@ ion-navbar.toolbar {
 }
 
 .my-navbar .toolbar .toolbar-background {
-  background-color: #2D3238;
+  background-color: #0a756f;
 }
 
 .my-navbar .toolbar-content .toolbar-title {
@@ -24785,9 +24791,18 @@ ion-navbar.toolbar {
 
 custom-assets .inner-popup {
   width: 100%;
-  padding: 10%;
+  padding: 5%;
   height: auto;
   background-color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+custom-assets .inner-popup .assets {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 custom-assets .inner-popup .selected-item {
@@ -24799,34 +24814,86 @@ custom-assets .inner-popup .images {
   height: 70px !important;
 }
 
-custom-dress-category-selector .flex {
-  display: inline-block;
-  height: 100vh;
-  background-color: lightgray;
+custom-assets .inner-popup .action {
+  margin-top: 5px;
 }
 
-custom-dress-category-selector .flex .selected-item {
+custom-dress-category-selector .selected-item {
   border: 2px solid greenyellow;
 }
 
-custom-dress-category-selector .flex .cat {
-  width: 33%;
-  height: auto;
+custom-dress-category-selector .chip-list {
+  margin: 0 !important;
 }
 
-custom-fashion-category-selector .flex {
-  display: inline-block;
-  height: 100vh;
-  background-color: lightgray;
+custom-dress-category-selector .chip-size {
+  width: 110px;
+  background-color: rgba(164, 203, 210, 0.49);
 }
 
-custom-fashion-category-selector .flex .selected-item {
+custom-dress-category-selector .icon {
+  width: 32px;
+  height: 32px;
+  background: #2ce3e4;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+custom-fashion-category-selector .selected-item {
   border: 2px solid greenyellow;
 }
 
-custom-fashion-category-selector .flex .cat {
-  width: 33%;
+custom-fashion-category-selector .chip-list {
+  margin: 0 !important;
+}
+
+custom-fashion-category-selector .chip-size {
+  width: 110px;
+  background-color: rgba(164, 203, 210, 0.49);
+}
+
+custom-fashion-category-selector .icon {
+  width: 32px;
+  height: 32px;
+  background: #2ce3e4;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+custom-product-selection .thumbnail-image {
+  height: 100px;
+}
+
+custom-product-selection .selected {
+  border: 2px solid greenyellow;
+}
+
+custom-product-selection .toolbar-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+popover .list {
+  height: 90px !important;
+  top: 47px !important;
+  left: 329.5px !important;
+  border-radius: 1vw !important;
+  width: 64px !important;
+}
+
+page-add-product .input {
   height: auto;
+  width: 90%;
+  padding: 5px;
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
 page-order-details ion-card {
@@ -24842,6 +24909,12 @@ page-order-details ion-card ion-card-title {
   text-align: center;
 }
 
+.card-background-page .card-background-page {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  margin-top: 15px;
+}
+
 .card-background-page ion-card {
   position: relative;
   text-align: center;
@@ -24849,25 +24922,49 @@ page-order-details ion-card ion-card-title {
 
 .card-background-page .card-title {
   position: absolute;
-  top: 36%;
+  top: 28%;
   font-size: 2.0em;
   width: 100%;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .card-background-page .card-subtitle {
   font-size: 1.0em;
   position: absolute;
+  margin-top: 17px;
   top: 52%;
   width: 100%;
-  color: #fff;
+  color: #e2e2e2;
+}
+
+.card-background-page .card-categories {
+  margin: 0px !important;
+  width: 100%;
+  height: 80px;
+  border: 1px;
+  border-radius: 15px;
+  background-color: brown;
+}
+
+ion-content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .left-side {
   width: 20%;
   height: 100%;
   background: red;
+}
+
+.grid {
+  margin-top: -5;
+}
+
+.column {
+  text-align: center;
 }
 
 .mid {
@@ -24883,8 +24980,8 @@ page-order-details ion-card ion-card-title {
 }
 
 .icons {
-  width: 20%;
-  height: 20%;
+  width: 70px;
+  height: 70px;
   padding: 8px;
 }
 
@@ -24921,6 +25018,84 @@ page-order-details ion-card ion-card-title {
   padding: 15%;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+input {
+  /* removes default styling from input color element */
+  padding: 0;
+  border: none;
+  /* makes input (color swatch) 100% size of container */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* mix blend mode makes the color of the swatch alter the image behind it. */
+  mix-blend-mode: hue;
+  /* try screen, multiply or other blend modes for different effects */
+  cursor: pointer;
+}
+
+/* removes default styling from input color element */
+::-webkit-color-swatch {
+  border: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+  border: none;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+}
+
+.refresher {
+  color: red;
+}
+
+page-cutom-design-category-selector .gendar {
+  width: 50%;
+  margin: 5px;
+}
+
+page-cutom-design-category-selector .column {
+  text-align: center;
+}
+
+.inputfields {
+  width: 83%;
+  height: 45px;
+  position: relative;
+  border: 1px solid;
+  padding-left: 23%;
+  border-radius: 5vw;
+  margin-top: 10px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.buy-button {
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: 1px solid #f53d3d;
+  color: #f53d3d;
+}
+
+.ap-color {
+  color: #f53d3d;
+}
+
 .slider {
   background: #1f2533;
   border-radius: 1vw;
@@ -24940,12 +25115,144 @@ page-order-details ion-card ion-card-title {
   height: 70px;
 }
 
-.logo {
-  padding: 20px;
-  height: 300px;
+page-login .main {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-login .main .card {
+  margin-left: 14%;
+  margin-top: 42%;
+  width: 71%;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+page-login .main .card .card:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+page-login .main .card img {
+  margin-top: 7%;
+  width: 40%;
+  height: 33%;
+}
+
+page-login .main .card .container .inputfields {
+  width: 83%;
+  height: 45px;
+  position: relative;
+  border: 1px solid;
+  padding-left: 23%;
+  border-radius: 5vw;
+  margin-top: 10px;
+}
+
+page-login .main .loginbtn {
+  left: 61px;
+  top: 13px;
+  width: 180px;
+  height: 46px;
+  line-height: 20px;
+  border-radius: 20px;
+  background-color: #333643;
   text-align: center;
 }
 
-.logo-img {
-  max-width: 250px;
+page-login .main .signuplbl {
+  top: 618px;
+  margin-top: 5%;
+  margin-left: 36%;
+  width: 131px;
+  height: 23px;
+  line-height: 20px;
+  opacity: 0.7;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+page-login .main .signuplbl a {
+  left: 122px;
+  color: #3e4241;
+}
+
+page-signup .register {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-signup .register .card {
+  margin-left: 14%;
+  margin-top: 30%;
+  width: 71%;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+page-signup .register .card .card:hover {
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+page-signup .register .card img {
+  margin-top: 7%;
+  width: 40%;
+  height: 26%;
+}
+
+page-signup .register .card .container .inputfields {
+  width: 83%;
+  height: 45px;
+  position: relative;
+  border: 1px solid;
+  padding-left: 23%;
+  border-radius: 5vw;
+  margin-top: 10px;
+}
+
+page-signup .register .loginbtn {
+  left: 61px;
+  top: 13px;
+  width: 180px;
+  height: 46px;
+  line-height: 20px;
+  border-radius: 20px;
+  background-color: #333643;
+  text-align: center;
+}
+
+page-signup .register .signuplbl {
+  top: 618px;
+  margin-top: 5%;
+  margin-left: 36%;
+  width: 131px;
+  height: 23px;
+  line-height: 20px;
+  opacity: 0.7;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+page-signup .register .signuplbl a {
+  left: 122px;
+  color: #3e4241;
 }
