@@ -12,12 +12,12 @@
     </button>
     <ion-title>Custom Design</ion-title>
     <ion-buttons end>
-        
+
       <button (click)="downloadImage()">
-        
-      <ion-icon style="font-size: 40px"  name="checkmark"></ion-icon>
-    </button>
-    
+
+        <ion-icon style="font-size: 40px" name="checkmark"></ion-icon>
+      </button>
+
     </ion-buttons>
   </ion-navbar>
 
@@ -26,17 +26,17 @@
 
 <ion-content padding class="main">
   <!-- {{selectedProduct | json}} -->
-    <ion-icon name="create" (click)="forgotpassword()"></ion-icon>
+  <ion-icon name="create" (click)="forgotpassword()"></ion-icon>
   <ion-grid class="grid" *ngIf="selectedProduct">
     <ion-row>
       <ion-col class="column" size="6" #frontScreen style="position:relative;">
         <ion-icon style="float: left;" *ngIf="selectedProduct" name="albums" (click)="selectAssets('front')">Front
         </ion-icon>
-{{selectedProduct | json}}
+        <!-- {{selectedProduct | json}} -->
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>
-        <img  src ="{{matchImage('front')}}">
+          <img src="{{matchImage('front')}}">
           <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
@@ -44,20 +44,23 @@
           </svg> -->
 
         </div>
-       <!-- front  {{dragableAssets | json}} -->
+        <!-- front  {{dragableAssets | json}} -->
         <div *ngIf="dragableAssets && dragableAssets.length > 0"
           style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-          <div *ngFor="let asset of dragableAssets; let i = index;" style="display:grid; text-align: center;position: relative;" ngDraggable [bounds]="myBounds" [inBounds]="inBounds" (edge)="checkEdge($event)">
-            
-            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="asset.isRotateIcon = true" (mouseleave)="asset.isRotateIcon = false" >
-              <ion-icon name="refresh" *ngIf="asset.isRotateIcon" class="refresher" (click)="imageRotate(i,'front')" style="color:red;"></ion-icon>
-            <img 
-            [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}"  [style.transform]="'rotate(' + (asset.rotate) + 'deg)'" class="icons"
-            ion-long-press [interval]="400" (onPressing)="active(asset)"  
-             src="{{asset.icon}}">
-             </div>
+          <div *ngFor="let asset of dragableAssets; let i = index;"
+            style="display:grid; text-align: center;position: relative;" ngDraggable [bounds]="myBounds"
+            [inBounds]="inBounds" (edge)="checkEdge($event)">
+
+            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="asset.isRotateIcon = true"
+              (mouseleave)="asset.isRotateIcon = false">
+              <ion-icon name="refresh" *ngIf="asset.isRotateIcon" class="refresher" (click)="imageRotate(i,'front')"
+                style="color:red;"></ion-icon>
+              <img [ngStyle]="{height:asset.width+'px',width:asset.width+'px'}"
+                [style.transform]="'rotate(' + (asset.rotate) + 'deg)'" class="icons" ion-long-press [interval]="400"
+                (onPressing)="active(asset)" src="{{asset.icon}}">
+            </div>
           </div>
-         
+
         </div>
         <!-- <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
         </custom-fashion-category-selector> -->
@@ -76,7 +79,7 @@
         <div style="width:300px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !backEdge?.top, 'bottom-b': !backEdge?.bottom, 'left-b': !backEdge?.left, 'right-b': !backEdge?.right }"
           #myBackBounds>
-          <img style="width:'200px'; height:'200px'"  src ="{{matchImage('back')}}">
+          <img style="width:'200px'; height:'200px'" src="{{matchImage('back')}}">
 
           <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -85,21 +88,23 @@
           </svg> -->
 
         </div>
- <!-- back {{dragableBackAssets | json}} -->
+        <!-- back {{dragableBackAssets | json}} -->
         <div *ngIf="dragableBackAssets && dragableBackAssets.length > 0"
-            style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
-            <div  *ngFor="let a of dragableBackAssets; let i = index"    ngDraggable (backEdge)="checkBackEdge($event)"
-            [bounds]="myBackBounds" [inBounds]="backInBounds" >
-            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="a.isRotateIcon = true" (mouseleave)="a.isRotateIcon = false" >
-              <ion-icon name="refresh" *ngIf="a.isRotateIcon" class="refresher" (click)="imageRotate(i,'back')" style="color:red;"></ion-icon>
-              <img 
-              [ngStyle]="{height:a.width+'px',width:a.width+'px'}" [style.transform]="'rotate(' + (a.rotate) + 'deg)'" class="icons"
-              ion-long-press [interval]="400" (onPressing)="active(a)"src="{{a.icon}}">
+          style="position:absolute;left: 50%;top:50%;transform: translate(-50%, -50%);">
+          <div *ngFor="let a of dragableBackAssets; let i = index" ngDraggable (backEdge)="checkBackEdge($event)"
+            [bounds]="myBackBounds" [inBounds]="backInBounds">
+            <div style="display:grid; text-align: center;position: relative;" (mouseenter)="a.isRotateIcon = true"
+              (mouseleave)="a.isRotateIcon = false">
+              <ion-icon name="refresh" *ngIf="a.isRotateIcon" class="refresher" (click)="imageRotate(i,'back')"
+                style="color:red;"></ion-icon>
+              <img [ngStyle]="{height:a.width+'px',width:a.width+'px'}"
+                [style.transform]="'rotate(' + (a.rotate) + 'deg)'" class="icons" ion-long-press [interval]="400"
+                (onPressing)="active(a)" src="{{a.icon}}">
             </div>
-              
-            </div>
-            
+
           </div>
+
+        </div>
 
         <!-- </div> -->
 
@@ -131,7 +136,6 @@
   <div class="popup" *ngIf="showAssets">
     <custom-assets [allCustomAssets]="productStore.getCustomAssets" (onCancel)="closePopup()"
       (onAssetsSelection)="onCustomAssetSelection($event)"></custom-assets>
-
   </div>
 
   <div class="flex" *ngIf="selectedProduct">
@@ -147,10 +151,8 @@
   <button ion-button (click)="downloadImage()">save</button>
   result
   <div style="display: flex">
-    <img #frontCanvas style=" width:300px;
-  height:300px;">
-    <img #backCanvas style=" width:300px;
-  height:300px;">
+    <img #frontCanvas style=" width:300px; height:300px;">
+    <img #backCanvas style=" width:300px; height:300px;">
   </div>
   <a #downloadLink></a>
 </ion-content>

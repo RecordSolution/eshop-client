@@ -22,7 +22,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="main">
 <!-- {{ordersStore.getOrders | json}} -->
     <!-- <button (click)="filterOrders('pending')"></button> -->
   <ion-card (click)="productDetails()" *ngFor="let order of ordersStore.getOrders">
@@ -38,8 +38,19 @@
     <!-- <img src="img/advance-card-bttf.png"> -->
   
     <ion-card-content>
-     <p>{{order.status}}</p>
-     <h6>{{order.buyer.contactNo}}</h6>
+      <ion-row>  
+         <ion-col> <ion-label>Order Status</ion-label></ion-col>
+        <ion-col style="text-align : right"><ion-label> {{order.status}}</ion-label></ion-col>
+      </ion-row>
+   
+      <ion-row>
+          <ion-col><ion-label>Client Contact</ion-label></ion-col>
+    <ion-col style="text-align : right"> <ion-label>{{order.buyer.contactNo}}</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col><ion-label>Ordered on</ion-label></ion-col>
+    <ion-col style="text-align : right"> <ion-label>9-4-2018</ion-label></ion-col>
+      </ion-row>
     </ion-card-content>
 
     <ion-item>

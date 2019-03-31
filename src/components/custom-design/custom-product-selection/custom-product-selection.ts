@@ -26,9 +26,11 @@ products:Array<CustomDesignViewModel> = [];
     // console.log(orderStore.customDesignOrder);
     debugger;
     
-    this.productService.getProducts().subscribe(res => {
+    this.productService.getcustomDesignProducts().subscribe(res => {
+    // this.productService.getProducts().subscribe(res => {
       if(res && res.length > 0){
         for(let i=0; i < res.length;i++){
+          debugger
           if((res[i].dressCategory == this.orderStore.customDesignOrder.dressCategory) && (res[i].fashionCategory == this.orderStore.customDesignOrder.fashionCategory) && (res[i].gendar == this.orderStore.customDesignOrder.gender)){
            debugger
             this.products.push(res[i])
@@ -40,7 +42,9 @@ products:Array<CustomDesignViewModel> = [];
     });
   }
   goToFinalCustomView(){
-    this.navCtrl.push(CustomDesignHomePage)
+    // this.navCtrl.push(CustomDesignHomePage)
+    this.navCtrl.push(CustomDesignHomePage, { 'data': this.slectedItem });
+
   }
   selectedArticle(item){
     this.orderStore.customDesignOrder.selectedItem = item;

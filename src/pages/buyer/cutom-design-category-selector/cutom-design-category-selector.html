@@ -8,6 +8,14 @@
 
   <ion-navbar>
     <ion-title>Cutom Design</ion-title>
+    <ion-buttons end>
+        
+      <button (click)="getSelectedDress()">
+        
+      <ion-icon style="font-size: 40px"  name="checkmark"></ion-icon>
+    </button>
+    
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,118 +23,40 @@
 
 <ion-content padding class="modal-content">
 
-            <!-- <input ion-input class="inputfields"  type="text" placeholder="Enter Name">
-            <input ion-input class="inputfields" type="email" placeholder="Enter Email">
-            <input ion-input class="inputfields" type="text" placeholder="Enter Mobile #">
-            <select ion-select value="brown" okText="Okay" cancelText="Dismiss">
-                <option ion-select-option value="brown">Brown</option>
-              </select>
-              <select value="brown" okText="Okay" cancelText="Dismiss">
-                  <option value="brown">Brown</option>
-                
-                </select> -->
-                <form novalidate [formGroup]="designForm" (ngSubmit)="onSubmit()">
-                  <input class="inputfields" type="test" placeholder="enter your naem">
-                          <ion-item class="form-group">
-                              <ion-label floating>
-                                
-                                Fashion Category
-                              </ion-label>
-                              <ion-select class="form-control" formControlName="cat" [class.error]="!designForm.controls.cat.valid && designForm.controls.cat.dirty">
-                                  
-                                  <ion-option *ngFor="let fcat of fasionDesignes" value="{{fcat.key}}">{{fcat.key }}</ion-option>
-                                </ion-select>
-                              <!-- <ion-input type="text" value="" formControlName ="cat" ></ion-input> -->
-                            </ion-item>
-                            <ion-item  *ngIf="!designForm.controls.cat.valid &&
-                      designForm.controls.cat.dirty"
-                      class="validator-error">
-                          <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                            Please select atleast one Category
-                          <!-- </div> -->
-                      </ion-item>
-                            <ion-item class="form-group">
-                                <ion-label floating>
-                                 
-                                  Dress Category
-                                </ion-label>
-                                <ion-select class="form-control" formControlName="dressCat" [class.error]="!designForm.controls.dressCat.valid && designForm.controls.dressCat.dirty">
-                                    <ion-option *ngFor="let cat of dressDesignes" value="{{cat.key}}">{{cat.key}}</ion-option>
-                                  </ion-select>
-                                <!-- <ion-input type="text" value="" formControlName ="dressCat"></ion-input> -->
-                              </ion-item>
-                              <ion-item  *ngIf="!designForm.controls.dressCat.valid &&
-                              designForm.controls.dressCat.dirty"
-                              class="validator-error">
-                                  <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                                    Please select alteast one dress type.
-                                  <!-- </div> -->
-                              </ion-item>
-                              <ion-item class="form-group">
-                                <ion-label floating>
-                                 
-                                  Gender
-                                </ion-label>
-                                <ion-select  class="form-control" formControlName="gender" [class.error]="!designForm.controls.gender.valid && designForm.controls.gender.dirty">
-                                    <ion-option  value="male">Male</ion-option>
-                                    <ion-option  value="female">Female</ion-option>
-                                  </ion-select>
-                                <!-- <ion-input type="text" value="" formControlName ="dressCat"></ion-input> -->
-                              </ion-item>
-                              <ion-item  *ngIf="!designForm.controls.gender.valid &&
-                              designForm.controls.gender.dirty"
-                              class="validator-error">
-                                  <!-- <div class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched"> -->
-                                    Please select gender.
-                                  <!-- </div> -->
-                              </ion-item>
-                              <button  ion-button>
-                                  Next
-                              </button>
-                    <!-- <ion-item> -->
-                        <!-- <ion-label stacked>My Field Label</ion-label>
-                    <ion-input type="text"  formControlName="myField" value="" placeholder="Enter Name"></ion-input> -->
-                    <!-- </ion-item> -->
-          
-              </form>
-          <!-- <ion-form>
-
-            <ion-input type="text" placeholder="Enter Name"></ion-input>
-            <ion-input type="email" placeholder="Enter Email"></ion-input>
-            <ion-input type="text" placeholder="Enter Mobile "></ion-input>
-            <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-                <ion-option value="brown">Brown</ion-option>
-              </ion-select>
-              <ion-select value="brown" okText="Okay" cancelText="Dismiss">
-                  <ion-option value="brown">Brown</ion-option>
-                </ion-select>
-              </ion-form> -->
+         
 
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="column gendar-column" size="4">
-        <div>
-          <p style="float: left">Gendar</p>
-          <br><br><br>
-          <img class="gendar" src="/assets/icon/man-icon.png">
-        </div>
-        <div>
-          <img class="gendar" src="/assets/icon/women-icon.png">
-        </div>
-
-      </ion-col>
-      <ion-col class="column" size="4">
-        <p style="float: left"> Dress Type</p>
-        <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
-        </custom-dress-category-selector>
-      </ion-col>
-      <ion-col class="column" size="4">
-        <p style="float: left"> Style Type</p>
-        <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
-        </custom-fashion-category-selector>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+              <ion-grid>
+                <ion-row>
+              <ion-col class="column gendar-column" size="4">
+                <div (click)="gendarSelection('male')">
+                  <img class="gendar" src="/assets/icon/man-icon.png">
+                </div>
+            
+              </ion-col>
+              <ion-col class="column gendar-column" size="4">
+                <div (click)="gendarSelection('female')">
+                  <img class="gendar" src="/assets/icon/women-icon.png">
+                </div>
+              </ion-col>
+                </ion-row>
+              </ion-grid>
+            
+            
+              <ion-grid>
+                <ion-row>
+                 
+                  <ion-col class="column" size="4">
+                    <p style="float: left"> Dress Type</p>
+                    <custom-dress-category-selector (selectedCategory)="onDressCategorySelection($event)">
+                    </custom-dress-category-selector>
+                  </ion-col>
+                  <ion-col class="column" size="4">
+                    <p style="float: left"> Style Type</p>
+                    <custom-fashion-category-selector (selectedCategory)="onFashionCategorySelection($event)">
+                    </custom-fashion-category-selector>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
 
 </ion-content>
