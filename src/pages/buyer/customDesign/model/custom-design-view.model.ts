@@ -11,7 +11,7 @@ export class CustomDesignViewModel{
     images:Array<object> = [];
     sizes:Array<string> = [];
     standardSize:string;
-    selectedItem = {};
+    selectedItem:Object = {};
     constructor(){
         this.name = "";
         this.email = "";

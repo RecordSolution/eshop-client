@@ -10,6 +10,7 @@ import { ProductStore } from '../../../../store/productstore/productstore';
 import { ProductsProvider } from '../../../../providers/products/products';
 import { OrderStore } from '../../../../store/orders/orderstore';
 import html2canvas from 'html2canvas';
+import { OrdersProvider } from '../../../../providers/orders/orders';
 @IonicPage()
 @Component({
   selector: 'custom-design',
@@ -27,6 +28,7 @@ export class CustomDesignHomePage {
   dressCategory: string = '';
   customDesignSelectionModel: CustomDesignSelectionModel;
   color: string = "black";
+  selectedColor:string;
   crossActive: boolean;
   size: any;
   selectedProduct: any;
@@ -39,6 +41,8 @@ export class CustomDesignHomePage {
   inBounds = true;
   backInBounds = true;
   assetView:string;
+  selectedItem:Object;
+  selectedSize:string;
   edge = {
     top: true,
     bottom: true,
@@ -56,7 +60,8 @@ export class CustomDesignHomePage {
     public navParams: NavParams,
     public alertCtrl:AlertController,
     private productsProvider: ProductsProvider,
-    public orderStore:OrderStore) {
+    public orderStore:OrderStore,
+    public orderService:OrdersProvider) {
     this.customDesignSelectionModel = new CustomDesignSelectionModel();
   }
   onEventLog(colorPicker, event) {
@@ -73,11 +78,15 @@ export class CustomDesignHomePage {
     // or image custom designs
     screen.orientation.lock('landscape');
     this.selectedProduct = this.orderStore.customDesignOrder.selectedItem;
+    this.selectedProduct.isStandardSize = "true";
+    this.selectedItem = this.selectedProduct.images[0];
+    this.selectedColor = this.selectedProduct.colors[0];
+    this.selectedSize = this.selectedProduct.sizes[0];
     console.log('ionViewDidLoad CustomDesignPage');
     this.productsProvider.getDesigingAssets().subscribe(res => {
       debugger
       this.customAssets = [...res];
-      this.color=this.selectedProduct.colors[0];
+      this.selectedColor=this.selectedProduct.colors[0];
       //   this.svgs= res;
       //   console.log(res)
     })
@@ -108,7 +117,8 @@ export class CustomDesignHomePage {
   //   console.log(this.selectedProduct);
   // }
   selectColor(selectedColor) {
-    this.color = selectedColor;
+    this.selectedColor = selectedColor;
+    this.orderStore.customDesignOrder.selectedItem["selectedColor"] = selectedColor;
   }
   onCustomAssetSelection(item) {
     if (item) {
@@ -182,8 +192,13 @@ export class CustomDesignHomePage {
     });
     alert.present();
   }
-  downloadImage() {
-
+  selectSize(size) {
+    this.selectedSize = size;
+    this.orderStore.customDesignOrder.selectedItem["selectedSize"] = size;
+  }
+  order() {
+    this.orderStore.customDesignOrder.selectedItem["selectedSize"] = this.selectedSize;
+    this.orderStore.customDesignOrder.selectedItem["selectedColor"] = this.selectedColor;
 
     html2canvas(this.frontScreen.nativeElement, {
       useCORS: true,
@@ -192,10 +207,14 @@ export class CustomDesignHomePage {
       height: 300
     }).then((canvas: any) => {
       this.frontCanvas.nativeElement.src = canvas.toDataURL();
-      // document.getElementById('test').appendChild(canvas);
-      // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-      // this.downloadLink.nativeElement.download = 'marble-diagram.png';
-      // this.downloadLink.nativeElement.click();
+     let test = document.getElementById('frontCanvas');
+     console.log(test);
+     console.log(this.orderStore.customDesignOrder);
+     fetch(this.frontCanvas.nativeElement.src)
+  .then(res => res.blob())
+  .then(blob => {
+    this.orderStore.customDesignOrder.selectedItem["selectedItemFront"] = new File([blob], "front")
+  })
     });
     html2canvas(this.backScreen.nativeElement, {
       useCORS: true,
@@ -204,13 +223,15 @@ export class CustomDesignHomePage {
       height: 300
     }).then((canvas: any) => {
       this.backCanvas.nativeElement.src = canvas.toDataURL();
-      // document.getElementById('test').appendChild(canvas);
-
-
-      // this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-      // this.downloadLink.nativeElement.download = 'marble-diagram.png';
-      // this.downloadLink.nativeElement.click();
+      fetch(this.backCanvas.nativeElement.src)
+      .then(res => res.blob())
+      .then(blob => {
+        this.orderStore.customDesignOrder.selectedItem["selectedItemBack"] = new File([blob], "back");
+        this.orderService.orderSubmit(this.orderStore.customDesignOrder);
+      })
     });
+    console.log(this.orderStore.customDesignOrder);
+    debugger
   }
   imageRotate = (index,view) => {
     if(view == 'front'){

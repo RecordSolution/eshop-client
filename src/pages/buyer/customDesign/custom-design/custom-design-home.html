@@ -140,19 +140,95 @@
 
   <div class="flex" *ngIf="selectedProduct">
     <!-- colors -->
-    <div class="color-selection" (click)="selectColor(color)" [style.background]="color"
-      *ngFor="let color of selectedProduct.colors"></div>
+    <div class="color-selection" 
+      *ngFor="let color of selectedProduct.colors"  [style.background]="color" (click)="selectColor(color)" [ngClass]="color == selectedColor ? 'active' : ''"></div>
   </div>
   <div class="flex " *ngIf="selectedProduct">
-    <div class="size" *ngFor="let size of selectedProduct.sizes">{{size}}</div>
+    <div class="size" *ngFor="let size of selectedProduct.sizes" (click)="selectSize(size)" [ngClass]="size == selectedSize ? 'active' : ''">{{size}}</div>
+  </div>
+  <!-- {{selectedProduct | json}} -->
+  <div *ngIf="selectedProduct">
+    <ion-list radio-group [(ngModel)]="selectedProduct.isStandardSize">
+      <ion-item>
+        <ion-label>Standard Size</ion-label>
+        <ion-radio slot="start" value="true" checked></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Custom Size</ion-label>
+        <ion-radio slot="start" value="false" ></ion-radio>
+      </ion-item>
+    </ion-list>
   </div>
 
+  <div *ngIf="selectedProduct && selectedProduct.isStandardSize == 'false'">
+    <ion-list >
+        <ion-item class="form-group" >
+            <ion-grid item-content>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control" [(ngModel)]="orderStore.customDesignOrder.selectedItem.kameezLength"   placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"  [(ngModel)]="orderStore.customDesignOrder.selectedItem.colorSize"   placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control" [(ngModel)]="orderStore.customDesignOrder.selectedItem.shalwarLength"   placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control" [(ngModel)]="orderStore.customDesignOrder.selectedItem.paitSize"   placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"  [(ngModel)]="orderStore.customDesignOrder.selectedItem.panchaSize"  placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+                  <ion-col col-6>
+                      <ion-label stacked>
+                                  
+                          Mobile #
+                        </ion-label>
+                
+                        <ion-input type="text" name="ph" value="" class="form-control"  [(ngModel)]="orderStore.customDesignOrder.selectedItem.gheera"  placeholder="Enter Mobile #"></ion-input>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+  </div>
 
-  <button ion-button (click)="downloadImage()">save</button>
-  result
+  <button ion-button (click)="order()">save</button>
+  <!-- result
   <div style="display: flex">
-    <img #frontCanvas style=" width:300px; height:300px;">
-    <img #backCanvas style=" width:300px; height:300px;">
+    <img #frontCanvas id="frontCanvas" style=" width:300px; height:300px;">
+    <img #backCanvas id="backCanvas" style=" width:300px; height:300px;">
   </div>
-  <a #downloadLink></a>
+  <a #downloadLink></a> -->
 </ion-content>

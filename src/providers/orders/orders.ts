@@ -21,4 +21,14 @@ export class OrdersProvider {
      return data.orders;
     }))
   }
+  orderSubmit(order) {
+    console.log(order);
+    debugger;
+  //   return this.http.get('assets/orders.json').pipe(
+  //   map((data: any) => {
+  //     console.log('Orders', data.orders);
+  //  this.ordersStore.setOrders(data.orders);
+  //    return data.orders;
+  //   }))
+  }
 }
