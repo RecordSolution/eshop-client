@@ -15,6 +15,7 @@ export class CustomFashionCategorySelectorComponent implements OnInit {
 fasionDesignes:Array<any>=[]
   text: string;
   selectedItem:any;
+  colors : Array<string>= [ '#008080', '#e6beff', '#9a6324', '#800000', '#808000',  '#000075', '#808080'];
 @Output() selectedCategory:EventEmitter<any>=new EventEmitter<any>();
 
   constructor(public sharedService: SharedProvider) {
@@ -26,9 +27,14 @@ fasionDesignes:Array<any>=[]
     this.sharedService.getFashionCategories().subscribe(res=>{
       console.log(res);
       this.fasionDesignes=res;
+      if(this.fasionDesignes && this.fasionDesignes.length > 0){
+        for(let r=0;r < this.fasionDesignes.length;r++){
+          this.fasionDesignes[r].color = "";
+              this.fasionDesignes[r].color = this.colors[r];
+        }
+      }
     })
   }
-
   onSelectCategory(selectedCategory){
     this.selectedItem=selectedCategory;
     this.selectedCategory.emit(selectedCategory);

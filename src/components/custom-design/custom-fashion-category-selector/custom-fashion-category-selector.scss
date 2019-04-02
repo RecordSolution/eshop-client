@@ -12,7 +12,7 @@ custom-fashion-category-selector {
     //     }
     // }
          .selected-item{
-            border:2px solid greenyellow;
+            border:2px solid greenyellow !important;
         }
     .chip-list{
         margin: 0 !important;
@@ -25,9 +25,19 @@ custom-fashion-category-selector {
     .icon{
         width: 32px;
         height: 32px;
-        background: #2ce3e4;
+        // background: #2ce3e4;
         border-radius: 50%;
         padding: 3px;
+        margin-right: 5px;
+    }
+    ion-label{
+        align-items: center!important;
+        display: flex!important;
+        text-transform: uppercase;
+    }
+    .item-list{
+        border-right:2px solid grey;
+        color:#fff;
     }
     
 }

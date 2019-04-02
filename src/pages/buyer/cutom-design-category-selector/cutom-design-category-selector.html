@@ -28,13 +28,13 @@
 
               <ion-grid>
                 <ion-row>
-              <ion-col class="column gendar-column" size="4">
+              <ion-col class="column gendar-column men-cat" [ngClass]="categoryViewModel.gendar == 'male' ? 'selected-cat' : ''" size="4">
                 <div (click)="gendarSelection('male')">
                   <img class="gendar" src="assets/icon/man-icon.png">
                 </div>
             
               </ion-col>
-              <ion-col class="column gendar-column" size="4">
+              <ion-col class="column gendar-column women-cat" size="4" [ngClass]="categoryViewModel.gendar == 'female' ? 'selected-cat' : ''">
                 <div (click)="gendarSelection('female')">
                   <img class="gendar" src="assets/icon/women-icon.png">
                 </div>

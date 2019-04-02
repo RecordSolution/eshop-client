@@ -15,6 +15,7 @@ export class CustomDressCategorySelectorComponent {
   dressDesignes:Array<any>=[];
   text: string;
   selectedItem:any;
+  colors : Array<string>= ['#e6194b', '#3cb44b', '#46f0f0', '#4363d8', '#f58231', '#911eb4'];
 @Output() selectedCategory:EventEmitter<any>=new EventEmitter<any>();
 constructor(public sharedService: SharedProvider){
 
@@ -23,6 +24,14 @@ constructor(public sharedService: SharedProvider){
     this.sharedService.getdressCategories().subscribe(res=>{
       console.log(res);
       this.dressDesignes=res;
+      if(this.dressDesignes && this.dressDesignes.length > 0){
+        for(let r=0;r < this.dressDesignes.length;r++){
+          this.dressDesignes[r].color = "";
+              this.dressDesignes[r].color = this.colors[r];
+        }
+      }
+
+
     })
   }
 
