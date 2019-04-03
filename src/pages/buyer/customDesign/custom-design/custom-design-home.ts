@@ -20,8 +20,10 @@ export class CustomDesignHomePage {
   @ViewChild('itemSlider') itemSlider: any;
   @ViewChild('frontScreen') frontScreen: ElementRef;
   @ViewChild('backScreen') backScreen: ElementRef;
-  @ViewChild('frontCanvas') frontCanvas: ElementRef;
-  @ViewChild('backCanvas') backCanvas: ElementRef;
+  @ViewChild('frontCanvas') frontCanvas: HTMLImageElement;
+  @ViewChild('backCanvas') backCanvas: HTMLImageElement;
+  // @ViewChild('frontCanvas1') frontCanvas1: ElementRef;
+  // @ViewChild('backCanvas1') backCanvas1: ElementRef;
   @ViewChild('downloadLink') downloadLink: ElementRef;
 
   fashionCategory: string = '';
@@ -97,7 +99,6 @@ export class CustomDesignHomePage {
     console.log('ionViewDidLeave CustomDesignPage');
   }
   matchImage(side){
-    console.log(this.selectedProduct)
    let image = this.selectedProduct.images.find(x=>x.color==this.color && x.side==side);
   if(image){
     return image.img;
@@ -117,6 +118,7 @@ export class CustomDesignHomePage {
   //   console.log(this.selectedProduct);
   // }
   selectColor(selectedColor) {
+    this.color = selectedColor;
     this.selectedColor = selectedColor;
     this.orderStore.customDesignOrder.selectedItem["selectedColor"] = selectedColor;
   }
@@ -206,11 +208,12 @@ export class CustomDesignHomePage {
       width: 300,
       height: 300
     }).then((canvas: any) => {
-      this.frontCanvas.nativeElement.src = canvas.toDataURL();
-     let test = document.getElementById('frontCanvas');
-     console.log(test);
-     console.log(this.orderStore.customDesignOrder);
-     fetch(this.frontCanvas.nativeElement.src)
+      this.frontCanvas = document.createElement("img");
+      this.frontCanvas.id = "frontCanvas";
+      this.frontCanvas.src = canvas.toDataURL();
+      // this.frontCanvas1.nativeElement.src = this.frontCanvas.src;
+      debugger
+     fetch(this.frontCanvas.src)
   .then(res => res.blob())
   .then(blob => {
     this.orderStore.customDesignOrder.selectedItem["selectedItemFront"] = new File([blob], "front")
@@ -222,10 +225,15 @@ export class CustomDesignHomePage {
       width: 300,
       height: 300
     }).then((canvas: any) => {
-      this.backCanvas.nativeElement.src = canvas.toDataURL();
-      fetch(this.backCanvas.nativeElement.src)
+      this.backCanvas = document.createElement("img");
+      this.backCanvas.id = "backCanvas";
+      this.backCanvas.src = canvas.toDataURL();
+
+      // this.backCanvas1.nativeElement.src = this.backCanvas.src;
+      fetch(this.backCanvas.src)
       .then(res => res.blob())
       .then(blob => {
+        
         this.orderStore.customDesignOrder.selectedItem["selectedItemBack"] = new File([blob], "back");
         this.orderService.orderSubmit(this.orderStore.customDesignOrder);
       })

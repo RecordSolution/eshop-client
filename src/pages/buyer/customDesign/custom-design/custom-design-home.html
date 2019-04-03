@@ -33,10 +33,10 @@
         <ion-icon style="float: left;" *ngIf="selectedProduct" name="albums" (click)="selectAssets('front')">Front
         </ion-icon>
         <!-- {{selectedProduct | json}} -->
-        <div style="width:300px;" class="drag-boundary"
+        <div style="width:200px; height: 200px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"
           #myBounds>
-          <img src="{{matchImage('front')}}">
+          <img style="width:200px; height: 200px;" src="{{matchImage('front')}}">
           <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 626 645" style="fill:color;" xml:space="preserve">
@@ -76,10 +76,10 @@
         <!-- <div  class="drag-boundary" #screen   [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }" #myBounds> -->
         <!-- {{svgs.json}} -->
 
-        <div style="width:300px;" class="drag-boundary"
+        <div style="width:200px; height: 200px;" class="drag-boundary"
           [ngClass]="{ 'top-b': !backEdge?.top, 'bottom-b': !backEdge?.bottom, 'left-b': !backEdge?.left, 'right-b': !backEdge?.right }"
           #myBackBounds>
-          <img style="width:'200px'; height:'200px'" src="{{matchImage('back')}}">
+          <img style="width:200px; height: 200px;" src="{{matchImage('back')}}">
 
           <!-- <svg width="200px" height="200px" version="1.1" [attr.fill]="color" id="Layer_1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -227,8 +227,8 @@
   <button ion-button (click)="order()">save</button>
   <!-- result
   <div style="display: flex">
-    <img #frontCanvas id="frontCanvas" style=" width:300px; height:300px;">
-    <img #backCanvas id="backCanvas" style=" width:300px; height:300px;">
+    <img #frontCanvas1 id="frontCanvas1" style=" width:300px; height:300px;">
+    <img #backCanvas1 id="backCanvas1" style=" width:300px; height:300px;">
   </div>
   <a #downloadLink></a> -->
 </ion-content>
